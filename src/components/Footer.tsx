@@ -35,16 +35,16 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h4 className="text-2xl font-bold mb-6 text-education-accent">EduZenith</h4>
+            <h4 className="text-2xl font-bold mb-6 text-professional-primary">Professional Training</h4>
             <p className="text-background/80 mb-6 leading-relaxed">
               Empowering learners worldwide with high-quality, accessible education. 
               Transform your future with our expert-led courses and supportive community.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="w-5 h-5 text-background/60 hover:text-education-accent cursor-pointer smooth-transition" />
-              <Twitter className="w-5 h-5 text-background/60 hover:text-education-accent cursor-pointer smooth-transition" />
-              <Instagram className="w-5 h-5 text-background/60 hover:text-education-accent cursor-pointer smooth-transition" />
-              <Linkedin className="w-5 h-5 text-background/60 hover:text-education-accent cursor-pointer smooth-transition" />
+              <Facebook className="w-5 h-5 text-background/60 hover:text-professional-primary cursor-pointer smooth-transition" />
+              <Twitter className="w-5 h-5 text-background/60 hover:text-professional-primary cursor-pointer smooth-transition" />
+              <Instagram className="w-5 h-5 text-background/60 hover:text-professional-primary cursor-pointer smooth-transition" />
+              <Linkedin className="w-5 h-5 text-background/60 hover:text-professional-primary cursor-pointer smooth-transition" />
             </div>
           </div>
 
@@ -54,7 +54,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {['Browse Courses', 'About Us', 'Instructors', 'Student Reviews', 'Success Stories', 'Blog'].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-background/80 hover:text-education-accent smooth-transition">
+                  <a href="#" className="text-background/80 hover:text-professional-primary smooth-transition">
                     {link}
                   </a>
                 </li>
@@ -68,7 +68,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {['Help Center', 'Contact Us', 'Privacy Policy', 'Terms of Service', 'Refund Policy', 'FAQ'].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-background/80 hover:text-education-accent smooth-transition">
+                  <a href="#" className="text-background/80 hover:text-professional-primary smooth-transition">
                     {link}
                   </a>
                 </li>
@@ -81,15 +81,15 @@ export const Footer = () => {
             <h5 className="text-lg font-semibold mb-6">Contact Info</h5>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-education-accent" />
-                <span className="text-background/80">support@eduzenith.com</span>
+                <Mail className="w-5 h-5 text-professional-primary" />
+                <span className="text-background/80">info@professionaltraining.com</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-education-accent" />
+                <Phone className="w-5 h-5 text-professional-primary" />
                 <span className="text-background/80">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-education-accent" />
+                <MapPin className="w-5 h-5 text-professional-primary" />
                 <span className="text-background/80">San Francisco, CA</span>
               </div>
             </div>
@@ -101,7 +101,7 @@ export const Footer = () => {
       <div className="border-t border-background/20">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-background/60">
-            <p>&copy; 2024 EduZenith. All rights reserved.</p>
+            <p>&copy; 2024 Professional Training. All rights reserved.</p>
             <p>Made with ❤️ for learners worldwide</p>
           </div>
         </div>

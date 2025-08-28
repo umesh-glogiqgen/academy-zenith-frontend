@@ -1,91 +1,110 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, Users, Award, Search } from "lucide-react";
+import { Menu, X, Building, Phone, Mail } from "lucide-react";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About Us" },
+    { href: "#services", label: "Services" },
     { href: "#courses", label: "Courses" },
-    { href: "#about", label: "About" },
-    { href: "#instructors", label: "Instructors" },
-    { href: "#reviews", label: "Reviews" },
-    { href: "#contact", label: "Contact" }
+    { href: "#jobs", label: "Jobs" },
+    { href: "#blog", label: "Blog" },
+    { href: "#contact", label: "Contact Us" }
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+    <div className="fixed top-0 w-full z-50">
+      {/* Top Contact Bar */}
+      <div className="bg-professional-secondary text-white text-sm py-2">
+        <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-education-primary rounded-lg flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-education-primary">EduZenith</span>
+            <Mail className="w-4 h-4" />
+            <span>info@professionaltraining.com</span>
           </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground/80 hover:text-primary smooth-transition font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4" />
+            <span>Call us: +1 (555) 123-4567</span>
           </div>
-
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="icon">
-              <Search className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost">
-              Sign In
-            </Button>
-            <Button variant="default">
-              Get Started
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-white">
-            <div className="flex flex-col space-y-4">
+      {/* Main Navigation */}
+      <nav className="bg-white shadow-md border-b border-border">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-professional-primary rounded-lg flex items-center justify-center">
+                <Building className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <div className="text-xl font-bold text-professional-secondary">Professional Training</div>
+                <div className="text-xs text-professional-primary font-medium">Transforming Careers Into Reality</div>
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-foreground/80 hover:text-primary smooth-transition font-medium px-4 py-2"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="text-professional-secondary/80 hover:text-professional-primary smooth-transition font-medium text-sm"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="flex flex-col gap-2 px-4 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start">
-                  Sign In
-                </Button>
-                <Button variant="default" className="justify-start">
-                  Get Started
-                </Button>
+            </div>
+
+            {/* Desktop Actions */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Button variant="ghost" className="text-professional-secondary">
+                Login
+              </Button>
+              <Button variant="default" className="bg-professional-primary">
+                Get Quote
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="lg:hidden py-4 border-t border-border bg-white">
+              <div className="flex flex-col space-y-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-professional-secondary/80 hover:text-professional-primary smooth-transition font-medium px-4 py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <div className="flex flex-col gap-2 px-4 pt-4 border-t border-border">
+                  <Button variant="ghost" className="justify-start text-professional-secondary">
+                    Login
+                  </Button>
+                  <Button variant="default" className="justify-start bg-professional-primary">
+                    Get Quote
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
-    </nav>
+          )}
+        </div>
+      </nav>
+    </div>
   );
 };

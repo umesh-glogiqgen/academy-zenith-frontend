@@ -15,18 +15,18 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Educational Brand Colors - Purple/Blue Theme */
-    --primary: 259 94% 51%;
+    /* Professional Business Theme - Orange/Dark */
+    --primary: 25 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 259 94% 61%;
+    --primary-glow: 25 100% 60%;
     
-    --secondary: 221 83% 53%;
+    --secondary: 220 13% 18%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 259 94% 51%;
+    --accent: 25 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -34,16 +34,16 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 259 94% 51%;
+    --ring: 25 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Educational Theme Colors */
-    --education-primary: 259 94% 51%;
-    --education-secondary: 221 83% 53%;
-    --education-accent: 45 93% 47%;
-    --education-success: 142 71% 45%;
-    --education-warning: 38 92% 50%;
+    /* Professional Theme Colors */
+    --professional-primary: 25 100% 50%;
+    --professional-secondary: 220 13% 18%;
+    --professional-accent: 210 100% 50%;
+    --professional-success: 142 71% 45%;
+    --professional-warning: 38 92% 50%;
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--education-primary)), hsl(var(--education-secondary)));

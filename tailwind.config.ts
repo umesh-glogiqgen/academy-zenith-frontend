@@ -29,12 +29,12 @@ export default {
 					foreground: 'hsl(var(--primary-foreground))',
 					glow: 'hsl(var(--primary-glow))'
 				},
-				education: {
-					primary: 'hsl(var(--education-primary))',
-					secondary: 'hsl(var(--education-secondary))',
-					accent: 'hsl(var(--education-accent))',
-					success: 'hsl(var(--education-success))',
-					warning: 'hsl(var(--education-warning))'
+				professional: {
+					primary: 'hsl(var(--professional-primary))',
+					secondary: 'hsl(var(--professional-secondary))',
+					accent: 'hsl(var(--professional-accent))',
+					success: 'hsl(var(--professional-success))',
+					warning: 'hsl(var(--professional-warning))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
