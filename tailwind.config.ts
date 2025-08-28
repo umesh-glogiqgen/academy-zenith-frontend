@@ -26,7 +26,15 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
+				},
+				education: {
+					primary: 'hsl(var(--education-primary))',
+					secondary: 'hsl(var(--education-secondary))',
+					accent: 'hsl(var(--education-accent))',
+					success: 'hsl(var(--education-success))',
+					warning: 'hsl(var(--education-warning))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
