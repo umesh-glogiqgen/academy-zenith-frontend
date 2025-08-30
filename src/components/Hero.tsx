@@ -7,14 +7,7 @@ export const Hero = () => {
       {/* Floating background element */}
       <div className="absolute top-[-50%] right-[-20%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-[#46a6a5]/10 to-transparent animate-pulse" />
       
-      {/* Logo Display */}
-      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-20">
-        <img 
-          src="/rr-technos-logo.png" 
-          alt="RR Technos Logo" 
-          className="h-24 w-auto opacity-30"
-        />
-      </div>
+      
       
       {/* Hero Content */}
       <div className="container mx-auto px-6 relative z-10">
