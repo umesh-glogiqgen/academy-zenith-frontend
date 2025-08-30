@@ -3,19 +3,19 @@ import { Phone, Mail } from "lucide-react";
 
 export const ProfessionalHero = () => {
   return (
-    <div className="bg-professional-secondary text-white py-20 mt-16">
+    <div className="bg-professional-secondary text-white py-20 mt-20">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Professional Training & 
-              <span className="text-professional-primary block">Development Programs</span>
+              From Workday to AI 
+              <span className="text-professional-primary block">One Platform for Your Tech Growth</span>
             </h1>
             
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Advance your career with our comprehensive online training programs. 
-              Expert instructors, hands-on projects, and industry-recognized certifications.
+              Master enterprise technologies with our expert-led training programs. 
+              Workday, AI, ERP systems, and cutting-edge tech skills with real-time projects and 100% placement support.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -23,7 +23,7 @@ export const ProfessionalHero = () => {
                 Explore Programs
               </Button>
               <Button variant="outline-hero" size="lg" className="text-lg px-8 py-4">
-                Download Brochure
+                Book Free Demo
               </Button>
             </div>
 
@@ -31,11 +31,11 @@ export const ProfessionalHero = () => {
             <div className="flex flex-col sm:flex-row gap-6 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-professional-primary" />
-                <span>Call us: +1 (555) 123-4567</span>
+                <span>Call us: +91 9573529800</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-professional-primary" />
-                <span>info@professionaltraining.com</span>
+                <span>rrtechnos@gmail.com</span>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ export const ProfessionalHero = () => {
               <div className="mb-6">
                 <h3 className="text-2xl font-bold mb-2">Featured Program</h3>
                 <h2 className="text-3xl font-black">
-                  Full Stack Development<br/>
+                  Workday HCM<br/>
                   Professional Training
                 </h2>
               </div>
@@ -54,11 +54,11 @@ export const ProfessionalHero = () => {
               <div className="bg-white/20 rounded-lg p-4 mb-6 backdrop-blur-sm">
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80" 
-                  alt="Professional training session"
+                  alt="Workday training session"
                   className="w-full h-32 object-cover rounded mb-4"
                 />
                 <div className="text-sm">
-                  <p>12-Week Intensive Program</p>
+                  <p>Comprehensive Program</p>
                   <p>Live Projects • Expert Mentors • Job Assistance</p>
                 </div>
               </div>
@@ -66,11 +66,11 @@ export const ProfessionalHero = () => {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <Phone className="w-4 h-4 mx-auto mb-1" />
-                  <p>+1 (555) 123-4567</p>
+                  <p>+91 9573529800</p>
                 </div>
                 <div>
                   <Mail className="w-4 h-4 mx-auto mb-1" />
-                  <p>training@company.com</p>
+                  <p>rrtechnos@gmail.com</p>
                 </div>
               </div>
             </div>

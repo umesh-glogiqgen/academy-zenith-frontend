@@ -8,9 +8,8 @@ export const Navigation = () => {
   const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About Us" },
-    { href: "#services", label: "Services" },
     { href: "#courses", label: "Courses" },
-    { href: "#jobs", label: "Jobs" },
+    { href: "#events", label: "Events & Workshops" },
     { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Contact Us" }
   ];
@@ -22,11 +21,11 @@ export const Navigation = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Mail className="w-4 h-4" />
-            <span>info@professionaltraining.com</span>
+            <span>rrtechnos@gmail.com</span>
           </div>
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4" />
-            <span>Call us: +1 (555) 123-4567</span>
+            <span>Call us: +91 9573529800</span>
           </div>
         </div>
       </div>
@@ -41,8 +40,8 @@ export const Navigation = () => {
                 <Building className="w-6 h-6 text-white" />
               </div>
               <div>
-                <div className="text-xl font-bold text-professional-secondary">Professional Training</div>
-                <div className="text-xs text-professional-primary font-medium">Transforming Careers Into Reality</div>
+                <div className="text-xl font-bold text-professional-secondary">RR Technos</div>
+                <div className="text-xs text-professional-primary font-medium">From Workday to AI -- One Platform for Your Tech Growth</div>
               </div>
             </div>
 
@@ -65,7 +64,7 @@ export const Navigation = () => {
                 Login
               </Button>
               <Button variant="default" className="bg-professional-primary">
-                Get Quote
+                Book Free Demo
               </Button>
             </div>
 
@@ -74,35 +73,48 @@ export const Navigation = () => {
               className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-professional-secondary" />
+              ) : (
+                <Menu className="w-6 h-6 text-professional-secondary" />
+              )}
             </button>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-border bg-white">
+            <div className="lg:hidden border-t border-border py-4">
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className="text-professional-secondary/80 hover:text-professional-primary smooth-transition font-medium px-4 py-2"
+                    className="text-professional-secondary/80 hover:text-professional-primary smooth-transition font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
                   </a>
                 ))}
-                <div className="flex flex-col gap-2 px-4 pt-4 border-t border-border">
-                  <Button variant="ghost" className="justify-start text-professional-secondary">
+                <div className="flex flex-col gap-2 pt-4 border-t border-border">
+                  <Button variant="ghost" className="text-professional-secondary justify-start">
                     Login
                   </Button>
-                  <Button variant="default" className="justify-start bg-professional-primary">
-                    Get Quote
+                  <Button variant="default" className="bg-professional-primary justify-start">
+                    Book Free Demo
                   </Button>
                 </div>
               </div>
             </div>
           )}
+        </div>
+
+        {/* Scrolling Banner */}
+        <div className="bg-professional-primary/10 py-2 overflow-hidden">
+          <div className="whitespace-nowrap animate-scroll">
+            <span className="text-professional-secondary text-sm font-medium px-8">
+              Learn Online & Offline | Real-Time Projects | Placement Support | Live Classes | Hands-on Labs | Career Guidance | Flexible Learning Modes | Expert Trainers | Industry-Aligned Courses
+            </span>
+          </div>
         </div>
       </nav>
     </div>

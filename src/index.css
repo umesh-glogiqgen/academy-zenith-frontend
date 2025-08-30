@@ -2,116 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Educational Website Design System - Premium color palette and gradients */
+/* RR Technos Design System - Earthy Minimalist Palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 30 28% 95%; /* #f4efea (off-white / cream) */
+    --foreground: 30 20% 20%; /* dark brown-gray for text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 30 28% 95%; /* cream */
+    --card-foreground: 30 20% 20%; /* dark brown-gray */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 30 28% 95%;
+    --popover-foreground: 30 20% 20%;
 
-    /* Professional Business Theme - Orange/Dark */
-    --primary: 25 100% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 25 100% 60%;
-    
-    --secondary: 220 13% 18%;
+    /* RR Technos Primary Theme */
+    --primary: 30 30% 52%; /* #aa865e warm medium brown */
+    --primary-foreground: 0 0% 100%; /* white */
+    --primary-glow: 30 30% 60%; /* slightly lighter brown */
+
+    --secondary: 32 30% 58%; /* #b59673 lighter brown */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 32 32% 76%; /* #cdb79e pale tan */
+    --muted-foreground: 32 25% 35%; /* muted earthy text */
 
-    --accent: 25 100% 50%;
+    --accent: 32 28% 65%; /* #c1a688 beige */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84% 60%; /* keep red for alerts */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 25 100% 50%;
+    --border: 32 32% 76%; /* tan */
+    --input: 32 32% 76%; 
+    --ring: 30 30% 52%; /* brown ring */
 
     --radius: 0.5rem;
 
-    /* Professional Theme Colors */
-    --professional-primary: 25 100% 50%;
-    --professional-secondary: 220 13% 18%;
-    --professional-accent: 210 100% 50%;
-    --professional-success: 142 71% 45%;
-    --professional-warning: 38 92% 50%;
-    
+    /* RR Technos Extended Palette */
+    --rr-primary: 30 30% 52%;   /* #aa865e */
+    --rr-secondary: 32 30% 58%; /* #b59673 */
+    --rr-accent: 32 28% 65%;    /* #c1a688 */
+    --rr-soft: 32 32% 76%;      /* #cdb79e */
+    --rr-bg: 30 28% 95%;        /* #f4efea */
+
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--education-primary)), hsl(var(--education-secondary)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-feature: linear-gradient(120deg, hsl(var(--education-primary) / 0.1), hsl(var(--education-secondary) / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--rr-primary)), hsl(var(--rr-accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--rr-soft)));
+    --gradient-feature: linear-gradient(120deg, hsl(var(--rr-primary) / 0.1), hsl(var(--rr-accent) / 0.1));
     
     /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--education-primary) / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(220 9% 46% / 0.15);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--rr-primary) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(var(--rr-secondary) / 0.15);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar (Light mode) */
+    --sidebar-background: 30 28% 95%; /* cream */
+    --sidebar-foreground: 32 25% 35%; /* dark text */
+    --sidebar-primary: 30 30% 52%; /* brown */
+    --sidebar-primary-foreground: 0 0% 100%; 
+    --sidebar-accent: 32 28% 65%; /* beige */
+    --sidebar-accent-foreground: 30 20% 20%; /* dark text */
+    --sidebar-border: 32 32% 76%; /* tan */
+    --sidebar-ring: 30 30% 52%; /* brown */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 20% 15%; /* deep earthy brown */
+    --foreground: 30 28% 95%; /* cream text */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 20% 15%;
+    --card-foreground: 30 28% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 20% 15%;
+    --popover-foreground: 30 28% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 32 28% 65%; /* beige as highlight */
+    --primary-foreground: 30 20% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 30% 52%;
+    --secondary-foreground: 30 28% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 32 25% 25%;
+    --muted-foreground: 32 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 32 30% 58%;
+    --accent-foreground: 30 28% 95%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 30 28% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 32 25% 25%;
+    --input: 32 25% 25%;
+    --ring: 32 30% 58%; /* lighter brown highlight */
+
+    /* Sidebar (Dark mode) */
+    --sidebar-background: 30 20% 12%;
+    --sidebar-foreground: 30 28% 95%;
+    --sidebar-primary: 32 28% 65%;
+    --sidebar-primary-foreground: 30 20% 15%;
+    --sidebar-accent: 30 20% 25%;
+    --sidebar-accent-foreground: 30 28% 95%;
+    --sidebar-border: 30 20% 25%;
+    --sidebar-ring: 32 30% 58%;
   }
 }
 
@@ -126,7 +122,6 @@
 }
 
 @layer components {
-  /* Educational Component Styles */
   .hero-gradient {
     background: var(--gradient-hero);
   }
@@ -156,5 +151,14 @@
   
   .bouncy-transition {
     transition: var(--transition-bouncy);
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
   }
 }
