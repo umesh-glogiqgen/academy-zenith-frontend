@@ -2,57 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Educational Website Design System - Premium color palette and gradients */
+/* Educational Website Design System - Teal/Mint color palette */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 200 47% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 200 47% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 200 47% 20%;
 
-    /* Professional Business Theme - Orange/Dark */
-    --primary: 25 100% 50%;
+    /* Teal/Mint Theme Colors */
+    --primary: 189 41% 34%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 25 100% 60%;
+    --primary-glow: 177 34% 47%;
     
-    --secondary: 220 13% 18%;
+    --secondary: 200 47% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 162 23% 94%;
+    --muted-foreground: 200 20% 45%;
 
-    --accent: 25 100% 50%;
+    --accent: 177 34% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 25 100% 50%;
+    --border: 180 20% 91%;
+    --input: 180 20% 91%;
+    --ring: 189 41% 34%;
 
     --radius: 0.5rem;
 
-    /* Professional Theme Colors */
-    --professional-primary: 25 100% 50%;
-    --professional-secondary: 220 13% 18%;
-    --professional-accent: 210 100% 50%;
-    --professional-success: 142 71% 45%;
-    --professional-warning: 38 92% 50%;
+    /* Teal Theme Colors */
+    --teal-primary: 189 41% 34%;
+    --teal-secondary: 185 30% 40%;
+    --teal-light: 177 34% 47%;
+    --mint-green: 175 30% 50%;
+    --pale-mint: 75 40% 78%;
+    --soft-mint: 152 23% 86%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--education-primary)), hsl(var(--education-secondary)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-feature: linear-gradient(120deg, hsl(var(--education-primary) / 0.1), hsl(var(--education-secondary) / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(75 40% 78%), hsl(152 23% 86%), hsl(180 25% 80%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(162 23% 94%));
+    --gradient-feature: linear-gradient(120deg, hsl(189 41% 34% / 0.1), hsl(177 34% 47% / 0.1));
     
     /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--education-primary) / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(220 9% 46% / 0.15);
+    --shadow-elegant: 0 10px 30px -10px hsl(189 41% 34% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(200 20% 45% / 0.15);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
     
     /* Animations */
@@ -60,43 +61,59 @@
     --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 200 20% 25%;
+    --sidebar-primary: 200 47% 20%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 180 20% 95%;
+    --sidebar-accent-foreground: 200 47% 20%;
+    --sidebar-border: 180 20% 91%;
+    --sidebar-ring: 189 41% 50%;
+
+    /* Professional Theme Colors (for compatibility) */
+    --professional-primary: 189 41% 34%;
+    --professional-secondary: 200 47% 20%;
+    --professional-accent: 177 34% 47%;
+    --professional-success: 175 30% 50%;
+    --professional-warning: 38 92% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 200 50% 3%;
+    --foreground: 180 20% 98%;
+
+    --card: 200 50% 3%;
+    --card-foreground: 180 20% 98%;
+
+    --popover: 200 50% 3%;
+    --popover-foreground: 180 20% 98%;
+
+    --primary: 189 41% 50%;
+    --primary-foreground: 200 50% 10%;
+
+    --secondary: 200 30% 20%;
+    --secondary-foreground: 180 20% 98%;
+
+    --muted: 200 30% 20%;
+    --muted-foreground: 180 20% 65%;
+
+    --accent: 177 34% 47%;
+    --accent-foreground: 180 20% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 180 20% 98%;
+
+    --border: 200 30% 20%;
+    --input: 200 30% 20%;
+    --ring: 189 41% 50%;
+
+    --sidebar-background: 200 50% 5%;
+    --sidebar-foreground: 180 20% 95%;
+    --sidebar-primary: 180 20% 98%;
+    --sidebar-primary-foreground: 200 50% 10%;
+    --sidebar-accent: 200 30% 15%;
+    --sidebar-accent-foreground: 180 20% 98%;
+    --sidebar-border: 200 30% 20%;
+    --sidebar-ring: 189 41% 50%;
   }
 }
 
@@ -104,77 +121,136 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    background-color: #f0f8f5;
   }
 }
 
-@layer components {
-  /* Educational Component Styles */
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-  
-  .card-elegant {
-    background: var(--gradient-card);
-    box-shadow: var(--shadow-card);
-    transition: var(--transition-smooth);
-  }
-  
-  .card-elegant:hover {
-    box-shadow: var(--shadow-elegant);
-    transform: translateY(-4px);
-  }
-  
-  .feature-bg {
-    background: var(--gradient-feature);
-  }
-  
-  .glow-effect {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .smooth-transition {
-    transition: var(--transition-smooth);
-  }
-  
-  .bouncy-transition {
-    transition: var(--transition-bouncy);
-  }
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
 
-  /* ENHANCED CARD HOVER EFFECTS */
-  .card-hover-orange:hover {
-    @apply bg-gradient-to-br from-orange-500/10 to-orange-400/5 border-orange-500/40 shadow-2xl shadow-orange-500/30;
-  }
-  
-  .card-hover-blue:hover {
-    @apply bg-gradient-to-br from-blue-500/10 to-blue-400/5 border-blue-500/40 shadow-2xl shadow-blue-500/30;
-  }
-  
-  .card-hover-green:hover {
-    @apply bg-gradient-to-br from-green-500/10 to-green-400/5 border-green-500/40 shadow-2xl shadow-green-500/30;
-  }
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-  .card-hover-yellow:hover {
-    @apply bg-gradient-to-br from-yellow-500/10 to-yellow-400/5 border-yellow-500/40 shadow-2xl shadow-yellow-500/30;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  /* Card transform effects */
-  .card-3d-effect {
-    @apply transition-all duration-500 transform-gpu hover:scale-105 hover:rotate-1 hover:shadow-2xl;
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
+}
 
-  .card-slide-effect {
-    @apply transition-all duration-300 hover:translate-y-[-8px] hover:shadow-xl;
-  }
+/* Custom utility classes */
+.smooth-transition {
+  transition: var(--transition-smooth);
+}
 
-  /* Icon and text color transitions */
-  .icon-color-transition {
-    @apply transition-colors duration-300;
-  }
+.hero-gradient {
+  background: var(--gradient-hero);
+}
 
-  .text-color-transition {
-    @apply transition-colors duration-300;
-  }
+.feature-bg {
+  background: linear-gradient(135deg, #C8E6D0 0%, #a8d5d8 100%);
+}
+
+.card-elegant {
+  @apply bg-white rounded-xl transition-all duration-300 hover:shadow-lg;
+}
+
+/* Button variants */
+.btn-hero {
+  @apply bg-gradient-to-r from-teal-600 to-teal-700 text-white hover:from-teal-700 hover:to-teal-800;
+}
+
+.btn-outline-hero {
+  @apply border-2 border-white text-white hover:bg-white hover:text-teal-700;
+}
+
+/* Floating animation for badges */
+.float-animation {
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+/* Fade in animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(189 41% 34%), hsl(177 34% 47%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+}
+
+/* Feature card styling */
+.feature-card-gradient {
+  background: linear-gradient(135deg, #f0f8f5 0%, #e8f4f1 100%);
+}
+
+.feature-card-gradient:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8f5 100%);
+}
+
+/* Course card badge colors */
+.badge-bestseller {
+  background: linear-gradient(to right, #58bbb2, #46a6a5);
+}
+
+.badge-popular {
+  background: linear-gradient(to right, #237d8c, #349198);
+}
+
+.badge-new {
+  background: linear-gradient(to right, #d9eca1, #58bbb2);
+}
+
+/* Professional training specific styles */
+.professional-bg {
+  background: linear-gradient(135deg, hsl(189 41% 34%), hsl(177 34% 47%));
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(162 23% 94%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(189 41% 34%);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(189 41% 40%);
 }

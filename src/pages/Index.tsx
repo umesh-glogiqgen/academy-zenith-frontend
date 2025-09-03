@@ -64,32 +64,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Blog/Resources Section - Placeholder */}
-      <section id="blog" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a4a52]">
-              Blog & Resources
-            </h2>
-            <p className="text-xl text-[#5a8088] mb-8">
-              Coming Soon - Articles on software trends, free resources, interview tips, and more!
-            </p>
-            <div className="bg-gradient-to-br from-[#f0f8f5] to-[#e8f4f1] rounded-2xl p-12">
-              <p className="text-[#237d8c] font-semibold mb-4">
-                Topics we'll cover:
-              </p>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {['Workday', 'AI', 'Cloud ERP', 'Technology', 'Career Tips', 'Interview Prep', 'Industry Trends'].map((topic) => (
-                  <span key={topic} className="px-4 py-2 bg-white rounded-full text-sm text-[#5a8088]">
-                    {topic}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section - Placeholder */}
       <section id="testimonials" className="py-20 bg-[#f0f8f5]">
         <div className="container mx-auto px-6">

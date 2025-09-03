@@ -27,7 +27,7 @@ export const ContactForm = () => {
     "SAP Security",
     "ServiceNow",
     "AI & Machine Learning",
-    "Cybersecurity",
+    "SAP Security",
     "Cloud Technologies"
   ];
 

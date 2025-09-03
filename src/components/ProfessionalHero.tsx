@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CourseImagesCarousel } from "@/components/CourseImagesCarousel"; // NEW IMPORT
+import { CompactCourseSlider} from "@/components/CompactCourseSlider";
 import { Phone, Mail } from "lucide-react";
 
 export const ProfessionalHero = () => {
@@ -52,13 +52,11 @@ export const ProfessionalHero = () => {
                 </h2>
               </div>
               
+              // Replace the img section with:
               <div className="bg-white/20 rounded-lg p-4 mb-6 backdrop-blur-sm">
-                   {/* REPLACED: Static image with auto-scrolling carousel */}
-                   <div className="w-full h-32 mb-4 rounded overflow-hidden">
-                  <CourseImagesCarousel />
-                </div>
-                <div className="text-sm">
-                  <p>Comprehensive Program</p>
+                <CompactCourseSlider />
+                <div className="text-sm mt-4"> 
+                  <p>12-Week Intensive Program</p> 
                   <p>Live Projects • Expert Mentors • Job Assistance</p>
                 </div>
               </div>

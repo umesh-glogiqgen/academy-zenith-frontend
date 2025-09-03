@@ -20,8 +20,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-xl text-[#5a8088] mb-8 leading-relaxed">
-              Top-rated training institute offering Workday HCM, Finance, Integration, 
-              AI, and emerging technologies. Real-time projects with 100% placement support.
+            Passionate teaching, enlightening young minds and shaping the future with the most advanced Workday training. Guided by expert faculty, we provide cutting-edge learning in HCM, Finance, Integration, AI, and emerging technologies with real-time projects and complete placement support.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
