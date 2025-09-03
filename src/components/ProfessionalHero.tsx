@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { CourseImagesCarousel } from "@/components/CourseImagesCarousel"; // NEW IMPORT
 import { Phone, Mail } from "lucide-react";
 
 export const ProfessionalHero = () => {
@@ -52,11 +53,10 @@ export const ProfessionalHero = () => {
               </div>
               
               <div className="bg-white/20 rounded-lg p-4 mb-6 backdrop-blur-sm">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80" 
-                  alt="Workday training session"
-                  className="w-full h-32 object-cover rounded mb-4"
-                />
+                   {/* REPLACED: Static image with auto-scrolling carousel */}
+                   <div className="w-full h-32 mb-4 rounded overflow-hidden">
+                  <CourseImagesCarousel />
+                </div>
                 <div className="text-sm">
                   <p>Comprehensive Program</p>
                   <p>Live Projects • Expert Mentors • Job Assistance</p>

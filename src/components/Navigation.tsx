@@ -1,27 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X, GraduationCap, Phone, Mail } from "lucide-react";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   // Add scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
       setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    });
+  }
 
   const navLinks = [
-    { href: "#about", label: "About" },
+    { href: "#home", label: "Home" },
     { href: "#courses", label: "Courses" },
-    { href: "#contact", label: "Contact" },
-    { href: "#blog", label: "Blog" },
-    { href: "#enroll", label: "Enroll Now" }
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#contact", label: "Contact" }
   ];
 
   return (
@@ -41,7 +38,6 @@ export const Navigation = () => {
               </div>
               <div>
                 <div className="text-xl font-bold text-[#1a4a52]">RR Technos</div>
-                <div className="text-xs text-[#46a6a5] font-medium">From Workday to AI - One Platform for Your Tech Growth</div>
               </div>
             </div>
 
@@ -61,7 +57,7 @@ export const Navigation = () => {
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-4">
               <Button 
-                variant="outline" 
+                variant="ghost" 
                 className="border-[#237d8c] text-[#237d8c] hover:bg-[#237d8c] hover:text-white transition-all duration-300"
               >
                 Login

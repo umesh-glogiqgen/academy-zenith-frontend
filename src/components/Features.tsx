@@ -1,71 +1,86 @@
 import { Card } from "@/components/ui/card";
-import { Users, Target, Smartphone, Trophy, MessageCircle, RefreshCw } from "lucide-react";
+import { BookOpen, Users, Award, Clock, Globe, HelpCircle } from "lucide-react";
 
 const features = [
   {
-    icon: <Users className="w-8 h-8" />,
-    title: "Expert Instructors",
-    description: "Learn from industry professionals with years of real-world experience and passion for teaching."
+    icon: BookOpen,
+    title: "Expert-Led Courses",
+    description: "Learn from industry professionals and renowned educators with years of experience."
   },
   {
-    icon: <Target className="w-8 h-8" />,
-    title: "Personalized Learning",
-    description: "Tailored learning paths that adapt to your pace, style, and goals for maximum effectiveness."
+    icon: Users,
+    title: "Interactive Community",
+    description: "Connect with fellow learners, participate in discussions, and build your network."
   },
   {
-    icon: <Smartphone className="w-8 h-8" />,
-    title: "Learn Anywhere",
-    description: "Access courses on any device, anytime. Download lessons for offline learning on the go."
+    icon: Award,
+    title: "Verified Certificates",
+    description: "Earn certificates upon course completion to showcase your new skills to employers."
   },
   {
-    icon: <Trophy className="w-8 h-8" />,
-    title: "Certified Programs",
-    description: "Earn recognized certificates upon completion to showcase your skills to employers."
+    icon: Clock,
+    title: "Learn at Your Pace",
+    description: "Study when it's convenient for you with our flexible, self-paced learning approach."
   },
   {
-    icon: <MessageCircle className="w-8 h-8" />,
-    title: "Community Support",
-    description: "Join a vibrant community of learners. Collaborate, share insights, and grow together."
+    icon: Globe,
+    title: "Global Accessibility",
+    description: "Access courses from anywhere in the world on any device with internet connection."
   },
   {
-    icon: <RefreshCw className="w-8 h-8" />,
-    title: "Lifetime Access",
-    description: "Once enrolled, enjoy lifetime access to course materials and all future updates."
+    icon: HelpCircle,
+    title: "24/7 Support",
+    description: "Get help whenever you need it with our dedicated student support team."
   }
 ];
 
 export const Features = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20">
       <div className="container mx-auto px-6">
-        {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a4a52]">
-            Why Choose Our Platform?
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Why Choose Our <span className="text-primary">Platform</span>
           </h2>
-          <p className="text-xl text-[#5a8088] max-w-3xl mx-auto">
-            Experience world-class education with features designed for your success
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            We provide everything you need to succeed in your learning journey with 
+            cutting-edge features and unwavering support.
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card 
-              key={index}
-              className="p-8 text-center bg-gradient-to-br from-[#f0f8f5] to-[#e8f4f1] border-none hover:from-white hover:to-[#f0f8f5] transition-all duration-300 cursor-pointer group hover:-translate-y-2 hover:shadow-xl"
-            >
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[#237d8c] to-[#349198] rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-[#1a4a52]">
-                {feature.title}
-              </h3>
-              <p className="text-[#5a8088] leading-relaxed">
-                {feature.description}
-              </p>
-            </Card>
-          ))}
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <Card 
+                key={index} 
+                className="group p-8 text-center cursor-pointer bg-white hover:bg-gradient-to-br hover:from-professional-primary/10 hover:to-professional-accent/10 border hover:border-professional-primary/50 shadow-md hover:shadow-2xl transform hover:scale-105 hover:-rotate-1 transition-all duration-500 ease-out overflow-hidden"
+              >
+                {/* Animated Background Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-professional-primary/20 to-professional-accent/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+                
+                <div className="relative z-10">
+                  {/* Enhanced Icon Container */}
+                  <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 group-hover:bg-professional-primary rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out ring-4 ring-transparent group-hover:ring-professional-primary/20">
+                    <Icon className="w-8 h-8 text-primary group-hover:text-white group-hover:scale-110 transition-all duration-500" />
+                  </div>
+                  
+                  {/* Enhanced Title */}
+                  <h3 className="text-xl font-semibold mb-4 text-professional-secondary group-hover:text-professional-primary transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  
+                  {/* Enhanced Description */}
+                  <p className="text-muted-foreground group-hover:text-professional-secondary/80 leading-relaxed transition-colors duration-300">
+                    {feature.description}
+                  </p>
+                </div>
+
+                {/* Glowing border effect */}
+                <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-professional-primary/50 group-hover:shadow-[0_0_20px_rgba(255,133,0,0.3)] transition-all duration-500"></div>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

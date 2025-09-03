@@ -48,8 +48,8 @@ export const Footer = () => {
                     <option value="workday-extend">Workday Extend</option>
                     <option value="servicenow">ServiceNow</option>
                     <option value="ai-ml">AI & Machine Learning</option>
-                    <option value="peoplesoft">PeopleSoft</option>
-                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="peoplesoft ERP">PeopleSoft ERP</option>
+                    <option value="SAP Security">SAP Security</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
@@ -145,7 +145,7 @@ export const Footer = () => {
               <li className="text-white/80 text-sm">Workday Integration</li>
               <li className="text-white/80 text-sm">ServiceNow</li>
               <li className="text-white/80 text-sm">AI & Machine Learning</li>
-              <li className="text-white/80 text-sm">Cybersecurity</li>
+              <li className="text-white/80 text-sm">SAP Security</li>
             </ul>
           </div>
 

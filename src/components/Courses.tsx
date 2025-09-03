@@ -89,7 +89,7 @@ const courses = [
   },
   {
     id: 7,
-    title: "PeopleSoft",
+    title: "PeopleSoft ERP",
     description: "Comprehensive PeopleSoft training covering HCM, Finance, and technical modules.",
     instructor: "PeopleSoft Expert",
     modules: 14,
@@ -103,7 +103,7 @@ const courses = [
   },
   {
     id: 8,
-    title: "Cybersecurity",
+    title: "SAP Security",
     description: "Learn ethical hacking, network security, cloud security, and security compliance frameworks.",
     instructor: "Security Expert",
     modules: 22,

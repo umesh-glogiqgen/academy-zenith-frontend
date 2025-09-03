@@ -44,29 +44,51 @@ export const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="card-elegant p-8 relative">
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
+            <Card 
+              key={index} 
+              className="group p-8 relative cursor-pointer overflow-hidden bg-white hover:bg-gradient-to-br hover:from-professional-primary/8 hover:to-professional-accent/8 border hover:border-professional-primary/40 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-rotate-1 transition-all duration-500 ease-out"
+            >
+              {/* Animated Quote Icon */}
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20 group-hover:text-professional-primary/60 group-hover:scale-125 transition-all duration-500" />
               
-              <div className="flex items-center mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-education-accent text-education-accent" />
-                ))}
-              </div>
+              {/* Animated Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-r from-professional-primary/5 to-professional-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              <p className="text-muted-foreground mb-6 leading-relaxed italic">
-                "{testimonial.text}"
-              </p>
-              
-              <div className="flex items-center">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role} at {testimonial.company}
+              <div className="relative z-10">
+                {/* Rating Stars with Animation */}
+                <div className="flex items-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      className="w-5 h-5 fill-professional-accent text-professional-accent group-hover:fill-professional-primary group-hover:text-professional-primary group-hover:scale-110 transition-all duration-300"
+                      style={{ transitionDelay: `${i * 100}ms` }}
+                    />
+                  ))}
+                </div>
+                
+                {/* Testimonial Text */}
+                <p className="text-muted-foreground group-hover:text-professional-secondary/90 mb-6 leading-relaxed italic transition-colors duration-300">
+                  "{testimonial.text}"
+                </p>
+                
+                {/* Author Info with Enhanced Hover */}
+                <div className="flex items-center">
+                  <div className="relative">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4 ring-2 ring-transparent group-hover:ring-professional-primary/50 group-hover:scale-110 transition-all duration-300"
+                    />
+                    {/* Glowing ring effect */}
+                    <div className="absolute inset-0 w-12 h-12 rounded-full bg-professional-primary/20 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500"></div>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-professional-secondary group-hover:text-professional-primary transition-colors duration-300">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-muted-foreground group-hover:text-professional-accent transition-colors duration-300">
+                      {testimonial.role} at {testimonial.company}
+                    </div>
                   </div>
                 </div>
               </div>

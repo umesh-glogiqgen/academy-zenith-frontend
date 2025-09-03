@@ -24,22 +24,6 @@ export const Hero = () => {
               AI, and emerging technologies. Real-time projects with 100% placement support.
             </p>
 
-            {/* Key Features Badges */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <span className="px-4 py-2 bg-white/80 rounded-full text-sm font-medium text-[#237d8c] shadow-sm">
-                <Monitor className="w-4 h-4 inline mr-1" />
-                Learn Online & Offline
-              </span>
-              <span className="px-4 py-2 bg-white/80 rounded-full text-sm font-medium text-[#237d8c] shadow-sm">
-                <Briefcase className="w-4 h-4 inline mr-1" />
-                Real-Time Projects
-              </span>
-              <span className="px-4 py-2 bg-white/80 rounded-full text-sm font-medium text-[#237d8c] shadow-sm">
-                <Building className="w-4 h-4 inline mr-1" />
-                Placement Support
-              </span>
-            </div>
-            
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button 
                 size="lg" 

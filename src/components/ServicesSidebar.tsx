@@ -19,11 +19,10 @@ const courses = [
   "Workday Finance", 
   "Workday Integration",
   "Workday Extend",
-  "PeopleSoft",
+  "PeopleSoft ERP",
   "SAP Security",
   "ServiceNow",
   "AI & Machine Learning",
-  "Cybersecurity",
   "Cloud Technologies"
 ];
 
@@ -32,7 +31,7 @@ const ongoingBatches = [
   "Workday Finance - Seats Available", 
   "Workday Integration - Limited Seats",
   "AI & ML Bootcamp - New Batch",
-  "Cybersecurity - Weekend Batch",
+  "SAP Security - Weekend Batch",
   "Cloud Computing - Evening Batch"
 ];
 

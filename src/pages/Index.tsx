@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { AboutUs } from "@/components/AboutUs";
-import { Features } from "@/components/Features";
+import { ContactPopup } from "@/components/ContactPopup"; // NEW IMPORT
 import { Courses } from "@/components/Courses";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Footer } from "@/components/Footer";
@@ -11,6 +11,7 @@ import { MessageCircle, Phone } from "lucide-react";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ContactPopup /> {/* NEW: Added at the very top */}
       <Navigation />
       <Hero />
       <AboutUs />
