@@ -42,16 +42,12 @@ export const Footer = () => {
                   <label className="block text-sm mb-2">Course of Interest</label>
                   <select className="w-full p-2 rounded-md bg-white/10 border border-white/20 text-white">
                     <option value="">Select Course</option>
-                    <option value="workday-hcm">Workday HCM</option>
-                    <option value="workday-finance">Workday Finance</option>
-                    <option value="workday-integration">Workday Integration</option>
-                    <option value="workday-extend">Workday Extend</option>
-                    <option value="servicenow">ServiceNow</option>
-                    <option value="ai-ml">AI & Machine Learning</option>
-                    <option value="peoplesoft ERP">PeopleSoft ERP</option>
-                    <option value="SAP Security">SAP Security</option>
-                    <option value="other">Other</option>
-                  </select>
+                    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+                    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80", 
+                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+                    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+                    "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&q=80"                  </select>
                 </div>
               </div>
               <div className="mt-6">

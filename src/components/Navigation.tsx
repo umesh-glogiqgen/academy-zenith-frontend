@@ -63,8 +63,9 @@ export const Navigation = () => {
                 Login
               </Button>
               <Button 
-                className="bg-gradient-to-r from-[#237d8c] to-[#349198] hover:from-[#349198] hover:to-[#46a6a5] text-white shadow-lg hover:shadow-xl transition-all duration-300"
-              >
+               variant="ghost" 
+               className="border-[#237d8c] text-[#237d8c] hover:bg-[#237d8c] hover:text-white transition-all duration-300"
+               >
                 Get Started
               </Button>
             </div>

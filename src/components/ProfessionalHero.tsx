@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { CompactCourseSlider} from "@/components/CompactCourseSlider";
 import { Phone, Mail } from "lucide-react";
+import { CompactCourseSlider } from "@/components/CompactCourseSlider";
 
 export const ProfessionalHero = () => {
   return (
     <div className="bg-professional-secondary text-white py-20 mt-20">
-      <div className="container mx-auto px-6">
+      <div className="container mx-4xl px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
@@ -15,8 +15,7 @@ export const ProfessionalHero = () => {
             </h1>
             
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Master enterprise technologies with our expert-led training programs. 
-              Workday, AI, ERP systems, and cutting-edge tech skills with real-time projects and 100% placement support.
+              Passionate teaching, enlightening young minds and shaping the future with the most advanced Workday training. Guided by expert faculty, we provide cutting-edge learning in HCM, Finance, Integration, AI, and emerging technologies with real-time projects and complete placement support.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -24,54 +23,30 @@ export const ProfessionalHero = () => {
                 Explore Programs
               </Button>
               <Button variant="outline-hero" size="lg" className="text-lg px-8 py-4">
-                Book Free Demo
+                Download Brochure
               </Button>
-            </div>
-
-            {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-professional-primary" />
-                <span>Call us: +91 9573529800</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-professional-primary" />
-                <span>rrtechnos@gmail.com</span>
-              </div>
             </div>
           </div>
 
           {/* Right Content - Featured Program Banner */}
           <div className="relative">
-            <div className="bg-gradient-to-r from-professional-primary to-professional-accent rounded-lg p-8 text-center shadow-2xl">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-2">Featured Program</h3>
-                <h2 className="text-3xl font-black">
-                  Workday HCM<br/>
-                  Professional Training
-                </h2>
-              </div>
               
-              // Replace the img section with:
+              
               <div className="bg-white/20 rounded-lg p-4 mb-6 backdrop-blur-sm">
-                <CompactCourseSlider />
-                <div className="text-sm mt-4"> 
-                  <p>12-Week Intensive Program</p> 
-                  <p>Live Projects • Expert Mentors • Job Assistance</p>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <Phone className="w-4 h-4 mx-auto mb-1" />
-                  <p>+91 9573529800</p>
-                </div>
-                <div>
-                  <Mail className="w-4 h-4 mx-auto mb-1" />
-                  <p>rrtechnos@gmail.com</p>
-                </div>
-              </div>
+                {/* PERFECT SLIDER INTEGRATION */}
+                <CompactCourseSlider height="h-45" className="mb-4 group" />
+                 {/* Floating Badge 1 */}
+            <div className="absolute -top-5 right-5 bg-white rounded-2xl p-4 shadow-xl float-animation">
+              <div className="text-2xl font-bold text-[#237d8c]">Live Classes</div>
+              <div className="text-sm text-[#5a8088]">Hands-on Labs</div>
             </div>
+            
+            {/* Floating Badge 2 */}
+            <div className="absolute -bottom-5 left-5 bg-white rounded-2xl p-4 shadow-xl float-animation" style={{ animationDelay: "1s" }}>
+              <div className="text-2xl font-bold text-[#237d8c]">Career Guidance</div>
+              <div className="text-sm text-[#5a8088]">1:1 Mentorship</div>
+            </div>
+              </div>
           </div>
         </div>
       </div>

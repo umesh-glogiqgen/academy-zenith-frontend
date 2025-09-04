@@ -1,9 +1,12 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { AboutUs } from "@/components/AboutUs";
-import { ContactPopup } from "@/components/ContactPopup"; // NEW IMPORT
+import { ContactPopup } from "@/components/ContactPopup";
 import { Courses } from "@/components/Courses";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { ProfessionalHero } from "@/components/ProfessionalHero";
+import { ProgramContent } from "@/components/ProgramContent";
+import { ServicesSidebar } from "@/components/ServicesSidebar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone } from "lucide-react";
@@ -11,12 +14,24 @@ import { MessageCircle, Phone } from "lucide-react";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <ContactPopup /> {/* NEW: Added at the very top */}
+      <ContactPopup />
       <Navigation />
+      <ProfessionalHero />
       <Hero />
       <AboutUs />
       <WhyChooseUs />
       <Courses />
+      
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-3">
+            <ProgramContent />
+          </div>
+          <div className="lg:col-span-1">
+            <ServicesSidebar />
+          </div>
+        </div>
+      </div>
       
       {/* CTA Section - Admissions & Fees */}
       <section id="enroll" className="py-20 bg-gradient-to-r from-[#237d8c] to-[#349198] text-white text-center">

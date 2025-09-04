@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Star, BookOpen, Phone, MessageCircle } from "lucide-react";
-
+import { ContinuousNewsTicker } from "@/components/ContinuousNewsTicker";
 const courses = [
   {
     id: 1,
@@ -135,13 +135,8 @@ export const Courses = () => {
             Industry-aligned courses with real-time projects, expert trainers, and 100% placement support
           </p>
         </div>
-
-        {/* Ongoing Batches Alert */}
-        <div className="bg-white/95 rounded-xl p-4 mb-8 max-w-4xl mx-auto">
-          <p className="text-center text-[#237d8c] font-semibold">
-            🔥 Ongoing Training Batches: Workday HCM | Workday Finance | Workday Integration | Workday Extend
-          </p>
-        </div>
+        {/* Scrolling Batches Ticker */}
+        <ContinuousNewsTicker />
 
         {/* Courses Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
