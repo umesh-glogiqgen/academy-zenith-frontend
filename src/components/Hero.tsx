@@ -10,12 +10,7 @@ export const Hero = () => {
       {/* Hero Background - Now with Image Slider */}
       <div className="absolute inset-0">
         {/* REPLACED: Static background with sliding images */}
-        <CompactCourseSlider 
-          height="h-full" 
-          className="w-full"
-          autoPlay={true}
-          interval={4000}
-        />
+      
         <div className="absolute inset-0 hero-gradient opacity-90" />
       </div>
       

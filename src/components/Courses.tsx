@@ -199,31 +199,6 @@ export const Courses = () => {
             </Card>
           ))}
         </div>
-
-        {/* Contact for More Courses */}
-        <div className="text-center mt-12">
-          <p className="text-white mb-4">More courses available. Reach out for complete course catalog.</p>
-          <div className="flex gap-4 justify-center">
-            <Button 
-              size="lg"
-              variant="outline"
-              className="bg-white text-[#237d8c] border-2 border-white hover:bg-transparent hover:text-white px-8"
-              onClick={() => window.open('https://wa.me/919573529800', '_blank')}
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp Us
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="bg-white text-[#237d8c] border-2 border-white hover:bg-transparent hover:text-white px-8"
-              onClick={() => window.location.href = '#contact'}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Contact Form
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );

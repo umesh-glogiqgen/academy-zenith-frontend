@@ -15,14 +15,16 @@ export const Navigation = () => {
 
   const navLinks = [
     { href: "#home", label: "Home" },
-    { href: "#courses", label: "Courses" },
-    { href: "#about", label: "About" },
+    { href: "#about", label: "About Us" },
     { href: "#services", label: "Services" },
-    { href: "#contact", label: "Contact" }
+    { href: "#courses", label: "Courses" },
+    { href: "#contact", label: "Contact Us" }
   ];
 
   return (
     <div className="fixed top-0 w-full z-50">
+       <div className="fixed top-0 w-full z-50">
+      
       {/* Main Navigation */}
       <nav 
         className={`bg-white/98 backdrop-blur-md transition-all duration-300 ${
@@ -112,5 +114,6 @@ export const Navigation = () => {
         </div>
       </nav>
     </div>
+  </div>
   );
 };

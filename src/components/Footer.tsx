@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Send, MessageCircle, Youtube } from "lucide-react";
 
 export const Footer = () => {
+  const googleMapsUrl = "https://www.google.com/maps?q=Hig-66,+Neera+Cafe+Building,+E-seva+line,+Near+Temple+bus+stand,+K+P+H+B+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072";
   return (
     <footer id="contact" className="bg-[#1a4a52] text-white">
       {/* Contact Form Section */}
@@ -122,11 +123,6 @@ export const Footer = () => {
               <li>
                 <a href="#testimonials" className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm">
                   Success Stories
-                </a>
-              </li>
-              <li>
-                <a href="#blog" className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm">
-                  Blog & Resources
                 </a>
               </li>
             </ul>

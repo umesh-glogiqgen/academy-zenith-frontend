@@ -39,6 +39,32 @@ const courses = [
 ];
 
 export const FeaturedCourses = () => {
+  const handleEnquiry = (courseTitle: string, coursePrice: string, courseDuration: string) => {
+    const message = `Hi RR Technos Team! 👋
+
+I'm interested in enrolling for the *${courseTitle}* course.
+
+📚 Course Details:
+• Duration: ${courseDuration}
+• Price: ${coursePrice}
+
+Could you please provide me with more information about:
+✅ Course curriculum and syllabus
+✅ Batch timings and schedule
+✅ Prerequisites (if any)
+✅ Certification details
+✅ Payment options
+✅ Next batch start date
+
+Looking forward to hearing from you!
+
+Thank you! 😊`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919573529800?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -103,7 +129,7 @@ export const FeaturedCourses = () => {
                   <Button 
                     variant="course" 
                     size="sm"
-                    className="group-hover:bg-professional-accent group-hover:shadow-lg transition-all duration-300"
+                    onClick={() => handleEnquiry(course.title, course.price, course.duration)}
                   >
                     Enroll Now
                   </Button>

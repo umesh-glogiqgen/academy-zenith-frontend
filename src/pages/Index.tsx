@@ -6,7 +6,6 @@ import { Courses } from "@/components/Courses";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { ProfessionalHero } from "@/components/ProfessionalHero";
 import { ProgramContent } from "@/components/ProgramContent";
-import { ServicesSidebar } from "@/components/ServicesSidebar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone } from "lucide-react";
@@ -22,16 +21,7 @@ const Index = () => {
       <WhyChooseUs />
       <Courses />
       
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3">
-            <ProgramContent />
-          </div>
-          <div className="lg:col-span-1">
-            <ServicesSidebar />
-          </div>
-        </div>
-      </div>
+    
       
       {/* CTA Section - Admissions & Fees */}
       <section id="enroll" className="py-20 bg-gradient-to-r from-[#237d8c] to-[#349198] text-white text-center">
@@ -42,27 +32,10 @@ const Index = () => {
           <p className="text-xl mb-8 text-white/95 max-w-2xl mx-auto">
             Easy enrollment process. Contact us via WhatsApp or fill the contact form to get started.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Button 
-              size="lg"
-              className="bg-white text-[#237d8c] hover:bg-white/90 text-lg px-10 py-6 shadow-xl hover:shadow-2xl transition-all duration-300"
-              onClick={() => window.open('https://wa.me/919573529800?text=Hi, I want to enroll in your course', '_blank')}
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp: 9573529800
-            </Button>
-            <Button 
-              size="lg"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#237d8c] text-lg px-10 py-6 transition-all duration-300"
-              onClick={() => window.location.href = '#contact'}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Contact Form
-            </Button>
-          </div>
+          
           
           {/* Enrollment Steps */}
-          <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="mt-12 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
               <div className="text-3xl font-bold mb-2">Step 1</div>
               <p>Contact us via WhatsApp or Contact Form</p>
@@ -77,6 +50,25 @@ const Index = () => {
             </div>
           </div>
         </div>
+        <div className="mt-12 flex gap-4 justify-center flex-wrap">
+            <Button 
+              size="lg"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/90 text-lg px-12 py-5 shadow-xl hover:shadow-2xl transition-all duration-300"
+              onClick={() => window.open('https://wa.me/919573529800?text=Hi, I want to enroll in your course', '_blank')}
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              WhatsApp: 9573529800
+            </Button>
+            <Button 
+              size="lg"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#237d8c] text-lg px-12 py-5 transition-all duration-300"
+              onClick={() => window.location.href = '#contact'}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Contact Form
+            </Button>
+          </div>
+          
       </section>
 
       {/* Testimonials Section - Placeholder */}
