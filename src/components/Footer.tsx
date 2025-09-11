@@ -4,6 +4,33 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Send, Mess
 
 export const Footer = () => {
   const googleMapsUrl = "https://www.google.com/maps?q=Hig-66,+Neera+Cafe+Building,+E-seva+line,+Near+Temple+bus+stand,+K+P+H+B+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072";
+  
+  // Popular courses with proper URLs
+  const popularCourses = [
+    { name: "Workday HCM", url: "/courses/workday-hcm" },
+    { name: "Workday Finance", url: "/courses/workday-finance" },
+    { name: "Workday Integration", url: "/courses/workday-integration" },
+    { name: "Workday Extend", url: "/courses/workday-extend" },
+    { name: "PeopleSoft", url: "/courses/peoplesoft" },
+    { name: "SAP Security", url: "/courses/sap-security" },
+    { name: "ServiceNow", url: "/courses/servicenow" },
+    { name: "AI & Machine Learning", url: "/courses/ai-machine-learning" },
+    { name: "Cloud Technologies", url: "/courses/cloud-technologies" }
+  ];
+
+  // Course options for the contact form
+  const courseOptions = [
+    "Workday HCM",
+    "Workday Finance", 
+    "Workday Integration",
+    "Workday Extend",
+    "PeopleSoft",
+    "SAP Security",
+    "ServiceNow",
+    "AI & Machine Learning",
+    "Cloud Technologies"
+  ];
+
   return (
     <footer id="contact" className="bg-[#1a4a52] text-white">
       {/* Contact Form Section */}
@@ -43,12 +70,12 @@ export const Footer = () => {
                   <label className="block text-sm mb-2">Course of Interest</label>
                   <select className="w-full p-2 rounded-md bg-white/10 border border-white/20 text-white">
                     <option value="">Select Course</option>
-                    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
-                    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80", 
-                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-                    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-                    "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&q=80"                  </select>
+                    {courseOptions.map((course) => (
+                      <option key={course} value={course} className="bg-[#1a4a52] text-white">
+                        {course}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
               <div className="mt-6">
@@ -128,16 +155,20 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Popular Courses */}
+          {/* Popular Courses - FIXED SECTION */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-[#46a6a5]">Popular Courses</h4>
             <ul className="space-y-3">
-              <li className="text-white/80 text-sm">Workday HCM</li>
-              <li className="text-white/80 text-sm">Workday Finance</li>
-              <li className="text-white/80 text-sm">Workday Integration</li>
-              <li className="text-white/80 text-sm">ServiceNow</li>
-              <li className="text-white/80 text-sm">AI & Machine Learning</li>
-              <li className="text-white/80 text-sm">SAP Security</li>
+              {popularCourses.map((course) => (
+                <li key={course.name}>
+                  <a 
+                    href={course.url} 
+                    className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm"
+                  >
+                    {course.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

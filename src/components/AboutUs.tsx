@@ -47,8 +47,8 @@ export const AboutUs = () => {
         </div>
 
                {/* Vision Section - Row 1 */}
-               <div className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+               <div className="mb-12">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Vision Content - Left */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-4">
@@ -67,7 +67,7 @@ export const AboutUs = () => {
               
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="flex items-center gap-2">
-                  <Target className="w-5 h-5 text-primary" />
+                  <Target className="w-6 h-6 text-primary" />
                   <span className="text-sm font-medium">Industry Focus</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export const AboutUs = () => {
             {/* Vision Image - Right */}
             <div className="relative">
               <Card className="card-elegant overflow-hidden">
-                <div className="aspect-[4/2] relative">
+                <div className="aspect-[3/2] relative">
                   <img 
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" 
                     alt="Professional team collaboration representing our vision"
@@ -115,7 +115,7 @@ export const AboutUs = () => {
             {/* Mission Image - Left */}
             <div className="relative lg:order-1">
               <Card className="card-elegant overflow-hidden">
-                <div className="aspect-[4/2] relative">
+                <div className="aspect-[3/2] relative">
                   <img 
                     src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" 
                     alt="Modern training facility showcasing our mission"

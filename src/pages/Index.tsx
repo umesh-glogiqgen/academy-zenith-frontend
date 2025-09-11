@@ -9,6 +9,10 @@ import { ProgramContent } from "@/components/ProgramContent";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone } from "lucide-react";
+import { StudentPlacementSection } from "@/components/StudentPlacementSection";
+import { Testimonials } from "@/components/Testimonials";
+import { FeaturedCourses } from "@/components/FeaturedCourses";
+
 
 const Index = () => {
   return (
@@ -20,7 +24,6 @@ const Index = () => {
       <AboutUs />
       <WhyChooseUs />
       <Courses />
-      
     
       
       {/* CTA Section - Admissions & Fees */}
@@ -53,7 +56,7 @@ const Index = () => {
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
             <Button 
               size="lg"
-              className="bg-transparent border-2 border-white text-white hover:bg-white/90 text-lg px-12 py-5 shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-transparent border-2 border-white text-white hover:bg-white text-lg px-12 py-5 shadow-xl hover:shadow-2xl transition-all duration-300"
               onClick={() => window.open('https://wa.me/919573529800?text=Hi, I want to enroll in your course', '_blank')}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
@@ -89,7 +92,15 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+      {/* Student Placement Section - prominently displayed */}
+      <StudentPlacementSection />
+      
+      {/* Featured Courses Section */}
+      <FeaturedCourses />
+      
+      {/* Testimonials Section */}
+      <Testimonials />
+      
       <Footer />
       
       {/* Floating WhatsApp Button */}
