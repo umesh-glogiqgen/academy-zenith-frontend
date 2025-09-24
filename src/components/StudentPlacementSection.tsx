@@ -224,40 +224,6 @@ export const StudentPlacementSection = () => {
           ))}
         </div>
 
-        {/* Top Placement Companies */}
-        <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-professional-secondary">
-            Top Placement Partners
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {topCompanies.map((company, index) => (
-              <Card key={index} className="card-elegant p-6 text-center group hover:shadow-lg transition-all duration-300">
-                <div className="flex flex-col items-center">
-                  <div className="w-24 h-16 mb-4 flex items-center justify-center">
-                    <img 
-                      src={company.logo} 
-                      alt={`${company.name} logo`}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                      onError={(e) => {
-                        e.currentTarget.src = `https://via.placeholder.com/150x60/1a365d/ffffff?text=${encodeURIComponent(company.name)}`;
-                      }}
-                    />
-                  </div>
-                  <h4 className="font-semibold text-professional-secondary mb-2 group-hover:text-professional-primary transition-colors">
-                    {company.name}
-                  </h4>
-                  <div className="text-sm text-muted-foreground mb-2">
-                    {company.category}
-                  </div>
-                  <div className="bg-professional-primary/10 text-professional-primary px-3 py-1 rounded-full text-xs font-medium">
-                    {company.placements} placements
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* All Companies Logo Grid */}
         <div className="mb-16">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-professional-secondary">
