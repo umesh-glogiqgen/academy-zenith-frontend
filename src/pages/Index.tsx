@@ -1,10 +1,10 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
+import { ScrollingHero } from "@/components/Hero";
 import { AboutUs } from "@/components/AboutUs";
 import { ContactPopup } from "@/components/ContactPopup";
 import { Courses } from "@/components/Courses";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
-import { ProfessionalHero } from "@/components/ProfessionalHero";
+// import { ProfessionalHero } from "@/components/ProfessionalHero";
 import { ProgramContent } from "@/components/ProgramContent";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -18,8 +18,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <ProfessionalHero />
-      <Hero />
+      {/* <ProfessionalHero /> */}
+      <ScrollingHero />
       <AboutUs />
       <WhyChooseUs />
       <Courses />

@@ -2,122 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Educational Website Design System - Teal/Mint Color Palette */
+/* Educational Website Design System - Blue & Orange Theme */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 208 82% 20%; /* Darker blue for text */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 208 82% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 208 82% 20%;
 
-    /* NEW TEAL/MINT THEME - Primary Colors */
-    --primary: 185 57% 35%;        /* #237d8c - Deep Teal */
+    /* Primary: Blue, Secondary: Orange */
+    --primary: 208 82% 36%; /* #0e61a8 - Deep Blue */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 185 50% 45%;   /* Lighter teal for glow */
+    --primary-glow: 208 82% 46%;
     
-    --secondary: 183 45% 42%;      /* #349198 - Medium Teal */
+    --secondary: 21 98% 58%; /* #fc7c2d - Vibrant Orange */
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 179 38% 58%;         /* #58bbb2 - Mint Teal */
+    --muted: 210 20% 96%;
+    --muted-foreground: 208 40% 40%;
+
+    --accent: 21 98% 58%; /* Orange accent */
     --accent-foreground: 0 0% 100%;
-
-    /* Mint Green Accents */
-    --mint-light: 74 44% 77%;      /* #d9eca1 - Light Mint */
-    --mint-soft: 145 35% 82%;      /* #C8E6D0 - Soft Mint */
-    --mint-medium: 179 38% 58%;    /* #58bbb2 - Medium Mint Teal */
-
-    /* Supporting Colors */
-    --muted: 155 20% 94%;          /* Very light mint background */
-    --muted-foreground: 185 15% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 155 25% 85%;         /* Light mint borders */
-    --input: 155 25% 85%;
-    --ring: 185 57% 35%;           /* Teal focus rings */
+    --border: 208 20% 91%;
+    --input: 208 20% 91%;
+    --ring: 208 82% 36%;
 
-    --radius: 0.75rem;             /* Slightly more rounded */
+    --radius: 0.5rem;
 
-    /* Professional Theme Colors - UPDATED TO TEAL/MINT */
-    --professional-primary: 185 57% 35%;    /* #237d8c - Deep Teal */
-    --professional-secondary: 183 45% 42%;  /* #349198 - Medium Teal */
-    --professional-accent: 179 32% 52%;     /* #46a6a5 - Teal Accent */
-    --professional-success: 145 35% 82%;    /* #C8E6D0 - Soft Mint */
-    --professional-warning: 74 44% 77%;     /* #d9eca1 - Light Mint */
+    /* Professional Theme Colors */
+    --professional-primary: 208 82% 36%; /* Blue */
+    --professional-secondary: 21 98% 58%; /* Orange */
+    --professional-accent: 208 82% 46%; /* Lighter blue */
+    --professional-success: 142 71% 45%;
+    --professional-warning: 21 98% 58%;
     
-    /* Beautiful Teal/Mint Gradients */
-    --gradient-hero: linear-gradient(135deg, #d9eca1, #C8E6D0, #58bbb2, #349198);
-    --gradient-card: linear-gradient(145deg, #f8fbfa, #f0f8f5, #e8f5f0);
-    --gradient-feature: linear-gradient(120deg, rgba(88, 187, 178, 0.1), rgba(200, 230, 208, 0.15));
-    --gradient-teal: linear-gradient(135deg, #237d8c, #349198, #46a6a5);
-    --gradient-mint: linear-gradient(135deg, #C8E6D0, #d9eca1);
-    --gradient-hero-soft: linear-gradient(135deg, #f0f8f5, #e8f5f0, #d9eca1);
+    /* Education Theme Colors */
+    --education-primary: 208 82% 36%;
+    --education-secondary: 21 98% 58%;
+    --education-accent: 21 98% 58%;
     
-    /* Enhanced Shadows with Teal Tints */
-    --shadow-elegant: 0 10px 30px -10px rgba(35, 125, 140, 0.3);
-    --shadow-card: 0 8px 25px -8px rgba(52, 145, 152, 0.15);
-    --shadow-glow: 0 0 40px rgba(88, 187, 178, 0.4);
-    --shadow-soft: 0 4px 20px -4px rgba(200, 230, 208, 0.25);
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #0e61a8, #fc7c2d);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-feature: linear-gradient(120deg, rgba(14, 97, 168, 0.1), rgba(252, 124, 45, 0.1));
+    --gradient-professional: linear-gradient(135deg, #0e61a8, #fc7c2d);
     
-    /* Smooth Animations */
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px rgba(14, 97, 168, 0.3);
+    --shadow-card: 0 4px 20px -4px rgba(14, 97, 168, 0.15);
+    --shadow-glow: 0 0 40px rgba(14, 97, 168, 0.4);
+    
+    /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    /* Sidebar Colors - Teal Theme */
-    --sidebar-background: 155 20% 98%;     /* Very light mint */
-    --sidebar-foreground: 185 30% 25%;    /* Dark teal text */
-    --sidebar-primary: 185 57% 35%;       /* Deep teal */
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 208 82% 36%;
+    --sidebar-primary: 208 82% 36%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 155 25% 92%;        /* Light mint accent */
-    --sidebar-accent-foreground: 185 30% 25%;
-    --sidebar-border: 155 25% 85%;        /* Mint border */
-    --sidebar-ring: 185 57% 35%;          /* Teal ring */
+    --sidebar-accent: 21 98% 95%;
+    --sidebar-accent-foreground: 208 82% 36%;
+    --sidebar-border: 208 20% 91%;
+    --sidebar-ring: 208 82% 36%;
   }
 
   .dark {
-    --background: 185 25% 8%;             /* Dark teal background */
-    --foreground: 155 25% 95%;            /* Light mint text */
+    --background: 208 84% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 185 20% 10%;                  /* Dark teal cards */
-    --card-foreground: 155 25% 95%;
+    --card: 208 84% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 185 20% 10%;
-    --popover-foreground: 155 25% 95%;
+    --popover: 208 84% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 179 38% 58%;               /* Brighter mint in dark mode */
-    --primary-foreground: 185 25% 8%;
+    --primary: 208 82% 46%; /* Lighter blue in dark */
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 183 30% 20%;             /* Dark teal secondary */
-    --secondary-foreground: 155 25% 95%;
+    --secondary: 21 98% 58%; /* Orange stays same */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 185 20% 15%;                 /* Dark muted */
-    --muted-foreground: 155 15% 65%;
+    --muted: 208 32% 17%;
+    --muted-foreground: 210 20% 65%;
 
-    --accent: 179 38% 58%;                /* Mint accent */
-    --accent-foreground: 185 25% 8%;
+    --accent: 21 98% 58%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 185 20% 18%;
-    --input: 185 20% 18%;
-    --ring: 179 38% 58%;
-
-    /* Dark mode sidebar */
-    --sidebar-background: 185 25% 8%;
-    --sidebar-foreground: 155 25% 90%;
-    --sidebar-primary: 179 38% 58%;
-    --sidebar-primary-foreground: 185 25% 8%;
-    --sidebar-accent: 185 20% 15%;
-    --sidebar-accent-foreground: 155 25% 90%;
-    --sidebar-border: 185 20% 18%;
-    --sidebar-ring: 179 38% 58%;
+    --border: 208 32% 17%;
+    --input: 208 32% 17%;
+    --ring: 208 82% 46%;
+    
+    /* Dark mode professional colors */
+    --professional-primary: 208 82% 46%;
+    --professional-secondary: 21 98% 58%;
+    --professional-accent: 21 98% 68%;
+    
+    --sidebar-background: 208 59% 10%;
+    --sidebar-foreground: 210 48% 95%;
+    --sidebar-primary: 208 82% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 208 37% 15%;
+    --sidebar-accent-foreground: 210 48% 95%;
+    --sidebar-border: 208 37% 15%;
+    --sidebar-ring: 208 82% 46%;
   }
 }
 
@@ -128,54 +128,38 @@
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, #f8fbfa 0%, #f0f8f5 50%, #e8f5f0 100%);
-    min-height: 100vh;
   }
 }
 
 @layer components {
-  /* Teal/Mint Educational Component Styles */
+  /* Hero gradient with new colors */
   .hero-gradient {
-    background: var(--gradient-hero);
+    background: linear-gradient(135deg, rgba(14, 97, 168, 0.95), rgba(252, 124, 45, 0.95));
   }
   
-  .hero-gradient-soft {
-    background: var(--gradient-hero-soft);
-  }
-  
+  /* Card styles */
   .card-elegant {
     background: var(--gradient-card);
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
-    border: 1px solid rgba(200, 230, 208, 0.3);
   }
   
   .card-elegant:hover {
     box-shadow: var(--shadow-elegant);
-    transform: translateY(-8px);
-    border-color: rgba(88, 187, 178, 0.4);
+    transform: translateY(-4px);
   }
   
+  /* Feature backgrounds */
   .feature-bg {
-    background: var(--gradient-feature);
+    background: linear-gradient(120deg, rgba(14, 97, 168, 0.05), rgba(252, 124, 45, 0.05));
   }
   
-  .teal-gradient {
-    background: var(--gradient-teal);
-  }
-  
-  .mint-gradient {
-    background: var(--gradient-mint);
-  }
-  
+  /* Glow effect */
   .glow-effect {
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 0 40px rgba(14, 97, 168, 0.3);
   }
   
-  .soft-shadow {
-    box-shadow: var(--shadow-soft);
-  }
-  
+  /* Transitions */
   .smooth-transition {
     transition: var(--transition-smooth);
   }
@@ -183,182 +167,212 @@
   .bouncy-transition {
     transition: var(--transition-bouncy);
   }
-
-  /* Teal Button Styles */
-  .btn-teal {
-    background: var(--gradient-teal);
+  
+  /* Primary gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+  }
+  
+  .gradient-primary-reverse {
+    background: linear-gradient(135deg, #fc7c2d, #0e61a8);
+  }
+  
+  /* Section backgrounds */
+  .bg-section-primary {
+    background: linear-gradient(180deg, rgba(14, 97, 168, 0.02), rgba(14, 97, 168, 0.05));
+  }
+  
+  .bg-section-secondary {
+    background: linear-gradient(180deg, rgba(252, 124, 45, 0.02), rgba(252, 124, 45, 0.05));
+  }
+  
+  /* Text gradients */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-secondary {
+    background: linear-gradient(135deg, #fc7c2d, #0e61a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Hover color effects */
+  .hover-primary:hover {
+    color: #0e61a8;
+  }
+  
+  .hover-secondary:hover {
+    color: #fc7c2d;
+  }
+  
+  /* Button styles with new colors */
+  .btn-primary {
+    background: #0e61a8;
     color: white;
-    box-shadow: var(--shadow-card);
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
+    border: none;
   }
   
-  .btn-teal:hover {
-    box-shadow: var(--shadow-elegant);
+  .btn-primary:hover {
+    background: #0a4f8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 97, 168, 0.4);
+  }
+  
+  .btn-secondary {
+    background: #fc7c2d;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background: #fb6b14;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(252, 124, 45, 0.4);
+  }
+  
+  .btn-outline-primary {
+    background: transparent;
+    color: #0e61a8;
+    border: 2px solid #0e61a8;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-primary:hover {
+    background: #0e61a8;
+    color: white;
     transform: translateY(-2px);
   }
   
-  .btn-mint {
-    background: var(--gradient-mint);
-    color: var(--professional-primary);
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
+  .btn-outline-secondary {
+    background: transparent;
+    color: #fc7c2d;
+    border: 2px solid #fc7c2d;
+    transition: all 0.3s ease;
   }
   
-  .btn-mint:hover {
-    box-shadow: var(--shadow-card);
+  .btn-outline-secondary:hover {
+    background: #fc7c2d;
+    color: white;
     transform: translateY(-2px);
   }
-
-  /* Navigation Enhancements */
-  .nav-teal {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(200, 230, 208, 0.3);
+  
+  .btn-gradient {
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
   }
   
-  /* Section Backgrounds */
-  .section-mint {
-    background: linear-gradient(135deg, #f0f8f5 0%, #e8f5f0 100%);
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fc7c2d, #0e61a8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
-  .section-teal {
-    background: var(--gradient-teal);
+  .btn-gradient:hover::before {
+    opacity: 1;
   }
-
-  /* News Ticker Animations */
-@keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+  
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(14, 97, 168, 0.3);
   }
-
-  .animate-scroll-left {
-    animation: scroll-left 30s linear infinite;
+  
+  /* Card hover effects */
+  .card-hover-primary:hover {
+    border-color: #0e61a8;
+    box-shadow: 0 4px 20px rgba(14, 97, 168, 0.2);
   }
-
-  /* Pause animation on hover
-  .animate-scroll-left:hover {
-    animation-play-state: paused;
-  } */
-
-  /* Breaking news style ticker */
-@keyframes breaking-news {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  
+  .card-hover-secondary:hover {
+    border-color: #fc7c2d;
+    box-shadow: 0 4px 20px rgba(252, 124, 45, 0.2);
   }
-
-  .animate-breaking-news {
-    animation: breaking-news 20s linear infinite;
+  
+  /* Badge styles */
+  .badge-primary {
+    background: rgba(14, 97, 168, 0.1);
+    color: #0e61a8;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
   }
-
-  /* Pulse effect for LIVE badge */
-  @keyframes live-pulse {
-    0%, 100% {
-      box-shadow: 0 0 0 0 rgba(35, 125, 140, 0.7);
-    }
-    70% {
-      box-shadow: 0 0 0 10px rgba(35, 125, 140, 0);
-    }
+  
+  .badge-secondary {
+    background: rgba(252, 124, 45, 0.1);
+    color: #fc7c2d;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
   }
-
-  .live-pulse {
-    animation: live-pulse 2s infinite;
+  
+  /* Link styles */
+  .link-primary {
+    color: #0e61a8;
+    text-decoration: none;
+    transition: all 0.3s ease;
   }
-@keyframes float-gentle {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
+  
+  .link-primary:hover {
+    color: #0a4f8a;
+    text-decoration: underline;
   }
-
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 0 0 rgba(35, 125, 140, 0.4);
-    }
-    50% {
-      box-shadow: 0 0 0 15px rgba(35, 125, 140, 0);
-    }
+  
+  .link-secondary {
+    color: #fc7c2d;
+    text-decoration: none;
+    transition: all 0.3s ease;
   }
-
-  @keyframes slide-in-left {
-    from {
-      transform: translateX(-100%) translateY(-50%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0) translateY(-50%);
-      opacity: 1;
-    }
+  
+  .link-secondary:hover {
+    color: #fb6b14;
+    text-decoration: underline;
   }
-
-  @keyframes slide-in-right {
-    from {
-      transform: translateX(100%) translateY(-50%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0) translateY(-50%);
-      opacity: 1;
-    }
+  
+  /* Border styles */
+  .border-gradient {
+    position: relative;
+    background: white;
   }
-
-  @keyframes bounce-in {
-    from {
-      transform: scale(0) translateY(50px);
-      opacity: 0;
-    }
-    60% {
-      transform: scale(1.1) translateY(-5px);
-      opacity: 1;
-    }
-    to {
-      transform: scale(1) translateY(0);
-      opacity: 1;
-    }
+  
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+    z-index: -1;
   }
-
-  /* Floating Badge Classes */
-  .float-gentle {
-    animation: float-gentle 3s ease-in-out infinite;
+  
+  /* Loading spinner with gradient */
+  @keyframes spin {
+    to { transform: rotate(360deg); }
   }
-
-  .pulse-glow {
-    animation: pulse-glow 2s infinite;
-  }
-
-  .slide-in-left {
-    animation: slide-in-left 0.6s ease-out forwards;
-  }
-
-  .slide-in-right {
-    animation: slide-in-right 0.6s ease-out forwards;
-  }
-
-  .bounce-in {
-    animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-  }
-
-  /* Enhanced Floating Effects */
-  .floating-badge {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .floating-badge:hover {
-    transform: translateY(-4px) scale(1.05);
-  }
-
-  /* Backdrop Blur Enhancement */
-  .floating-card {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  
+  .spinner-gradient {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(14, 97, 168, 0.1);
+    border-top-color: #0e61a8;
+    border-right-color: #fc7c2d;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
   }
 }

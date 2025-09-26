@@ -1,96 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Send, MessageCircle, Youtube } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Brain } from "lucide-react";
+import rrtechnosLogo from "@/assets/rr-technos-logo.png";
 
 export const Footer = () => {
-  const googleMapsUrl = "https://www.google.com/maps?q=Hig-66,+Neera+Cafe+Building,+E-seva+line,+Near+Temple+bus+stand,+K+P+H+B+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072";
-  
-  // Popular courses with proper URLs
-  const popularCourses = [
-    { name: "Workday HCM", url: "/courses/workday-hcm" },
-    { name: "Workday Finance", url: "/courses/workday-finance" },
-    { name: "Workday Integration", url: "/courses/workday-integration" },
-    { name: "Workday Extend", url: "/courses/workday-extend" },
-    { name: "PeopleSoft", url: "/courses/peoplesoft" },
-    { name: "SAP Security", url: "/courses/sap-security" },
-    { name: "ServiceNow", url: "/courses/servicenow" },
-    { name: "AI & Machine Learning", url: "/courses/ai-machine-learning" },
-    { name: "Cloud Technologies", url: "/courses/cloud-technologies" }
-  ];
-
-  // Course options for the contact form
-  const courseOptions = [
-    "Workday HCM",
-    "Workday Finance", 
-    "Workday Integration",
-    "Workday Extend",
-    "PeopleSoft",
-    "SAP Security",
-    "ServiceNow",
-    "AI & Machine Learning",
-    "Cloud Technologies"
-  ];
-
   return (
-    <footer id="contact" className="bg-[#1a4a52] text-white">
-      {/* Contact Form Section */}
-      <div className="border-b border-white/20">
+    <footer className="bg-white-900 text-secondary">
+      {/* Newsletter Section */}
+      <div className="border-b border-gray-800">
         <div className="container mx-auto px-6 py-16">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-8 text-center">Get in Touch</h3>
-            
-            {/* Contact Form */}
-            <div className="bg-white/10 rounded-xl p-8 backdrop-blur-sm">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm mb-2">Name *</label>
-                  <Input 
-                    type="text" 
-                    placeholder="Your Name"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm mb-2">Email *</label>
-                  <Input 
-                    type="email" 
-                    placeholder="your.email@example.com"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm mb-2">Phone (with country code) *</label>
-                  <Input 
-                    type="tel" 
-                    placeholder="+91 9999999999"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm mb-2">Course of Interest</label>
-                  <select className="w-full p-2 rounded-md bg-white/10 border border-white/20 text-white">
-                    <option value="">Select Course</option>
-                    {courseOptions.map((course) => (
-                      <option key={course} value={course} className="bg-[#1a4a52] text-white">
-                        {course}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className="mt-6">
-                <label className="block text-sm mb-2">Message</label>
-                <textarea 
-                  rows={4}
-                  placeholder="Tell us about your requirements..."
-                  className="w-full p-3 rounded-md bg-white/10 border border-white/20 text-white placeholder:text-white/60"
-                />
-              </div>
-              <Button 
-                className="mt-6 bg-gradient-to-r from-[#237d8c] to-[#349198] hover:from-[#349198] hover:to-[#46a6a5] text-white px-8"
-              >
-                Submit Enquiry
-                <Send className="ml-2 w-4 h-4" />
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-3xl font-bold mb-4">
+              Stay Updated with Latest AI Education Insights
+            </h3>
+            <p className="text-secondary-400 mb-8 text-lg">
+              Subscribe to our newsletter and be the first to know about new AI solutions, 
+              training courses, and industry insights.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+              <Input 
+                type="email" 
+                placeholder="Enter your email address"
+                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
+              />
+              <Button className="bg-orange-500 hover:bg-orange-600 px-8">
+                Subscribe
               </Button>
             </div>
           </div>
@@ -102,140 +36,105 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h4 className="text-2xl font-bold mb-6 text-[#46a6a5]">RR Technos</h4>
-            <p className="text-white/80 mb-6 leading-relaxed text-sm">
-              From Workday to AI - One Platform for Your Tech Growth. 
-              Industry-leading training institute with expert trainers and 100% placement support.
-            </p>
-            
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#46a6a5] flex-shrink-0 mt-1" />
-                <span className="text-white/80 text-sm">
-                  Hig-66, Neera Cafe Building, E-seva line, Near Temple bus stand, 
-                  K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#46a6a5]" />
-                <span className="text-white/80 text-sm">+91 9573529800</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#46a6a5]" />
-                <span className="text-white/80 text-sm">rrtechnos@gmail.com</span>
+          <div className="flex items-center gap-3">
+              <img 
+                src={rrtechnosLogo} 
+                alt="RR TECHNOS" 
+                className="h-10 w-auto object-contain"
+              />
+              <div>
+                <div className="text-2xl font-bold">Logiq Gen</div>
+                <div className="text-sm text-orange-400">AI-Powered Education</div>
               </div>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-[#46a6a5]">Quick Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#about" className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#courses" className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm">
-                  All Courses
-                </a>
-              </li>
-              <li>
-                <a href="#why-choose-us" className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm">
-                  Why Choose Us
-                </a>
-              </li>
-              <li>
-                <a href="#testimonials" className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm">
-                  Success Stories
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Popular Courses - FIXED SECTION */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-[#46a6a5]">Popular Courses</h4>
-            <ul className="space-y-3">
-              {popularCourses.map((course) => (
-                <li key={course.name}>
-                  <a 
-                    href={course.url} 
-                    className="text-white/80 hover:text-[#46a6a5] transition-colors text-sm"
-                  >
-                    {course.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Connect */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-[#46a6a5]">Connect With Us</h4>
-            
-            {/* WhatsApp Button */}
-            <Button 
-              className="w-full mb-4 bg-green-600 hover:bg-green-700 text-white"
-              onClick={() => window.open('https://wa.me/919573529800', '_blank')}
-            >
-              <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp: 9573529800
-            </Button>
-            
-            {/* Social Icons */}
-            <p className="text-white/80 mb-4 text-sm">Follow us on social media</p>
-            <div className="flex gap-3">
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#46a6a5] transition-colors"
-              >
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Empowering educational institutions and learners worldwide with cutting-edge AI solutions. 
+              Transform learning experiences with our personalized AI tutoring systems and chatbots.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#46a6a5] transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
+              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+                <Twitter className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#46a6a5] transition-colors"
-              >
+              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#46a6a5] transition-colors"
-              >
-                <Youtube className="w-5 h-5" />
+              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
+          </div>
 
-            {/* Google Map Link */}
+          {/* AI Solutions */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-orange-400">AI Solutions</h4>
+            <ul className="space-y-3 text-gray-400">
+              <li><a href="#" className="hover:text-white transition-colors">AI Chatbot Development</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Personalized Learning Systems</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">LLM Integration</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">AI BUDDY for Kids</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Educational Analytics</a></li>
+            </ul>
+          </div>
+
+          {/* Training Courses */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-orange-400">Training Courses</h4>
+            <ul className="space-y-3 text-gray-400">
+              <li><a href="#" className="hover:text-white transition-colors">Prompt Engineering</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">OpenAI API Development</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Claude Integration</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Llama Fine-tuning</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">AI Ethics in Education</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-orange-400">Contact Us</h4>
+            <ul className="space-y-4 text-gray-400">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-orange-400 mt-0.5" />
+                <span>
+                  Secunderabad, Telangana<br />
+                  India
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-orange-400" />
+                <span>+91 9876543210</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-orange-400" />
+                <span>hello@logiqgen.com</span>
+              </li>
+            </ul>
+            
             <div className="mt-6">
-              <Button 
-                variant="outline"
-                className="w-full bg-transparent border-white/30 text-white hover:bg-white/10"
-                onClick={() => window.open('https://maps.app.goo.gl/HKWRCvsbtStBQvuw5', '_blank')}
-              >
-                <MapPin className="w-4 h-4 mr-2" />
-                View on Google Maps
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full">
+                Get Free Consultation
               </Button>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Footer */}
-        <div className="mt-12 pt-8 border-t border-white/20">
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-800">
+        <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-sm">
-              © 2024 RR Technos. All rights reserved.
+            <p className="text-gray-400 text-sm">
+              © 2024 Logiq Gen. All rights reserved.
             </p>
-            <p className="text-white/60 text-sm">
-              From Workday to AI - One Platform for Your Tech Growth
+            <div className="flex items-center gap-6 text-sm text-gray-400">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+            <p className="text-gray-400 text-sm">
+              Made with ❤️ for AI-powered learning
             </p>
           </div>
         </div>
