@@ -2,116 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Educational Website Design System - Premium color palette and gradients */
+/* Educational Website Design System - Blue & Orange Theme */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 208 82% 20%; /* Darker blue for text */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 208 82% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 208 82% 20%;
 
-    /* Professional Business Theme - Orange/Dark */
-    --primary: 25 100% 50%;
+    /* Primary: Blue, Secondary: Orange */
+    --primary: 208 82% 36%; /* #0e61a8 - Deep Blue */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 25 100% 60%;
+    --primary-glow: 208 82% 46%;
     
-    --secondary: 220 13% 18%;
+    --secondary: 21 98% 58%; /* #fc7c2d - Vibrant Orange */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 208 40% 40%;
 
-    --accent: 25 100% 50%;
+    --accent: 21 98% 58%; /* Orange accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 25 100% 50%;
+    --border: 208 20% 91%;
+    --input: 208 20% 91%;
+    --ring: 208 82% 36%;
 
     --radius: 0.5rem;
 
     /* Professional Theme Colors */
-    --professional-primary: 25 100% 50%;
-    --professional-secondary: 220 13% 18%;
-    --professional-accent: 210 100% 50%;
+    --professional-primary: 208 82% 36%; /* Blue */
+    --professional-secondary: 21 98% 58%; /* Orange */
+    --professional-accent: 208 82% 46%; /* Lighter blue */
     --professional-success: 142 71% 45%;
-    --professional-warning: 38 92% 50%;
+    --professional-warning: 21 98% 58%;
+    
+    /* Education Theme Colors */
+    --education-primary: 208 82% 36%;
+    --education-secondary: 21 98% 58%;
+    --education-accent: 21 98% 58%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--education-primary)), hsl(var(--education-secondary)));
+    --gradient-hero: linear-gradient(135deg, #0e61a8, #fc7c2d);
     --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-feature: linear-gradient(120deg, hsl(var(--education-primary) / 0.1), hsl(var(--education-secondary) / 0.1));
+    --gradient-feature: linear-gradient(120deg, rgba(14, 97, 168, 0.1), rgba(252, 124, 45, 0.1));
+    --gradient-professional: linear-gradient(135deg, #0e61a8, #fc7c2d);
     
     /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--education-primary) / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(220 9% 46% / 0.15);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-elegant: 0 10px 30px -10px rgba(14, 97, 168, 0.3);
+    --shadow-card: 0 4px 20px -4px rgba(14, 97, 168, 0.15);
+    --shadow-glow: 0 0 40px rgba(14, 97, 168, 0.4);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 208 82% 36%;
+    --sidebar-primary: 208 82% 36%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 21 98% 95%;
+    --sidebar-accent-foreground: 208 82% 36%;
+    --sidebar-border: 208 20% 91%;
+    --sidebar-ring: 208 82% 36%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 208 84% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 208 84% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 208 84% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 208 82% 46%; /* Lighter blue in dark */
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 21 98% 58%; /* Orange stays same */
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 208 32% 17%;
+    --muted-foreground: 210 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 21 98% 58%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 208 32% 17%;
+    --input: 208 32% 17%;
+    --ring: 208 82% 46%;
+    
+    /* Dark mode professional colors */
+    --professional-primary: 208 82% 46%;
+    --professional-secondary: 21 98% 58%;
+    --professional-accent: 21 98% 68%;
+    
+    --sidebar-background: 208 59% 10%;
+    --sidebar-foreground: 210 48% 95%;
+    --sidebar-primary: 208 82% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 208 37% 15%;
+    --sidebar-accent-foreground: 210 48% 95%;
+    --sidebar-border: 208 37% 15%;
+    --sidebar-ring: 208 82% 46%;
   }
 }
 
@@ -126,11 +132,12 @@
 }
 
 @layer components {
-  /* Educational Component Styles */
+  /* Hero gradient with new colors
   .hero-gradient {
-    background: var(--gradient-hero);
-  }
+    background: linear-gradient(135deg, rgba(14, 97, 168, 0.95), rgba(252, 124, 45, 0.95));
+  } */
   
+  /* Card styles */
   .card-elegant {
     background: var(--gradient-card);
     box-shadow: var(--shadow-card);
@@ -142,19 +149,230 @@
     transform: translateY(-4px);
   }
   
+  /* Feature backgrounds */
   .feature-bg {
-    background: var(--gradient-feature);
+    background: linear-gradient(120deg, rgba(14, 97, 168, 0.05), rgba(252, 124, 45, 0.05));
   }
   
+  /* Glow effect */
   .glow-effect {
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 0 40px rgba(14, 97, 168, 0.3);
   }
   
+  /* Transitions */
   .smooth-transition {
     transition: var(--transition-smooth);
   }
   
   .bouncy-transition {
     transition: var(--transition-bouncy);
+  }
+  
+  /* Primary gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+  }
+  
+  .gradient-primary-reverse {
+    background: linear-gradient(135deg, #fc7c2d, #0e61a8);
+  }
+  
+  /* Section backgrounds */
+  .bg-section-primary {
+    background: linear-gradient(180deg, rgba(14, 97, 168, 0.02), rgba(14, 97, 168, 0.05));
+  }
+  
+  .bg-section-secondary {
+    background: linear-gradient(180deg, rgba(252, 124, 45, 0.02), rgba(252, 124, 45, 0.05));
+  }
+  
+  /* Text gradients */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-secondary {
+    background: linear-gradient(135deg, #fc7c2d, #0e61a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Hover color effects */
+  .hover-primary:hover {
+    color: #0e61a8;
+  }
+  
+  .hover-secondary:hover {
+    color: #fc7c2d;
+  }
+  
+  /* Button styles with new colors */
+  .btn-primary {
+    background: #0e61a8;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background: #0a4f8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 97, 168, 0.4);
+  }
+  
+  .btn-secondary {
+    background: #fc7c2d;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background: #fb6b14;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(252, 124, 45, 0.4);
+  }
+  
+  .btn-outline-primary {
+    background: transparent;
+    color: #0e61a8;
+    border: 2px solid #0e61a8;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-primary:hover {
+    background: #0e61a8;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline-secondary {
+    background: transparent;
+    color: #fc7c2d;
+    border: 2px solid #fc7c2d;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-secondary:hover {
+    background: #fc7c2d;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .btn-gradient {
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fc7c2d, #0e61a8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-gradient:hover::before {
+    opacity: 1;
+  }
+  
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(14, 97, 168, 0.3);
+  }
+  
+  /* Card hover effects */
+  .card-hover-primary:hover {
+    border-color: #0e61a8;
+    box-shadow: 0 4px 20px rgba(14, 97, 168, 0.2);
+  }
+  
+  .card-hover-secondary:hover {
+    border-color: #fc7c2d;
+    box-shadow: 0 4px 20px rgba(252, 124, 45, 0.2);
+  }
+  
+  /* Badge styles */
+  .badge-primary {
+    background: rgba(14, 97, 168, 0.1);
+    color: #0e61a8;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .badge-secondary {
+    background: rgba(252, 124, 45, 0.1);
+    color: #fc7c2d;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  /* Link styles */
+  .link-primary {
+    color: #0e61a8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .link-primary:hover {
+    color: #0a4f8a;
+    text-decoration: underline;
+  }
+  
+  .link-secondary {
+    color: #fc7c2d;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .link-secondary:hover {
+    color: #fb6b14;
+    text-decoration: underline;
+  }
+  
+  /* Border styles */
+  .border-gradient {
+    position: relative;
+    background: white;
+  }
+  
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #0e61a8, #fc7c2d);
+    z-index: -1;
+  }
+  
+  /* Loading spinner with gradient */
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .spinner-gradient {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(14, 97, 168, 0.1);
+    border-top-color: #0e61a8;
+    border-right-color: #fc7c2d;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
   }
 }

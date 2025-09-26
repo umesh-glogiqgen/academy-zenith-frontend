@@ -39,6 +39,32 @@ const courses = [
 ];
 
 export const FeaturedCourses = () => {
+  const handleEnquiry = (courseTitle: string, coursePrice: string, courseDuration: string) => {
+    const message = `Hi RR Technos Team! 👋
+
+I'm interested in enrolling for the *${courseTitle}* course.
+
+📚 Course Details:
+• Duration: ${courseDuration}
+• Price: ${coursePrice}
+
+Could you please provide me with more information about:
+✅ Course curriculum and syllabus
+✅ Batch timings and schedule
+✅ Prerequisites (if any)
+✅ Certification details
+✅ Payment options
+✅ Next batch start date
+
+Looking forward to hearing from you!
+
+Thank you! 😊`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919573529800?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -54,47 +80,57 @@ export const FeaturedCourses = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <Card key={course.id} className="card-elegant group cursor-pointer">
-              <div className="relative overflow-hidden rounded-t-lg">
+            <Card 
+              key={course.id} 
+              className="group cursor-pointer overflow-hidden bg-white hover:bg-gradient-to-br hover:from-professional-primary/5 hover:to-professional-accent/5 border hover:border-professional-primary/30 shadow-md hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-500 ease-out"
+            >
+              <div className="relative overflow-hidden">
                 <img 
                   src={course.image} 
                   alt={course.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 smooth-transition"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute top-4 right-4 bg-education-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                {/* Overlay effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-professional-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="absolute top-4 right-4 bg-professional-primary text-white px-3 py-1 rounded-full text-sm font-semibold group-hover:bg-professional-accent transition-colors duration-300">
                   {course.price}
                 </div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary smooth-transition">
+                <h3 className="text-xl font-semibold mb-3 text-professional-secondary group-hover:text-professional-primary transition-colors duration-300">
                   {course.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                <p className="text-muted-foreground group-hover:text-professional-secondary/80 mb-4 text-sm leading-relaxed transition-colors duration-300">
                   {course.description}
                 </p>
                 
                 <div className="flex items-center justify-between mb-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 group-hover:text-professional-primary transition-colors duration-300">
                     <Clock className="w-4 h-4" />
                     {course.duration}
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 group-hover:text-professional-primary transition-colors duration-300">
                     <Users className="w-4 h-4" />
                     {course.students.toLocaleString()}
                   </div>
                   <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 fill-education-accent text-education-accent" />
+                    <Star className="w-4 h-4 fill-professional-accent text-professional-accent group-hover:fill-professional-primary group-hover:text-professional-primary transition-colors duration-300" />
                     {course.rating}
                   </div>
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm text-muted-foreground group-hover:text-professional-secondary transition-colors duration-300">
                     by {course.instructor}
                   </div>
-                  <Button variant="course" size="sm">
+                  <Button 
+                    variant="course" 
+                    size="sm"
+                    onClick={() => handleEnquiry(course.title, course.price, course.duration)}
+                  >
                     Enroll Now
                   </Button>
                 </div>

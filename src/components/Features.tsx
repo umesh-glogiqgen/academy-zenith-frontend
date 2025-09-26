@@ -52,18 +52,32 @@ export const Features = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Card key={index} className="feature-bg p-8 text-center group hover:scale-105 smooth-transition">
-                <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 smooth-transition">
-                  <Icon className="w-8 h-8 text-primary" />
+              <Card 
+                key={index} 
+                className="group p-8 text-center cursor-pointer bg-white hover:bg-gradient-to-br hover:from-professional-primary/10 hover:to-professional-accent/10 border hover:border-professional-primary/50 shadow-md hover:shadow-2xl transform hover:scale-105 hover:-rotate-1 transition-all duration-500 ease-out overflow-hidden"
+              >
+                {/* Animated Background Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-professional-primary/20 to-professional-accent/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+                
+                <div className="relative z-10">
+                  {/* Enhanced Icon Container */}
+                  <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 group-hover:bg-professional-primary rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out ring-4 ring-transparent group-hover:ring-professional-primary/20">
+                    <Icon className="w-8 h-8 text-primary group-hover:text-white group-hover:scale-110 transition-all duration-500" />
+                  </div>
+                  
+                  {/* Enhanced Title */}
+                  <h3 className="text-xl font-semibold mb-4 text-professional-secondary group-hover:text-professional-primary transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  
+                  {/* Enhanced Description */}
+                  <p className="text-muted-foreground group-hover:text-professional-secondary/80 leading-relaxed transition-colors duration-300">
+                    {feature.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-semibold mb-4">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
+
+                {/* Glowing border effect */}
+                <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-professional-primary/50 group-hover:shadow-[0_0_20px_rgba(255,133,0,0.3)] transition-all duration-500"></div>
               </Card>
             );
           })}

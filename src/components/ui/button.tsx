@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-mint",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -18,14 +18,27 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-white text-professional-secondary hover:bg-white/90 shadow-lg glow-effect font-semibold",
-        "outline-hero": "border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm",
-        course: "bg-professional-primary text-white hover:bg-professional-primary/90 shadow-md",
+        
+        // NEW TEAL/MINT VARIANTS
+        hero: "bg-white text-professional-primary hover:bg-white/90 shadow-teal glow-effect font-semibold border border-teal-200/30 hover:shadow-card-hover transition-all duration-300",
+        
+        "outline-hero": "border-2 border-white/40 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm hover:border-white/60 transition-all duration-300",
+        
+        teal: "bg-gradient-teal text-white hover:shadow-teal hover:scale-105 transition-all duration-300 font-medium",
+        
+        mint: "bg-gradient-mint text-professional-primary hover:shadow-soft hover:scale-105 transition-all duration-300 font-medium",
+        
+        course: "bg-professional-primary text-white hover:bg-professional-secondary shadow-mint hover:shadow-teal transition-all duration-300",
+        
+        "teal-outline": "border-2 border-professional-primary bg-transparent text-professional-primary hover:bg-professional-primary hover:text-white transition-all duration-300",
+        
+        "mint-soft": "bg-mint-100 text-professional-primary hover:bg-mint-200 border border-mint-300/50 hover:border-mint-400/60 transition-all duration-300"
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-12 rounded-lg px-10 text-base",
         icon: "h-10 w-10",
       },
     },

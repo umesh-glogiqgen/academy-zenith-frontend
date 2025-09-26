@@ -1,25 +1,67 @@
 import { Navigation } from "@/components/Navigation";
-import { ProfessionalHero } from "@/components/ProfessionalHero";
+import { ScrollingHero } from "@/components/Hero";
+import { AboutUs } from "@/components/AboutUs";
+import { ContactPopup } from "@/components/ContactPopup";
+import { Courses } from "@/components/Courses";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
+// import { ProfessionalHero } from "@/components/ProfessionalHero";
 import { ProgramContent } from "@/components/ProgramContent";
-import { ServicesSidebar } from "@/components/ServicesSidebar";
 import { Footer } from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { MessageCircle, Phone } from "lucide-react";
+import { StudentPlacementSection } from "@/components/StudentPlacementSection";
+import { Testimonials } from "@/components/Testimonials";
+import { FeaturedCourses } from "@/components/FeaturedCourses";
+
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <ProfessionalHero />
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3">
-            <ProgramContent />
-          </div>
-          <div className="lg:col-span-1">
-            <ServicesSidebar />
+      {/* <ProfessionalHero /> */}
+      <ScrollingHero />
+      <AboutUs />
+      <WhyChooseUs />
+      <Courses />
+
+      {/* Testimonials Section - Placeholder */}
+      <section id="testimonials" className="py-20 bg-[#f0f8f5]">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a4a52]">
+              Success Stories
+            </h2>
+            <p className="text-xl text-[#5a8088] mb-8">
+              Student testimonials and alumni placement details coming soon!
+            </p>
+            <div className="bg-white rounded-2xl p-12 shadow-lg">
+              <p className="text-[#237d8c] font-semibold">
+                Our students have been placed in top MNCs. Video testimonials and detailed success stories will be added soon.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+      {/* Student Placement Section - prominently displayed */}
+      <StudentPlacementSection />
+      
+      {/* Featured Courses Section */}
+      <FeaturedCourses />
+      
+      {/* Testimonials Section */}
+      <Testimonials />
+      
       <Footer />
+      
+      {/* Floating WhatsApp Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Button
+          className="bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-all duration-300"
+          onClick={() => window.open('https://wa.me/919573529800', '_blank')}
+        >
+          <MessageCircle className="w-6 h-6" />
+        </Button>
+      </div>
     </div>
   );
 };

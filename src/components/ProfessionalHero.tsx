@@ -1,21 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
+import { CompactCourseSlider } from "@/components/CompactCourseSlider";
 
 export const ProfessionalHero = () => {
   return (
-    <div className="bg-professional-secondary text-white py-20 mt-16">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="bg-professional-secondary text-white py-8 mt-16">
+      <div className="container mx-4xl px-4">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Professional Training & 
-              <span className="text-professional-primary block">Development Programs</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+              From Workday to AI 
+              <span className="text-professional-[#237d8c] block">One Platform for Your Tech Growth</span>
             </h1>
             
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Advance your career with our comprehensive online training programs. 
-              Expert instructors, hands-on projects, and industry-recognized certifications.
+              Passionate teaching, enlightening young minds and shaping the future with the most advanced Workday training. Guided by expert faculty, we provide cutting-edge learning in HCM, Finance, Integration, AI, and emerging technologies with real-time projects and complete placement support.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -26,54 +26,25 @@ export const ProfessionalHero = () => {
                 Download Brochure
               </Button>
             </div>
-
-            {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-professional-primary" />
-                <span>Call us: +1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-professional-primary" />
-                <span>info@professionaltraining.com</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Content - Featured Program Banner */}
           <div className="relative">
-            <div className="bg-gradient-to-r from-professional-primary to-professional-accent rounded-lg p-8 text-center shadow-2xl">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-2">Featured Program</h3>
-                <h2 className="text-3xl font-black">
-                  Full Stack Development<br/>
-                  Professional Training
-                </h2>
-              </div>
-              
               <div className="bg-white/20 rounded-lg p-4 mb-6 backdrop-blur-sm">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80" 
-                  alt="Professional training session"
-                  className="w-full h-32 object-cover rounded mb-4"
-                />
-                <div className="text-sm">
-                  <p>12-Week Intensive Program</p>
-                  <p>Live Projects • Expert Mentors • Job Assistance</p>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <Phone className="w-4 h-4 mx-auto mb-1" />
-                  <p>+1 (555) 123-4567</p>
-                </div>
-                <div>
-                  <Mail className="w-4 h-4 mx-auto mb-1" />
-                  <p>training@company.com</p>
-                </div>
-              </div>
+                {/* PERFECT SLIDER INTEGRATION */}
+                <CompactCourseSlider height="h-45" className="mb-4 group" />
+                 {/* Floating Badge 1 */}
+            <div className="absolute -top-5 right-5 bg-white rounded-2xl p-4 shadow-xl float-animation">
+              <div className="text-2xl font-bold text-[#237d8c]">Live Classes</div>
+              <div className="text-sm text-[#5a8088]">Hands-on Labs</div>
             </div>
+            
+            {/* Floating Badge 2 */}
+            <div className="absolute -bottom-5 left-5 bg-white rounded-2xl p-4 shadow-xl float-animation" style={{ animationDelay: "1s" }}>
+              <div className="text-2xl font-bold text-[#237d8c]">Career Guidance</div>
+              <div className="text-sm text-[#5a8088]">1:1 Mentorship</div>
+            </div>
+              </div>
           </div>
         </div>
       </div>
