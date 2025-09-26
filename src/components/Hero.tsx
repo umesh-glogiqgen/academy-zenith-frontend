@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { 
   ChevronLeft, ChevronRight, Play, Star, CheckCircle, 
@@ -16,64 +16,142 @@ import sapSecurityImage from "@/assets/7.png";
 import servicenowImage from "@/assets/8.png";
 import cloudTechnologiesImage from "@/assets/9.png";
 
-
-
 // Define the slide interface for type safety
 interface HeroSlide {
   title: string;
-  backgroundImage: string;
+  Image: string;
+}
+
+// Define container dimensions interface
+interface ImageDimensions {
+  width: number;
+  height: number;
+  aspectRatio: number;
 }
 
 export const ScrollingHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imageDimensions, setImageDimensions] = useState<ImageDimensions | null>(null);
+  const [containerSize, setContainerSize] = useState({ width: '100vw', height: '100vh' });
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Hero slides data with your actual course images
   const heroSlides: HeroSlide[] = [
     {
       title: "Generative AI Mastery",
-      backgroundImage: genAiImage,
+      Image: genAiImage,
     },
-
     {
       title: "Workday HCM Complete",
-      backgroundImage: workdayHcmImage,
+      Image: workdayHcmImage,
     },
-
     {
       title: "Workday Finance Pro",
-      backgroundImage: workdayFinanceImage,
+      Image: workdayFinanceImage,
     },
     {
       title: "Workday Integration",
-      backgroundImage: workdayIntegrationImage,
+      Image: workdayIntegrationImage,
     },
     {
       title: "Workday Extend Platform",
-      backgroundImage: workdayExtendImage,
+      Image: workdayExtendImage,
     },
     {
       title: "PeopleSoft Mastery",
-      backgroundImage: peoplesoftImage,
+      Image: peoplesoftImage,
     },
     {
       title: "SAP Security Expert",
-      backgroundImage: sapSecurityImage,
+      Image: sapSecurityImage,
     },
     {
       title: "ServiceNow Platform",
-      backgroundImage: servicenowImage,
+      Image: servicenowImage,
     },
     {
       title: "Cloud Technologies",
-      backgroundImage: cloudTechnologiesImage,
+      Image: cloudTechnologiesImage,
     }
   ];
+
+  // Function to get image dimensions
+  const getImageDimensions = (src: string): Promise<ImageDimensions> => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        const aspectRatio = img.width / img.height;
+        resolve({
+          width: img.width,
+          height: img.height,
+          aspectRatio
+        });
+      };
+      img.onerror = reject;
+      img.src = src;
+    });
+  };
+
+  // Calculate responsive container size based on image dimensions
+  const calculateContainerSize = (dimensions: ImageDimensions) => {
+    const maxWidth = window.innerWidth ; // Use 90% of viewport width max
+    const maxHeight = window.innerHeight; // Use 80% of viewport height max
+
+    let width = dimensions.width;
+    let height = dimensions.height;
+
+    // Scale down if image is larger than viewport
+    if (width > maxWidth) {
+      width = maxWidth;
+      height = width / dimensions.aspectRatio;
+    }
+
+    if (height > maxHeight) {
+      height = maxHeight;
+      width = height * dimensions.aspectRatio;
+    }
+
+    return {
+      width: `${width}px`,
+      height: `${height}px`
+    };
+  };
+
+  // Load image dimensions on component mount
+  useEffect(() => {
+    const loadImageDimensions = async () => {
+      try {
+        // Use the first image to get dimensions (since all are same size)
+        const dimensions = await getImageDimensions(genAiImage);
+        setImageDimensions(dimensions);
+        setContainerSize(calculateContainerSize(dimensions));
+      } catch (error) {
+        console.error('Failed to load image dimensions:', error);
+        // Fallback to full viewport sizing
+        setContainerSize({ width: '100vw', height: '100vh' });
+      }
+    };
+
+    loadImageDimensions();
+  }, []);
+
+  // Handle window resize to maintain aspect ratio
+  useEffect(() => {
+    const handleResize = () => {
+      if (imageDimensions) {
+        setContainerSize(calculateContainerSize(imageDimensions));
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [imageDimensions]);
 
   // Auto-slide functionality
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000); // Increased to 6 seconds to accommodate more slides
+    }, 5000); // 5 seconds per slide
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
@@ -81,62 +159,75 @@ export const ScrollingHero = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
 
   return (
-    <div className="relative h-screen overflow-hidden">
-      <div 
-        className="flex transition-transform duration-1000 ease-in-out h-full"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className="min-w-full h-full relative bg-cover bg-center"
+    <>
+      {!imageDimensions ? (
+        // Loading state while calculating dimensions
+        <div className="w-screen h-screen flex flex-col bg-white-900">
+          <div className="w-10 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-white mt-4">Loading hero gallery...</p>
+        </div>
+      ) : (
+        <div 
+          // ref={containerRef}
+          // className="w-screen h-screen relative overflow-hidden flex justify-center items-center bg-white"
+        >
+          <div 
+            className="flex transition-transform duration-1000 ease-in-out"
             style={{ 
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('${slide.backgroundImage}')` 
+              transform: `translateX(-${currentSlide * 100}%)`,
+              width: containerSize.width, 
+              height: containerSize.height
             }}
           >
-
+            {heroSlides.map((slide, index) => (
+              <div
+                key={index}
+                className="relative bg-contain bg-center bg-no-repeat flex-shrink-0"
+                style={{ 
+                  backgroundImage: `url('${slide.Image}')`,
+                  width: containerSize.width,
+                  height: containerSize.height
+                }}
+              >
+                {/* Hero title overlay */}
+                <div className="absolute bottom-16 left-8 md:left-16 bg-black/60 text-white px-6 py-3 rounded-lg backdrop-blur-md">
+                  <h1 className="text-2xl md:text-3xl font-bold">{slide.title}</h1>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      
-      {/* Slide Controls */}
-      <button 
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 backdrop-blur-sm transition-all z-10"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      
-      <button 
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 backdrop-blur-sm transition-all z-10"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-      
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentSlide ? 'bg-orange-500 w-8' : 'bg-white/50'
-            }`}
-          />
-        ))}
-      </div>
-      
-      {/* Course Progress Indicator */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10">
-        <div className="bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
-          <span className="font-medium">{currentSlide + 1}</span>
-          <span className="text-white/70"> / {heroSlides.length}</span>
-          <span className="ml-2 text-orange-300 font-medium">
-            {heroSlides[currentSlide].title.split(' ')[0]}
-          </span>
+          
+          {/* Slide Controls */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 backdrop-blur-sm transition-all z-20"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <button 
+            onClick={nextSlide}
+            className="absolute right-6 md:right-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 backdrop-blur-sm transition-all z-20"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Slide Indicators */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === currentSlide 
+                    ? 'bg-white' 
+                    : 'bg-white/50 hover:bg-white/70'
+                }`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };

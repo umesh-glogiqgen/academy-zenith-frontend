@@ -132,10 +132,10 @@
 }
 
 @layer components {
-  /* Hero gradient with new colors */
+  /* Hero gradient with new colors
   .hero-gradient {
     background: linear-gradient(135deg, rgba(14, 97, 168, 0.95), rgba(252, 124, 45, 0.95));
-  }
+  } */
   
   /* Card styles */
   .card-elegant {
