@@ -12,7 +12,7 @@ const courses = [
     students: 2847,
     rating: 4.9,
     price: "$299",
-    image: "/src/assets/feturedCourses1.jpg"
+    image: "/feturedCourses1.jpg"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const courses = [
     students: 1923,
     rating: 4.8,
     price: "$399",
-    image: "/src/assets/feturedCourses2.jpg"
+    image: "/feturedCourses2.jpg"
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const courses = [
     students: 3241,
     rating: 4.9,
     price: "$199",
-    image: "/src/assets/feturedCourses3.png"
+    image: "/feturedCourses3.png"
   }
 ];
 

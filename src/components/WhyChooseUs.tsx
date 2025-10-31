@@ -38,7 +38,7 @@ export const WhyChooseUs = () => {
   const trainingModes = [
     {
       title: "Online Training",
-      image: "/src/assets/virtual-classroom-study-space.jpg",
+      image: "/virtual-classroom-study-space.jpg",
       features: [
         "Live interactive classes",
         "Recorded session access",
@@ -49,7 +49,7 @@ export const WhyChooseUs = () => {
     },
     {
       title: "Offline Training",
-      image: "/src/assets/how-is-your-deals-group-people-business-conference-modern-classroom-daytime.jpg",
+      image: "/how-is-your-deals-group-people-business-conference-modern-classroom-daytime.jpg",
       features: [
         "Classroom setup",
         "Hands-on lab sessions",
@@ -60,7 +60,7 @@ export const WhyChooseUs = () => {
     },
     {
       title: "Hybrid Learning",
-      image: "/src/assets/lastimg.jpg",
+      image: "/lastimg.jpg",
       features: [
         "Best of both modes",
         "Switch between online/offline",

@@ -17,7 +17,7 @@ const courses = [
     badge: "Most Popular",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
     icon: "👥",
-    image: "/src/assets/traning1.jpg"
+    image: "/traning1.jpg"
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const courses = [
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
     icon: "💰",
-    image: "/src/assets/traning2.jpg"
+    image: "/traning2.jpg"
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const courses = [
     badge: "Technical",
     badgeColor: "bg-gradient-to-r from-[#d9eca1] to-[#58bbb2]",
     icon: "🔗",
-    image: "/src/assets/traning3.jpg"
+    image: "/traning3.jpg"
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ const courses = [
     badge: "Advanced",
     badgeColor: "bg-gradient-to-r from-[#46a6a5] to-[#58bbb2]",
     icon: "🚀",
-    image: "/src/assets/traning4.jpg"
+    image: "/traning4.jpg"
   },
   {
     id: 5,
@@ -77,7 +77,7 @@ const courses = [
     badge: "Trending",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#46a6a5]",
     icon: "⚙️",
-    image: "/src/assets/traning5.jpg"
+    image: "/traning5.jpg"
   },
   {
     id: 6,
@@ -92,7 +92,7 @@ const courses = [
     badge: "Future Tech",
     badgeColor: "bg-gradient-to-r from-[#349198] to-[#46a6a5]",
     icon: "🤖",
-    image: "/src/assets/traning6.jpg"
+    image: "/traning6.jpg"
   },
   {
     id: 7,
@@ -107,7 +107,7 @@ const courses = [
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
     icon: "🏢",
-    image: "/src/assets/traning7.jpg"
+    image: "/traning7.jpg"
   },
   {
     id: 8,
@@ -122,7 +122,7 @@ const courses = [
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
     icon: "🔐",
-    image: "/src/assets/traning8.jpg"
+    image: "/traning8.jpg"
   }
 ];
 

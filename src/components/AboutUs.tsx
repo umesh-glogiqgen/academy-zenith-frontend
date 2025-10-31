@@ -15,25 +15,25 @@ export const AboutUs = () => {
       icon: <Users className="w-6 h-6" />,
       title: "Online + Offline Training",
       description: "Flexible learning modes to suit your schedule and preferences",
-      image: "/src/assets/online-education-concept-studying-science-laptop-modern-technologies.jpg"
+      image: "/online-education-concept-studying-science-laptop-modern-technologies.jpg"
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Industry Projects",
       description: "Work on real-time projects from actual business scenarios",
-      image: "/src/assets/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla.jpg"
+      image: "/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla.jpg"
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: "Placement Support",
       description: "100% placement assistance with resume building and interview prep",
-      image: "/src/assets/male-supervisor-training-latin-executive-call-center-manager-explaining-work-stuff-employees-offering-tech-support-customer-service.jpg"
+      image: "/male-supervisor-training-latin-executive-call-center-manager-explaining-work-stuff-employees-offering-tech-support-customer-service.jpg"
     },
     {
       icon: <Award className="w-6 h-6" />,
       title: "Flexible Timings",
       description: "Weekend and weekday batches available for working professionals",
-      image: "/src/assets/alarm-clock-with-young-businessman-using-laptop.jpg"
+      image: "/alarm-clock-with-young-businessman-using-laptop.jpg"
     }
   ];
 
@@ -124,7 +124,7 @@ export const AboutUs = () => {
               <Card className="overflow-hidden shadow-lg rounded-2xl border-0">
                 <div className="relative">
                   <img
-                    src="/src/assets/man-woman-making-deal-work.jpg"
+                    src="/man-woman-making-deal-work.jpg"
                     alt="Professional team collaboration"
                     className="w-full h-full object-cover"
                   />
@@ -149,7 +149,7 @@ export const AboutUs = () => {
             <div className="relative lg:order-1">
               <div className="relative">
                 <img
-                  src="/src/assets/fl.png"
+                  src="/fl.png"
                   alt="Modern training facility"
                   className="w-full h-[450px] object-cover rounded-3xl shadow-xl"
                 />
