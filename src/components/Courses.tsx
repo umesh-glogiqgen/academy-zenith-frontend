@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Star, BookOpen, Phone, MessageCircle } from "lucide-react";
 import { ContinuousNewsTicker } from "@/components/ContinuousNewsTicker";
+import { useNavigate } from "react-router-dom";
 const courses = [
   {
     id: 1,
@@ -15,7 +16,8 @@ const courses = [
     price: "Contact for Fees",
     badge: "Most Popular",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
-    icon: "👥"
+    icon: "👥",
+    image: "/src/assets/traning1.jpg"
   },
   {
     id: 2,
@@ -29,7 +31,8 @@ const courses = [
     price: "Contact for Fees",
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
-    icon: "💰"
+    icon: "💰",
+    image: "/src/assets/traning2.jpg"
   },
   {
     id: 3,
@@ -43,7 +46,8 @@ const courses = [
     price: "Contact for Fees",
     badge: "Technical",
     badgeColor: "bg-gradient-to-r from-[#d9eca1] to-[#58bbb2]",
-    icon: "🔗"
+    icon: "🔗",
+    image: "/src/assets/traning3.jpg"
   },
   {
     id: 4,
@@ -57,7 +61,8 @@ const courses = [
     price: "Contact for Fees",
     badge: "Advanced",
     badgeColor: "bg-gradient-to-r from-[#46a6a5] to-[#58bbb2]",
-    icon: "🚀"
+    icon: "🚀",
+    image: "/src/assets/traning4.jpg"
   },
   {
     id: 5,
@@ -71,7 +76,8 @@ const courses = [
     price: "Contact for Fees",
     badge: "Trending",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#46a6a5]",
-    icon: "⚙️"
+    icon: "⚙️",
+    image: "/src/assets/traning5.jpg"
   },
   {
     id: 6,
@@ -85,7 +91,8 @@ const courses = [
     price: "Contact for Fees",
     badge: "Future Tech",
     badgeColor: "bg-gradient-to-r from-[#349198] to-[#46a6a5]",
-    icon: "🤖"
+    icon: "🤖",
+    image: "/src/assets/traning6.jpg"
   },
   {
     id: 7,
@@ -99,7 +106,8 @@ const courses = [
     price: "Contact for Fees",
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
-    icon: "🏢"
+    icon: "🏢",
+    image: "/src/assets/traning7.jpg"
   },
   {
     id: 8,
@@ -113,86 +121,129 @@ const courses = [
     price: "Contact for Fees",
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
-    icon: "🔐"
+    icon: "🔐",
+    image: "/src/assets/traning8.jpg"
   }
 ];
 
 export const Courses = () => {
+  const navigate = useNavigate();
+
   const handleEnrollClick = () => {
     // WhatsApp contact
     window.open('https://wa.me/919573529800?text=Hi, I am interested in joining your course', '_blank');
   };
 
+  const handleViewDetails = (courseId: number, courseTitle: string) => {
+    // Map course IDs to their URL slugs
+    const courseSlugMap: Record<number, string> = {
+      1: 'workday-hcm',
+      2: 'workday-finance',
+      3: 'workday-integration',
+      4: 'workday-extend',
+      6: 'ai-machine-learning'
+    };
+
+    const courseSlug = courseSlugMap[courseId];
+    // Find the course data to pass along
+    const courseData = courses.find(c => c.id === courseId);
+
+    if (courseSlug) {
+      // Navigate to the course detail page with course data
+      navigate(`/course/${courseSlug}`, { state: { courseData } });
+    } else {
+      // For courses without detail pages, navigate to coming soon page
+      navigate('/coming-soon', { state: { courseData } });
+    }
+  };
+
   return (
-    <section id="courses" className="py-20 bg-gradient-to-br from-[#C8E6D0] to-[#a8d5d8]">
+    <section id="courses" className="pt-4 pb-20 bg-white">
       <div className="container mx-auto px-6">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Our Training Programs
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            Our Training <span className="text-[#0066CC]">Programs</span>
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             Industry-aligned courses with real-time projects, expert trainers, and 100% placement support
           </p>
         </div>
-        {/* Scrolling Batches Ticker */}
-        <ContinuousNewsTicker />
 
-        {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Scrolling Batches Ticker */}
+        <div className="mb-10">
+          <ContinuousNewsTicker />
+        </div>
+
+        {/* Courses Grid - 4 columns */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {courses.map((course) => (
-            <Card 
+            <Card
               key={course.id}
-              className="overflow-hidden bg-white border-none hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+              className="overflow-hidden bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer group rounded-xl"
             >
-              {/* Course Image/Icon Area */}
-              <div className="relative h-40 bg-gradient-to-br from-[#237d8c] to-[#349198] flex items-center justify-center text-5xl text-white">
-                {course.icon}
-                <span className={`absolute top-3 right-3 ${course.badgeColor} text-white px-3 py-1 rounded-full text-xs font-semibold`}>
+              {/* Course Image with Badge */}
+              <div className="relative h-44 bg-gray-100">
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                {/* Badge in top-right corner */}
+                <span className="absolute top-3 right-3 bg-[#17A2B8] text-white px-3 py-1 rounded-full text-xs font-semibold">
                   {course.badge}
                 </span>
               </div>
 
               {/* Course Content */}
               <div className="p-5">
-                <h3 className="text-lg font-semibold mb-2 text-[#1a4a52] group-hover:text-[#237d8c] transition-colors">
+                {/* Title */}
+                <h3 className="text-lg font-bold text-[#0066CC] mb-2 hover:text-[#0052A3] transition-colors">
                   {course.title}
                 </h3>
 
-                <p className="text-sm text-[#5a8088] mb-3 line-clamp-2">
+                {/* Description */}
+                <p className="text-xs text-gray-600 mb-4 line-clamp-2 leading-relaxed">
                   {course.description}
                 </p>
 
-                <div className="flex justify-between items-center mb-3 text-xs text-[#5a8088]">
-                  <div className="flex items-center gap-1">
-                    <BookOpen className="w-3 h-3" />
+                {/* Info Grid */}
+                <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+                  <div className="flex items-center gap-1.5 text-gray-600">
+                    <BookOpen className="w-3.5 h-3.5" />
                     <span>{course.modules} Modules</span>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
+                  <div className="flex items-center gap-1.5 text-orange-500">
+                    <Clock className="w-3.5 h-3.5" />
                     <span>{course.duration}</span>
                   </div>
-                </div>
-
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-1 text-xs text-[#5a8088]">
-                    <Users className="w-3 h-3" />
+                  <div className="flex items-center gap-1.5 text-gray-600">
+                    <Users className="w-3.5 h-3.5" />
                     <span>{course.students}+ students</span>
                   </div>
-                  <div className="flex items-center gap-1 text-[#46a6a5]">
-                    <Star className="w-3 h-3 fill-current" />
-                    <span className="text-xs font-semibold">{course.rating}</span>
+                  <div className="flex items-center gap-1.5 text-orange-500">
+                    <Star className="w-3.5 h-3.5 fill-current" />
+                    <span>{course.rating}</span>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#e8f4f1]">
-                  <Button 
+                {/* Action Buttons */}
+                <div className="grid grid-cols-2 gap-2">
+                  <Button
                     size="sm"
-                    className="w-full bg-gradient-to-r from-[#237d8c] to-[#349198] hover:from-[#349198] hover:to-[#46a6a5] text-white text-xs"
+                    className="bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-semibold py-2"
                     onClick={handleEnrollClick}
                   >
-                    <MessageCircle className="w-3 h-3 mr-1" />
                     Enquire Now
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="border-[#0066CC] text-[#0066CC] hover:bg-blue-50 text-xs font-semibold py-2"
+                    onClick={() => handleViewDetails(course.id, course.title)}
+                  >
+                    View Details
                   </Button>
                 </div>
               </div>

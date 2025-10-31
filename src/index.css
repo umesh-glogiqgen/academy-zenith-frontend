@@ -126,8 +126,18 @@
     @apply border-border;
   }
 
-  body {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    position: relative;
   }
 }
 
@@ -365,7 +375,7 @@
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
-  
+
   .spinner-gradient {
     width: 40px;
     height: 40px;
@@ -374,5 +384,53 @@
     border-right-color: #fc7c2d;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+  }
+
+  /* Infinite scrolling animation for news ticker */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
+
+  /* Gentle bounce animation */
+  @keyframes gentle-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .animate-gentle-bounce {
+    animation: gentle-bounce 2s ease-in-out infinite;
+  }
+
+  /* Fade in animation for lazy loaded sections */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
   }
 }

@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Users, Award, Building2 } from "lucide-react";
-
+import { Testimonials } from "./Testimonials";
 const companies = [
   {
     name: "Accenture",
@@ -195,37 +195,10 @@ export const StudentPlacementSection = () => {
     <section className="py-20 feature-bg">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Where Our <span className="text-professional-primary">Students Get Placed</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our graduates are successfully placed at top-tier companies across various industries. 
-            Join our alumni network working at these prestigious organizations.
-          </p>
-        </div>
-
-        {/* Statistics Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <Card key={index} className="card-elegant p-6 text-center">
-              <div className="flex justify-center mb-4">
-                <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-professional-primary/10 to-professional-accent/10 flex items-center justify-center`}>
-                  <stat.icon className={`w-6 h-6 ${stat.color}`} />
-                </div>
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-professional-secondary mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-muted-foreground font-medium">
-                {stat.label}
-              </div>
-            </Card>
-          ))}
-        </div>
+   <Testimonials/>
 
         {/* All Companies Logo Grid */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-professional-secondary">
             Our Complete Placement Partner Network
           </h3>
@@ -242,10 +215,10 @@ export const StudentPlacementSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Call to Action */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <Card className="card-elegant p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-professional-secondary">
               Ready to Join Our Success Stories?
@@ -263,8 +236,9 @@ export const StudentPlacementSection = () => {
               </Button>
             </div>
           </Card>
-        </div>
+        </div> */}
       </div>
     </section>
   );
+  
 };

@@ -2,16 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Brain } from "lucide-react";
 import rrtechnosLogo from "@/assets/rr-technos-logo.png";
+import { WhatsAppContact } from "@/components/WhatsAppContact";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white-900 text-secondary">
+    <footer className="bg-white-900 text-primary">
       {/* Newsletter Section */}
-      <div className="border-b border-gray-800">
         <div className="container mx-auto px-6 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl font-bold mb-4">
-              Stay Updated with Latest AI Education Insights
+              Stay Updated with Latest RR Technos Insights
             </h3>
             <p className="text-secondary-400 mb-8 text-lg">
               Subscribe to our newsletter and be the first to know about new AI solutions, 
@@ -29,112 +29,114 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div>
-          <div className="flex items-center gap-3">
-              <img 
-                src={rrtechnosLogo} 
-                alt="RR TECHNOS" 
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-6">
+              <img
+                src={rrtechnosLogo}
+                alt="RR TECHNOS"
                 className="h-10 w-auto object-contain"
               />
               <div>
-                <div className="text-2xl font-bold">Logiq Gen</div>
-                <div className="text-sm text-orange-400">AI-Powered Education</div>
+                <div className="text-2xl text-primary font-bold">RR Technos</div>
               </div>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Empowering educational institutions and learners worldwide with cutting-edge AI solutions. 
+            <p className="text-primary mb-6 leading-relaxed text-sm">
+              Empowering educational institutions and learners worldwide with cutting-edge AI solutions.
               Transform learning experiences with our personalized AI tutoring systems and chatbots.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61580823174367" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a href="https://x.com/RrTechnos2025" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a href="https://www.linkedin.com/in/rr-technos-268165387/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a href="https://www.instagram.com/rrtechnos/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
 
-          {/* AI Solutions */}
+          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-orange-400">AI Solutions</h4>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">AI Chatbot Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Personalized Learning Systems</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">LLM Integration</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">AI BUDDY for Kids</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Educational Analytics</a></li>
+            <h4 className="text-lg font-semibold mb-6 text-orange-400">Quick Links</h4>
+            <ul className="space-y-3 text-primary text-sm">
+              <li><a href="#home" className="hover:text-orange-400 transition-colors">Home</a></li>
+              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Training Courses</a></li>
+              <li><a href="#about" className="hover:text-orange-400 transition-colors">About Us</a></li>
+              <li><a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 
           {/* Training Courses */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-orange-400">Training Courses</h4>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Prompt Engineering</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">OpenAI API Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Claude Integration</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Llama Fine-tuning</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">AI Ethics in Education</a></li>
+            <h4 className="text-lg font-semibold mb-6 text-orange-400">Training Programs</h4>
+            <ul className="space-y-3 text-primary text-sm">
+              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Workday HCM</a></li>
+              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Workday Finance</a></li>
+              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Workday Integration</a></li>
+              <li><a href="#courses" className="hover:text-orange-400 transition-colors">ServiceNow</a></li>
+              <li><a href="#courses" className="hover:text-orange-400 transition-colors">AI & Machine Learning</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-orange-400">Contact Us</h4>
-            <ul className="space-y-4 text-gray-400">
+            <ul className="space-y-4 text-primary text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-orange-400 mt-0.5" />
+                <MapPin className="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <span>
-                  Secunderabad, Telangana<br />
-                  India
+                RR Technos Training Center
+
+Hig-66, Neera Cafe Building, E-seva line, Near Temple bus stand, K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-orange-400" />
-                <span>+91 9876543210</span>
+                <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                <span>+91 9573529800</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-orange-400" />
-                <span>hello@logiqgen.com</span>
+                <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                <span className="break-all">rrtechnos.info@gmail.com</span>
               </li>
             </ul>
-            
+
             <div className="mt-6">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full">
-                Get Free Consultation
-              </Button>
+              <WhatsAppContact
+                phoneNumber="+919573529800"
+                message="Hi! I would like to get a free consultation about your training courses. Can you please help me?"
+                buttonText="Get Free Consultation"
+                className="w-60 h-10 bg-orange-500 hover:bg-orange-600 border-orange-500 hover:border-orange-600"
+              />
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-primary">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-primary text-sm">
               © 2024 Logiq Gen. All rights reserved.
             </p>
-            <div className="flex items-center gap-6 text-sm text-gray-400">
+            <div className="flex items-center gap-6 text-sm text-primary">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
               <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
             </div>
-            <p className="text-gray-400 text-sm">
-              Made with ❤️ for AI-powered learning
+            <p className="text-primary text-sm">
+              Made with ❤️ Logiqgen
             </p>
           </div>
         </div>

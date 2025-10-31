@@ -12,7 +12,7 @@ const courses = [
     students: 2847,
     rating: 4.9,
     price: "$299",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80"
+    image: "/src/assets/feturedCourses1.jpg"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const courses = [
     students: 1923,
     rating: 4.8,
     price: "$399",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80"
+    image: "/src/assets/feturedCourses2.jpg"
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const courses = [
     students: 3241,
     rating: 4.9,
     price: "$199",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80"
+    image: "/src/assets/feturedCourses3.png"
   }
 ];
 
@@ -66,7 +66,7 @@ Thank you! 😊`;
     window.open(whatsappUrl, '_blank');
   }
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="pb-10 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -84,10 +84,11 @@ Thank you! 😊`;
               key={course.id} 
               className="group cursor-pointer overflow-hidden bg-white hover:bg-gradient-to-br hover:from-professional-primary/5 hover:to-professional-accent/5 border hover:border-professional-primary/30 shadow-md hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-500 ease-out"
             >
-              <div className="relative overflow-hidden">
-                <img 
-                  src={course.image} 
+              <div className="relative overflow-hidden bg-gray-100">
+                <img
+                  src={course.image}
                   alt={course.title}
+                  loading="lazy"
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 {/* Overlay effect on hover */}

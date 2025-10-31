@@ -38,6 +38,7 @@ export const WhyChooseUs = () => {
   const trainingModes = [
     {
       title: "Online Training",
+      image: "/src/assets/virtual-classroom-study-space.jpg",
       features: [
         "Live interactive classes",
         "Recorded session access",
@@ -48,6 +49,7 @@ export const WhyChooseUs = () => {
     },
     {
       title: "Offline Training",
+      image: "/src/assets/how-is-your-deals-group-people-business-conference-modern-classroom-daytime.jpg",
       features: [
         "Classroom setup",
         "Hands-on lab sessions",
@@ -58,6 +60,7 @@ export const WhyChooseUs = () => {
     },
     {
       title: "Hybrid Learning",
+      image: "/src/assets/lastimg.jpg",
       features: [
         "Best of both modes",
         "Switch between online/offline",
@@ -69,14 +72,14 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 bg-[#f0f8f5]">
+    <section id="why-choose-us" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a4a52]">
-            Why Choose <span className="text-[#237d8c]">RR Technos</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            Why Choose <span className="text-[#0066CC]">RR Technos</span>
           </h2>
-          <p className="text-xl text-[#5a8088] max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             Key differentiators that make us the preferred choice for tech training
           </p>
         </div>
@@ -84,40 +87,66 @@ export const WhyChooseUs = () => {
         {/* Key Differentiators */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {differentiators.map((item, index) => (
-            <Card 
-              key={index}
-              className="p-6 bg-white hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border-none"
-            >
-              <div className="w-16 h-16 mb-4 bg-gradient-to-br from-[#237d8c] to-[#349198] rounded-full flex items-center justify-center text-white">
-                {item.icon}
+            <div key={index} className="relative ">
+              {/* Circular Icon - Positioned at top center, overlapping the card */}
+              <div className="absolute mt-3 left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white">
+                  <div className="w-16 h-16 bg-[#FF8800] rounded-full flex items-center justify-center text-white">
+                    {item.icon}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#1a4a52]">{item.title}</h3>
-              <p className="text-[#5a8088]">{item.description}</p>
-            </Card>
+
+              {/* Card Content */}
+              <Card className="bg-white  shadow-[0_0_10px_rgba(0,0,0,0.08)]    pt-3 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl border-0 text-white rounded-2xl text-center">
+               <div className="rounded-b-xl bg-[#0066CC] px-6 pt-16 pb-8  h-[98%]">
+               <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
+               <p className="text-white/90 text-sm leading-relaxed">{item.description}</p>
+               </div>
+              </Card>
+            </div>
           ))}
         </div>
 
         {/* Training Modes */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <h3 className="text-3xl font-semibold text-center mb-8 text-[#1a4a52]">
-            Flexible Training Modes
+        <div className="bg-white rounded-3xl p-12 border border-gray-200">
+          <h3 className="text-3xl font-bold text-center mb-12 text-blue-950">
+            Flexible  <span className="text-[#0066CC]">Training Modes</span>
           </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {trainingModes.map((mode, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-gradient-to-br from-[#237d8c] to-[#349198] text-white rounded-lg p-4 mb-4">
-                  <h4 className="text-xl font-semibold">{mode.title}</h4>
+
+          {/* Single Card containing all three columns */}
+          <div className=" overflow-hidden ">
+            <div className="grid md:grid-cols-3 ">
+              {trainingModes.map((mode, index) => (
+                <div key={index} className="p-6">
+                  {/* Image - Only show for modes that have image property */}
+                  {mode.image && (
+                    <div className="relative h-40 overflow-hidden rounded-lg mb-4">
+                      <img
+                        src={mode.image}
+                        alt={mode.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+
+                  {/* Orange Button Title */}
+                  <div className="bg-[#FF8800] text-white text-center py-3 px-4 rounded-lg font-bold text-base mb-4">
+                    {mode.title}
+                  </div>
+
+                  {/* Features List */}
+                  <ul className="space-y-2.5">
+                    {mode.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-[#0066CC] flex-shrink-0 mt-0.5" />
+                        <span className="text-xs text-blue-700 leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-2">
-                  {mode.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-[#5a8088]">
-                      <CheckCircle className="w-4 h-4 text-[#46a6a5] flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

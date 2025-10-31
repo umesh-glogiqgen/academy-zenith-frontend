@@ -1,96 +1,80 @@
 import { Card } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { Users, Building2, TrendingUp, DollarSign } from "lucide-react";
 
-const testimonials = [
+const placementStats = [
   {
-    name: "Alex Thompson",
-    role: "Software Developer",
-    company: "TechCorp Inc.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
-    rating: 5,
-    text: "This platform completely transformed my career. The web development course was comprehensive and the instructors were incredibly supportive. I landed my dream job within 3 months of completing the program."
+    icon: Users,
+    number: "10000+",
+    label: "Students Placed",
+    color: "bg-[#FF8800]"
   },
   {
-    name: "Maria Garcia",
-    role: "Data Scientist",
-    company: "Analytics Pro",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b332c15c?w=150&q=80",
-    rating: 5,
-    text: "The machine learning course exceeded all my expectations. The hands-on projects and real-world applications made complex concepts easy to understand. Highly recommend!"
+    icon: Building2,
+    number: "26",
+    label: "Partner Companies",
+    color: "bg-[#FF8800]"
   },
   {
-    name: "David Kim",
-    role: "Marketing Manager",
-    company: "Growth Solutions",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80",
-    rating: 5,
-    text: "As someone with no prior marketing experience, I was amazed at how quickly I picked up digital marketing strategies. The course structure is perfect for beginners and experts alike."
+    icon: TrendingUp,
+    number: "99%",
+    label: "Placement Rate",
+    color: "bg-[#FF8800]"
+  },
+  {
+    icon: DollarSign,
+    number: "INR 855K+",
+    label: "Average Package",
+    color: "bg-[#FF8800]"
   }
 ];
 
 export const Testimonials = () => {
   return (
-    <section className="py-20 feature-bg">
+    <section className="pb-10 ">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What Our <span className="text-primary">Students Say</span>
+        {/* Section Title */}
+        <div className="text-center mb-32">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0066CC]">
+            Where Our <span className="text-[#0066CC]">Students Get Placed</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Join thousands of successful graduates who have transformed their careers 
-            through our comprehensive learning programs.
+          <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Our graduates are successfully placed at top-tier companies across various industries. Join our alumni network working at these prestigious organizations.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index} 
-              className="group p-8 relative cursor-pointer overflow-hidden bg-white hover:bg-gradient-to-br hover:from-professional-primary/8 hover:to-professional-accent/8 border hover:border-professional-primary/40 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-rotate-1 transition-all duration-500 ease-out"
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {placementStats.map((stat, index) => (
+            <Card
+              key={index}
+              className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-all duration-300 border-0"
             >
-              {/* Animated Quote Icon */}
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20 group-hover:text-professional-primary/60 group-hover:scale-125 transition-all duration-500" />
-              
-              {/* Animated Background Pattern */}
-              <div className="absolute inset-0 bg-gradient-to-r from-professional-primary/5 to-professional-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                {/* Rating Stars with Animation */}
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className="w-5 h-5 fill-professional-accent text-professional-accent group-hover:fill-professional-primary group-hover:text-professional-primary group-hover:scale-110 transition-all duration-300"
-                      style={{ transitionDelay: `${i * 100}ms` }}
-                    />
-                  ))}
-                </div>
-                
-                {/* Testimonial Text */}
-                <p className="text-muted-foreground group-hover:text-professional-secondary/90 mb-6 leading-relaxed italic transition-colors duration-300">
-                  "{testimonial.text}"
-                </p>
-                
-                {/* Author Info with Enhanced Hover */}
-                <div className="flex items-center">
-                  <div className="relative">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4 ring-2 ring-transparent group-hover:ring-professional-primary/50 group-hover:scale-110 transition-all duration-300"
-                    />
-                    {/* Glowing ring effect */}
-                    <div className="absolute inset-0 w-12 h-12 rounded-full bg-professional-primary/20 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500"></div>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-professional-secondary group-hover:text-professional-primary transition-colors duration-300">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-muted-foreground group-hover:text-professional-accent transition-colors duration-300">
-                      {testimonial.role} at {testimonial.company}
-                    </div>
+              {/* Circular Icon at Top - Higher position */}
+              <div className="flex justify-center    -mt-16 mb-6">
+              <div className="w-21 h-21 bg-white  rounded-full flex items-center justify-center shadow-xl border-4 border-white">
+                <div className={`${stat.color} w-16  h-16 rounded-full flex items-center justify-center text-white shadow-lg`}>
+                  <stat.icon className="w-10 h-10" strokeWidth={2} />
                   </div>
                 </div>
+              </div>
+
+                {/* <div className="absolute mt-3 left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="w-20 h-20 bg-white  flex items-center justify-center shadow-xl border-4 border-white">
+                  <div className="w-16 h-16 bg-[#FF8800] rounded-full flex items-center justify-center text-white">
+                    <stat.icon className="w-10 h-10" strokeWidth={2} />
+                  </div>
+                </div>
+              </div> */}
+
+
+              {/* Number */}
+              <div className="text-3xl md:text-2xl font-bold text-[#0066CC] ">
+                {stat.number}
+              </div>
+
+              {/* Label */}
+              <div className="text-sm md:text-xl font-semibold text-gray-700">
+                {stat.label}
               </div>
             </Card>
           ))}

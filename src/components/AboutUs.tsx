@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Award, Users, Target, Briefcase, CheckCircle ,Eye, Heart,Lightbulb } from "lucide-react";
+import { Award, Users, Target, Briefcase, CheckCircle, Eye, Lightbulb } from "lucide-react";
 
 export const AboutUs = () => {
   const credentials = [
@@ -14,95 +14,128 @@ export const AboutUs = () => {
     {
       icon: <Users className="w-6 h-6" />,
       title: "Online + Offline Training",
-      description: "Flexible learning modes to suit your schedule and preferences"
+      description: "Flexible learning modes to suit your schedule and preferences",
+      image: "/src/assets/online-education-concept-studying-science-laptop-modern-technologies.jpg"
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Industry Projects",
-      description: "Work on real-time projects from actual business scenarios"
+      description: "Work on real-time projects from actual business scenarios",
+      image: "/src/assets/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla.jpg"
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: "Placement Support",
-      description: "100% placement assistance with resume building and interview prep"
+      description: "100% placement assistance with resume building and interview prep",
+      image: "/src/assets/male-supervisor-training-latin-executive-call-center-manager-explaining-work-stuff-employees-offering-tech-support-customer-service.jpg"
     },
     {
       icon: <Award className="w-6 h-6" />,
       title: "Flexible Timings",
-      description: "Weekend and weekday batches available for working professionals"
+      description: "Weekend and weekday batches available for working professionals",
+      image: "/src/assets/alarm-clock-with-young-businessman-using-laptop.jpg"
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="about" className="pb-10 bg-white">
+      <div className="container mx-auto px-6 pt-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a4a52]">
-            About <span className="text-[#237d8c]">RR Technos</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our Training <span className="text-[#0066CC]">Programs</span>
           </h2>
-          <p className="text-xl text-[#5a8088] max-w-3xl mx-auto">
-            Your trusted partner for professional tech training and career transformation
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
+            Industry-aligned courses with real-time projects, expert trainers, and 100% placement support
           </p>
         </div>
 
                {/* Vision Section - Row 1 */}
-               <div className="mb-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+               <div className="mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Vision Content - Left */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                  <Eye className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 bg-[#0066CC] rounded-full flex items-center justify-center">
+                  <Eye className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-foreground">Our Vision</h3>
+                <h3 className="text-3xl font-bold text-gray-800">Our Vision</h3>
               </div>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                To be the leading catalyst for professional transformation, bridging the gap 
-                between traditional education and industry demands. We envision a world where 
-                every professional has access to cutting-edge skills and knowledge that propel 
-                their careers to new heights.
+
+              <p className="text-base text-[#003A70] leading-relaxed">
+                To be the global leader in professional transformation, bridging the gap
+                between traditional education and modern industry needs. We envision a future where
+                every learner is empowered to innovate, grow, and lead with confidence.
               </p>
-              
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                <div className="flex items-center gap-2">
-                  <Target className="w-6 h-6 text-primary" />
-                  <span className="text-sm font-medium">Industry Focus</span>
+
+              <div className="grid grid-cols-2 gap-6 mt-8">
+                {/* Industry Focus */}
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full flex items-center justify-center border-2 border-blue-200">
+                      <Target className="w-6 h-6 text-[#0066CC]" />
+                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <span className="text-sm font-bold text-[#003A70]">Industry Focus</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Lightbulb className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium">Innovation Driven</span>
+
+                {/* Innovation Driven */}
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full flex items-center justify-center border-2 border-orange-200">
+                      <Lightbulb className="w-6 h-6 text-[#FF8800]" />
+                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <span className="text-sm font-bold text-[#003A70]">Innovation Driven</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium">Community Centered</span>
+
+                {/* Community Centered */}
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full flex items-center justify-center border-2 border-blue-200">
+                      <Users className="w-6 h-6 text-[#0066CC]" />
+                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <span className="text-sm font-bold text-[#003A70]">Community Centered</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium">Excellence Focused</span>
+
+                {/* Excellence Focused */}
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full flex items-center justify-center border-2 border-orange-200">
+                      <Award className="w-6 h-6 text-[#FF8800]" />
+                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <span className="text-sm font-bold text-[#003A70]">Excellence Focused</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Vision Image - Right */}
             <div className="relative">
-              <Card className="card-elegant overflow-hidden">
-                <div className="aspect-[3/2] relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" 
-                    alt="Professional team collaboration representing our vision"
+              <Card className="overflow-hidden shadow-lg rounded-2xl border-0">
+                <div className="relative">
+                  <img
+                    src="/src/assets/man-woman-making-deal-work.jpg"
+                    alt="Professional team collaboration"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                      <h4 className="font-semibold text-foreground mb-1">Transforming Futures</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Empowering 10,000+ professionals worldwide
+                  {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-6">
+                    <div className="bg-[#FF8800]/90 backdrop-blur-sm rounded-lg p-4 border-2 border-orange-400">
+                      <h4 className="font-bold text-white text-lg mb-1">Transforming Futures</h4>
+                      <p className="text-sm text-white">
+                        Empowering 10,000+ professionals worldwide to achieve career breakthroughs
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </Card>
             </div>
@@ -110,83 +143,77 @@ export const AboutUs = () => {
         </div>
 
         {/* Mission Section - Row 2 */}
-        <div className="mb-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Mission Image - Left */}
             <div className="relative lg:order-1">
-              <Card className="card-elegant overflow-hidden">
-                <div className="aspect-[3/2] relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" 
-                    alt="Modern training facility showcasing our mission"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent"></div>
-                  <div className="absolute top-3 left-3 right-3">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="font-semibold text-foreground text-sm">Success Rate</h4>
-                          <p className="text-xl font-bold text-primary">95%</p>
-                        </div>
-                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                          <Award className="w-5 h-5 text-primary" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="relative">
+                <img
+                  src="/src/assets/fl.png"
+                  alt="Modern training facility"
+                  className="w-full h-[450px] object-cover rounded-3xl shadow-xl"
+                />
+                {/* White Card Overlay - Top Right */}
+               
+              </div>
             </div>
 
             {/* Mission Content - Right */}
-            <div className="space-y-4 lg:order-2">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground">Our Mission</h3>
-              </div>
-              
-              <p className="text-base text-muted-foreground leading-relaxed">
-                To deliver exceptional, practical training programs that combine industry 
-                expertise with personalized learning experiences.
+            <div className="space-y-5 lg:order-2">
+              <h3 className="text-4xl font-bold text-[#003366] mb-6">Our Mission</h3>
+
+              <p className="text-lg text-[#003366] leading-relaxed mb-8">
+                To deliver exceptional, hands-on learning experiences that combine industry expertise, real-world projects, and personalized mentorship.
               </p>
-              
-              <div className="space-y-3 mt-4">
-                <div className="flex items-start gap-3 p-3 bg-white/50 rounded-lg">
-                  <div className="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Target className="w-3 h-3 text-primary" />
+
+              <div className="space-y-6">
+                {/* Practical Learning */}
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
+                      <circle cx="24" cy="24" r="22" fill="#FEF3C7" />
+                      <path d="M24 12L28 20L36 21L30 27L32 36L24 32L16 36L18 27L12 21L20 20L24 12Z" fill="#F59E0B" />
+                      <rect x="20" y="28" width="8" height="10" fill="#F59E0B" rx="1" />
+                    </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground text-sm mb-1">Practical Learning</h4>
-                    <p className="text-xs text-muted-foreground">
-                      Real-world projects and hands-on experience
-                    </p>
+                    <h4 className="text-xl font-bold text-[#003366] mb-2">Practical Learning</h4>
+                    <p className="text-base text-[#003366]/80">Real-world projects and hands-on experience</p>
                   </div>
                 </div>
-                
-                <div className="flex items-start gap-3 p-3 bg-white/50 rounded-lg">
-                  <div className="w-6 h-6 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Users className="w-3 h-3 text-secondary" />
+
+                {/* Expert Mentorship */}
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
+                      <circle cx="24" cy="24" r="22" fill="#FEF3C7" />
+                      <circle cx="24" cy="18" r="5" fill="#F59E0B" />
+                      <path d="M24 24C19 24 15 27 15 30V33H33V30C33 27 29 24 24 24Z" fill="#F59E0B" />
+                      <circle cx="18" cy="20" r="3" fill="#F59E0B" opacity="0.7" />
+                      <circle cx="30" cy="20" r="3" fill="#F59E0B" opacity="0.7" />
+                      <path d="M32 36L24 32L16 36" stroke="#F59E0B" strokeWidth="2" />
+                    </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground text-sm mb-1">Expert Mentorship</h4>
-                    <p className="text-xs text-muted-foreground">
-                      Learn from industry professionals
-                    </p>
+                    <h4 className="text-xl font-bold text-[#003366] mb-2">Expert Mentorship</h4>
+                    <p className="text-base text-[#003366]/80">Learn from industry professionals</p>
                   </div>
                 </div>
-                
-                <div className="flex items-start gap-3 p-3 bg-white/50 rounded-lg">
-                  <div className="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Award className="w-3 h-3 text-primary" />
+
+                {/* Career Support */}
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
+                      <circle cx="24" cy="24" r="22" fill="#FEF3C7" />
+                      <path d="M24 15C20 15 18 17 18 20V28C18 31 20 33 24 33C28 33 30 31 30 28V20C30 17 28 15 24 15Z" fill="#F59E0B" />
+                      <path d="M18 22H30" stroke="white" strokeWidth="2" />
+                      <circle cx="24" cy="18" r="2" fill="white" />
+                      <rect x="22" y="28" width="4" height="5" fill="#F59E0B" />
+                    </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground text-sm mb-1">Career Support</h4>
-                    <p className="text-xs text-muted-foreground">
-                      Comprehensive job assistance and guidance
-                    </p>
+                    <h4 className="text-xl font-bold text-[#003366] mb-2">Career Support</h4>
+                    <p className="text-base text-[#003366]/80">Comprehensive job assistance and guidance</p>
                   </div>
                 </div>
               </div>
@@ -196,17 +223,31 @@ export const AboutUs = () => {
 
         {/* Service Types */}
         <div>
-          <h3 className="text-3xl font-semibold text-center mb-8 text-[#1a4a52]">
-            Our Services
+          <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            Our <span className="text-[#0066CC]">Services</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {serviceTypes.map((service, index) => (
-              <Card key={index} className="p-6 text-center hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
-                <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-[#237d8c] to-[#349198] rounded-full flex items-center justify-center text-white">
-                  {service.icon}
+              <Card key={index} className="overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border border-gray-200 bg-white shadow-md rounded-2xl">
+                <div className="relative p-4  ">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-48 object-cover rounded-2xl"
+                  />
+                  {/* Orange circular icon overlapping bottom-left of image */}
+                  <div className="absolute mt-3 left-1/2 top-44 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white">
+                  <div className="w-16 h-16 bg-[#FF8800] rounded-full flex items-center justify-center text-white">
+                    {service.icon}
+                  </div>
                 </div>
-                <h4 className="text-lg font-semibold mb-2 text-[#1a4a52]">{service.title}</h4>
-                <p className="text-sm text-[#5a8088]">{service.description}</p>
+              </div>
+                </div>
+                <div className="p-6 pt-10 text-center">
+                  <h4 className="text-base font-bold mb-2 text-blue-950">{service.title}</h4>
+                  <p className="text-sm text-blue-600 leading-relaxed">{service.description}</p>
+                </div>
               </Card>
             ))}
           </div>

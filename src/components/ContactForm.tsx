@@ -20,14 +20,13 @@ export const ContactForm = () => {
 
   const courses = [
     "Workday HCM",
-    "Workday Finance", 
+    "Workday Finance",
     "Workday Integration",
     "Workday Extend",
     "PeopleSoft",
     "SAP Security",
     "ServiceNow",
     "AI & Machine Learning",
-    "SAP Security",
     "Cloud Technologies"
   ];
 
@@ -74,7 +73,7 @@ Email: ${formData.email}`;
   };
 
   return (
-    <section className="py-20 bg-muted/30" id="contact">
+    <section className="pb-10 bg-muted/30" id="contact">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -181,6 +180,13 @@ Email: ${formData.email}`;
                   <MessageCircle className="w-4 h-4 mr-2" />
                   WhatsApp Us
                 </Button>
+                <a href="tel:+919573529800" className="flex-1">
+                  <Button type="button" variant="outline" size="lg" className="w-full">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Us
+                  </Button>
+                </a>
+                
               </div>
             </form>
           </Card>
