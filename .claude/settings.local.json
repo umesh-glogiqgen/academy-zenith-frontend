@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(powershell -Command \"if (-not (Test-Path 'public\\icons')) { New-Item -ItemType Directory -Path 'public\\icons' }; Copy-Item -Path 'src\\assets\\icons\\*.png' -Destination 'public\\icons\\' -Force\":*)"
-    ],
-    "deny": [],
-    "ask": []
-  }
-}
