@@ -1,27 +1,30 @@
-import { Users, Building2, TrendingUp, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import studentsPlaced from "@/assets/icons/10000+ Students Placed.png";
+import partnerCompanies from "@/assets/icons/26 Partner Companies.png";
+import placementRate from "@/assets/icons/99% Placement Rate.png";
+import averagePackage from "@/assets/icons/INR 855K+ Average Package.png";
 
 const stats = [
   {
-    icon: Users,
+    icon: studentsPlaced,
     value: "10000+",
     label: "Students Placed",
     bgColor: "bg-orange-500"
   },
   {
-    icon: Building2,
+    icon: partnerCompanies,
     value: "26",
     label: "Partner Companies",
     bgColor: "bg-orange-500"
   },
   {
-    icon: TrendingUp,
+    icon: placementRate,
     value: "99%",
     label: "Placement Rate",
     bgColor: "bg-orange-500"
   },
   {
-    icon: Award,
+    icon: averagePackage,
     value: "INR 855K+",
     label: "Average Package",
     bgColor: "bg-orange-500"
@@ -33,7 +36,6 @@ export const PlacementStatsCards = () => {
     <div className="container mx-auto px-6 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => {
-          const IconComponent = stat.icon;
           return (
             <Card
               key={index}
@@ -42,7 +44,7 @@ export const PlacementStatsCards = () => {
               {/* Icon Circle */}
               <div className="flex justify-center mb-4">
                 <div className={`${stat.bgColor} rounded-full p-4 w-16 h-16 flex items-center justify-center`}>
-                  <IconComponent className="w-8 h-8 text-white" strokeWidth={2.5} />
+                  <img src={stat.icon} alt={stat.label} className="w-8 h-8" />
                 </div>
               </div>
 

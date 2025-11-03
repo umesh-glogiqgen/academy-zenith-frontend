@@ -174,7 +174,7 @@ export const PlacementPartners = () => {
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-800">
             Our Complete <span className="text-[#0066CC]">Placement Partner Network</span>
           </h2>
         </div>

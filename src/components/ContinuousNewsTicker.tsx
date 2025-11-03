@@ -1,18 +1,18 @@
 export const ContinuousNewsTicker = () => {
-    const tickerText = "🔥 Ongoing Training Batches: Workday HCM  |  Workday Finance  |  Workday Integration  |  Workday Extend  |  ServiceNow  |  AI & Machine Learning  |  PeopleSoft ERP  |  SAP Security  |  ";
+    const tickerText = "Workday Extend | ServiceNow | AI & Machine Learning | PeopleSoft ERP | SAP Security | 🔥 Ongoing Training Batches: Workday HCM | Workday Finance | Workday Integration | ";
 
     return (
       <div className="bg-white/90 rounded-xl p-4 mb-4 max-w-8xl mx-auto shadow-soft border border-mint-200/25 overflow-hidden">
         <div className="relative h-6 flex items-center">
 
           {/* News Label */}
-          <div className="bg-professional-primary text-white px-3 py-1 rounded-full text-xs font-bold mr-4 flex-shrink-0 animate-gentle-bounce">
+          <div className="bg-[#0066CC] text-white px-3 py-1 rounded text-xs font-bold mr-4 flex-shrink-0 animate-gentle-bounce font-sf-display">
             LIVE
           </div>
 
           {/* Scrolling Container */}
           <div className="flex-1 overflow-hidden relative">
-            <div className="animate-scroll-left whitespace-nowrap text-professional-primary font-semibold text-sm">
+            <div className="animate-scroll-left whitespace-nowrap text-[#0066CC] font-medium text-sm font-sf-display">
               {/* Duplicate text multiple times for seamless infinite loop */}
               <span className="inline-block">{tickerText}</span>
               <span className="inline-block">{tickerText}</span>

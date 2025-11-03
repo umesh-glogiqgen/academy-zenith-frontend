@@ -1,27 +1,30 @@
 import { Card } from "@/components/ui/card";
-import { Users, Building2, TrendingUp, DollarSign } from "lucide-react";
+import studentsPlaced from "@/assets/icons/10000+ Students Placed.png";
+import partnerCompanies from "@/assets/icons/26 Partner Companies.png";
+import placementRate from "@/assets/icons/99Placement Rate.png";
+import averagePackage from "@/assets/icons/INR 855K+ Average Package.png";
 
 const placementStats = [
   {
-    icon: Users,
+    icon: studentsPlaced,
     number: "10000+",
     label: "Students Placed",
     color: "bg-[#FF8800]"
   },
   {
-    icon: Building2,
+    icon: partnerCompanies,
     number: "26",
     label: "Partner Companies",
     color: "bg-[#FF8800]"
   },
   {
-    icon: TrendingUp,
+    icon: placementRate,
     number: "99%",
     label: "Placement Rate",
     color: "bg-[#FF8800]"
   },
   {
-    icon: DollarSign,
+    icon: averagePackage,
     number: "INR 855K+",
     label: "Average Package",
     color: "bg-[#FF8800]"
@@ -34,10 +37,10 @@ export const Testimonials = () => {
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-32">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0066CC]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-blue-950">
             Where Our <span className="text-[#0066CC]">Students Get Placed</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg  max-w-3xl mx-auto leading-relaxed font-sf-display font-normal text-gray-500">
             Our graduates are successfully placed at top-tier companies across various industries. Join our alumni network working at these prestigious organizations.
           </p>
         </div>
@@ -53,7 +56,7 @@ export const Testimonials = () => {
               <div className="flex justify-center    -mt-16 mb-6">
               <div className="w-21 h-21 bg-white  rounded-full flex items-center justify-center shadow-xl border-4 border-white">
                 <div className={`${stat.color} w-16  h-16 rounded-full flex items-center justify-center text-white shadow-lg`}>
-                  <stat.icon className="w-10 h-10" strokeWidth={2} />
+                  <img src={stat.icon} alt={stat.label} className="w-10 h-10" />
                   </div>
                 </div>
               </div>
@@ -68,12 +71,12 @@ export const Testimonials = () => {
 
 
               {/* Number */}
-              <div className="text-3xl md:text-2xl font-bold text-[#0066CC] ">
+              <div className="text-3xl md:text-2xl font-bold text-blue-950 ">
                 {stat.number}
               </div>
 
               {/* Label */}
-              <div className="text-sm md:text-xl font-semibold text-gray-700">
+              <div className="text-sm md:text-xl font-bold text-blue-950 font-sf-display">
                 {stat.label}
               </div>
             </Card>

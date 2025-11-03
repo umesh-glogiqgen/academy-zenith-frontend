@@ -1,35 +1,41 @@
 import { Card } from "@/components/ui/card";
-import { CheckCircle, Users, Award, Briefcase, MessageSquare, TrendingUp } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import realTimeProjects from "@/assets/icons/Real-Time Projects.png";
+import placementAssistance from "@/assets/icons/100Placement Assistance.png";
+import certificationGuidance from "@/assets/icons/Certification Guidance.png";
+import mentorship from "@/assets/icons/mentorship.png";
+import support from "@/assets/icons/24-7 Support.png";
+import alumniNetwork from "@/assets/icons/Alumni Network.png";
 
 export const WhyChooseUs = () => {
   const differentiators = [
     {
-      icon: <Briefcase className="w-8 h-8" />,
+      icon: realTimeProjects,
       title: "Real-Time Projects",
       description: "Work on live industry projects and case studies from actual business scenarios to gain practical experience"
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
+      icon: placementAssistance,
       title: "100% Placement Assistance",
       description: "Comprehensive placement support with resume building, mock interviews, and direct company connections"
     },
     {
-      icon: <Award className="w-8 h-8" />,
+      icon: certificationGuidance,
       title: "Certification Guidance",
       description: "Complete guidance for industry certifications with exam preparation and study materials"
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: mentorship,
       title: "1:1 Mentorship",
       description: "Personal mentoring sessions, doubt clearing, and group discussions for better understanding"
     },
     {
-      icon: <MessageSquare className="w-8 h-8" />,
+      icon: support,
       title: "24/7 Support",
       description: "Round-the-clock support through WhatsApp, email, and dedicated student portal"
     },
     {
-      icon: <CheckCircle className="w-8 h-8" />,
+      icon: alumniNetwork,
       title: "Alumni Network",
       description: "Strong alumni network working in top MNCs for referrals and career guidance"
     }
@@ -76,10 +82,10 @@ export const WhyChooseUs = () => {
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            Why Choose <span className="text-[#0066CC]">RR Technos</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-sf-display">
+            <span className="text-[#1E3A5F]">Why Choose </span><span className="text-[#0066CC]">RR Technos</span>
           </h2>
-          <p className="text-base text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-[#4A7BA7] max-w-3xl mx-auto leading-relaxed font-sf-display font-normal">
             Key differentiators that make us the preferred choice for tech training
           </p>
         </div>
@@ -91,17 +97,17 @@ export const WhyChooseUs = () => {
               {/* Circular Icon - Positioned at top center, overlapping the card */}
               <div className="absolute mt-3 left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white">
-                  <div className="w-16 h-16 bg-[#FF8800] rounded-full flex items-center justify-center text-white">
-                    {item.icon}
-                  </div>
+                 
+                    <img src={item.icon} alt={item.title} className="w-12 h-12" />
+                  
                 </div>
               </div>
 
               {/* Card Content */}
-              <Card className="bg-white  shadow-[0_0_10px_rgba(0,0,0,0.08)]    pt-3 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl border-0 text-white rounded-2xl text-center">
-               <div className="rounded-b-xl bg-[#0066CC] px-6 pt-16 pb-8  h-[98%]">
-               <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
-               <p className="text-white/90 text-sm leading-relaxed">{item.description}</p>
+              <Card className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.08)] pt-3 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl border-0 text-white rounded-2xl text-center">
+               <div className="rounded-b-xl bg-gradient-to-b from-[#0066CC] to-[#004C99] px-6 pt-16 pb-8 h-[98%]">
+               <h3 className="text-xl font-bold mb-4 text-white font-sf-display">{item.title}</h3>
+               <p className="text-white text-sm leading-relaxed font-sf-display font-normal">{item.description}</p>
                </div>
               </Card>
             </div>
@@ -110,8 +116,8 @@ export const WhyChooseUs = () => {
 
         {/* Training Modes */}
         <div className="bg-white rounded-3xl p-12 border border-gray-200">
-          <h3 className="text-3xl font-bold text-center mb-12 text-blue-950">
-            Flexible  <span className="text-[#0066CC]">Training Modes</span>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 font-sf-display">
+            <span className="text-[#1E3A5F]">Flexible </span><span className="text-[#0066CC]">Training Modes</span>
           </h3>
 
           {/* Single Card containing all three columns */}
@@ -140,7 +146,7 @@ export const WhyChooseUs = () => {
                     {mode.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-[#0066CC] flex-shrink-0 mt-0.5" />
-                        <span className="text-xs text-blue-700 leading-relaxed">{feature}</span>
+                        <span className="text-xs text-[#4A7BA7] leading-relaxed font-normal font-sf-display">{feature}</span>
                       </li>
                     ))}
                   </ul>

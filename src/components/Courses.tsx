@@ -7,12 +7,12 @@ const courses = [
   {
     id: 1,
     title: "Workday HCM",
-    description: "Master Human Capital Management with hands-on training in core HR, compensation, talent management, and more.",
+    description: "Comprehensive Human Capital Management with Workday. Learn Core HCM, Talent...",
     instructor: "Industry Expert",
-    modules: 15,
-    duration: "45 Days",
-    students: 500,
-    rating: 4.9,
+    modules: 18,
+    duration: "60 Days",
+    students: 450,
+    rating: 4.8,
     price: "Contact for Fees",
     badge: "Most Popular",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
@@ -22,12 +22,12 @@ const courses = [
   {
     id: 2,
     title: "Workday Finance",
-    description: "Comprehensive training in financial management, accounting, procurement, and expense management.",
+    description: "Master Workday Financial Management with hands-on training in accounting, budgeting...",
     instructor: "Certified Professional",
-    modules: 12,
-    duration: "40 Days",
-    students: 350,
-    rating: 4.8,
+    modules: 20,
+    duration: "75 Days",
+    students: 320,
+    rating: 4.7,
     price: "Contact for Fees",
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
@@ -37,11 +37,11 @@ const courses = [
   {
     id: 3,
     title: "Workday Integration",
-    description: "Learn EIB, Core Connector, Studio, Report Writer, and BIRT Reports for seamless system integration.",
+    description: "Learn Workday Studio, Cloud Connect, and EIB for seamless data integration and syste...",
     instructor: "Technical Expert",
-    modules: 18,
-    duration: "60 Days",
-    students: 280,
+    modules: 16,
+    duration: "50 Days",
+    students: 275,
     rating: 4.9,
     price: "Contact for Fees",
     badge: "Technical",
@@ -52,12 +52,12 @@ const courses = [
   {
     id: 4,
     title: "Workday Extend",
-    description: "Build custom applications on Workday platform using Workday Extend framework and tools.",
+    description: "Build custom applications on Workday platform using Extend technology and...",
     instructor: "Platform Specialist",
-    modules: 10,
-    duration: "30 Days",
-    students: 200,
-    rating: 4.7,
+    modules: 12,
+    duration: "40 Days",
+    students: 150,
+    rating: 4.6,
     price: "Contact for Fees",
     badge: "Advanced",
     badgeColor: "bg-gradient-to-r from-[#46a6a5] to-[#58bbb2]",
@@ -67,14 +67,14 @@ const courses = [
   {
     id: 5,
     title: "ServiceNow",
-    description: "Complete ServiceNow platform training including ITSM, ITOM, and custom application development.",
+    description: "Complete ServiceNow administration, development, and ITSM implementation wi...",
     instructor: "ServiceNow Expert",
-    modules: 20,
-    duration: "50 Days",
-    students: 420,
+    modules: 15,
+    duration: "80 Days",
+    students: 380,
     rating: 4.8,
     price: "Contact for Fees",
-    badge: "Trending",
+    badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#46a6a5]",
     icon: "⚙️",
     image: "/traning5.jpg"
@@ -82,9 +82,9 @@ const courses = [
   {
     id: 6,
     title: "AI & Machine Learning",
-    description: "Master artificial intelligence, deep learning, and machine learning with Python and real-world projects.",
+    description: "Master Python, ML algorithms, and Generative AI with hands-on projects using...",
     instructor: "AI Specialist",
-    modules: 25,
+    modules: 35,
     duration: "90 Days",
     students: 600,
     rating: 4.9,
@@ -112,7 +112,7 @@ const courses = [
   {
     id: 8,
     title: "SAP Security",
-    description: "Learn ethical hacking, network security, cloud security, and security compliance frameworks.",
+    description: "Learn ethical hacking, network security, cloud security, and security compliance...",
     instructor: "Security Expert",
     modules: 22,
     duration: "60 Days",
@@ -162,10 +162,10 @@ export const Courses = () => {
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            Our Training <span className="text-[#0066CC]">Programs</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-sf-display">
+            <span className="text-[#1E3A5F]">Our Training </span><span className="text-[#0066CC]">Programs</span>
           </h2>
-          <p className="text-base text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-[#4A7BA7] max-w-3xl mx-auto leading-relaxed font-sf-display font-normal">
             Industry-aligned courses with real-time projects, expert trainers, and 100% placement support
           </p>
         </div>
@@ -191,7 +191,7 @@ export const Courses = () => {
                   className="w-full h-full object-cover"
                 />
                 {/* Badge in top-right corner */}
-                <span className="absolute top-3 right-3 bg-[#17A2B8] text-white px-3 py-1 rounded-full text-xs font-semibold">
+                <span className="absolute top-3 right-3 bg-[#17A2B8] text-white px-3 py-1 rounded-full text-xs font-semibold font-sf-display">
                   {course.badge}
                 </span>
               </div>
@@ -199,31 +199,31 @@ export const Courses = () => {
               {/* Course Content */}
               <div className="p-5">
                 {/* Title */}
-                <h3 className="text-lg font-bold text-[#0066CC] mb-2 hover:text-[#0052A3] transition-colors">
+                <h3 className="text-lg font-bold text-[#0066CC] mb-2 hover:text-[#0052A3] transition-colors font-sf-display">
                   {course.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+                <p className="text-xs text-[#FF8866] mb-4 line-clamp-2 leading-relaxed font-sf-display font-normal">
                   {course.description}
                 </p>
 
                 {/* Info Grid */}
                 <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
-                  <div className="flex items-center gap-1.5 text-gray-600">
-                    <BookOpen className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 text-[#FF8866] font-sf-display">
+                    <BookOpen className="w-3.5 h-3.5 text-[#FF8866]" />
                     <span>{course.modules} Modules</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-orange-500">
-                    <Clock className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 text-[#FF8866] font-sf-display">
+                    <Clock className="w-3.5 h-3.5 text-[#FF8866]" />
                     <span>{course.duration}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-gray-600">
-                    <Users className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 text-[#FF8866] font-sf-display">
+                    <Users className="w-3.5 h-3.5 text-[#FF8866]" />
                     <span>{course.students}+ students</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-orange-500">
-                    <Star className="w-3.5 h-3.5 fill-current" />
+                  <div className="flex items-center gap-1.5 text-[#0066CC] font-sf-display">
+                    <Star className="w-3.5 h-3.5 fill-current text-[#0066CC]" />
                     <span>{course.rating}</span>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export const Courses = () => {
                 <div className="grid grid-cols-2 gap-2">
                   <Button
                     size="sm"
-                    className="bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-semibold py-2"
+                    className="bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-semibold py-2 font-sf-display"
                     onClick={handleEnrollClick}
                   >
                     Enquire Now
@@ -240,7 +240,7 @@ export const Courses = () => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="border-[#0066CC] text-[#0066CC] hover:bg-blue-50 text-xs font-semibold py-2"
+                    className="border-[#0066CC] text-[#0066CC] hover:bg-blue-50 text-xs font-semibold py-2 font-sf-display"
                     onClick={() => handleViewDetails(course.id, course.title)}
                   >
                     View Details

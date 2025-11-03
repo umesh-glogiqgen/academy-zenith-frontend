@@ -1,7 +1,7 @@
-import { ChevronRight, Briefcase, Shield, Brain } from "lucide-react";
-import icon1 from "../assets/icons/icon1.png";
-import icon3 from "../assets/icons/icon3.png";
-import icons2 from "../assets/icons/icons2.png";
+import { ChevronRight } from "lucide-react";
+import icon1 from "@/assets/icons/icon1.png";
+import icon2 from "@/assets/icons/icon2.png";
+import icon3 from "@/assets/icons/icon3.png";
 
 export const ThreeCards = () => {
   return (
@@ -16,13 +16,11 @@ export const ThreeCards = () => {
               <img src={icon1} alt="Workday Consultant Icon" className="w-6 h-6 sm:w-7 sm:h-7" />
             </div> */}
             {/* Briefcase icon - Orange */}
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
-            </div>
+           <img src={icon1} alt="Workday Consultant" className="h-12 w-12" />
           </div>
-          <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">Become A</p>
+          <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide  font-sf-display font-normal">Become A</p>
           <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 sm:mb-3">WORKDAY CONSULTANT</h3>
-          <a href="#courses" className="text-[#0066CC] font-bold inline-flex items-center hover:underline text-xs uppercase tracking-wide">
+          <a href="#courses" className="text-[#0066CC] font-normal font-bold inline-flex items-center hover:underline text-xs uppercase tracking-wide">
             KNOW MORE <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
           </a>
         </div>
@@ -35,13 +33,11 @@ export const ThreeCards = () => {
               <img src={icon3} alt="SAP Security Expert Icon" className="w-6 h-6 sm:w-7 sm:h-7" />
             </div> */}
             {/* Shield icon - Orange */}
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
-            </div>
+            <img src={icon2} alt="SAP Security Expert" className="h-12 w-12" />
           </div>
-          <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">Become A</p>
+          <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide font-normal">Become A</p>
           <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 sm:mb-3">SAP SECURITY EXPERT</h3>
-          <a href="#courses" className="text-[#0066CC] font-bold inline-flex items-center hover:underline text-xs uppercase tracking-wide">
+          <a href="#courses" className="text-[#0066CC] font-bold inline-flex items-center hover:underline text-xs uppercase font-normal tracking-wide">
             KNOW MORE <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
           </a>
         </div>
@@ -54,13 +50,11 @@ export const ThreeCards = () => {
               <img src={icon1} alt="Generative AI Icon" className="w-6 h-6 sm:w-7 sm:h-7" />
             </div> */}
             {/* Brain/AI icon - Orange */}
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
-            </div>
+            <img src={icon3} alt="Generative AI" className="h-12 w-12" />
           </div>
-          <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">Become A</p>
+          <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide font-normal">Become A</p>
           <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 sm:mb-3">Generative AI</h3>
-          <a href="#courses" className="text-[#0066CC] font-bold inline-flex items-center hover:underline text-xs uppercase tracking-wide">
+          <a href="#courses" className="text-[#0066CC] font-bold font-normal inline-flex items-center hover:underline text-xs uppercase tracking-wide">
             KNOW MORE <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
           </a>
         </div>
