@@ -203,11 +203,16 @@ Email: ${formData.email}`;
                   <MapPin className="w-5 h-5 text-professional-primary mt-1" />
                   <div>
                     <p className="font-medium">RR Technos Training Center- Hyderabad</p>
-                    <p className="text-sm text-muted-foreground">
-                      Hig-66, Neera Cafe Building, E-seva line, Near Temple bus stand, 
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Hig-66,+Neera+Cafe+Building,+E-seva+line,+Near+Temple+bus+stand,+K+P+H+B+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-professional-primary hover:underline transition-colors cursor-pointer"
+                    >
+                      Hig-66, Neera Cafe Building, E-seva line, Near Temple bus stand,
                       K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072
-                    </p>
-                  
+                    </a>
+
                   </div>
                 </div>
 
@@ -215,11 +220,16 @@ Email: ${formData.email}`;
                   <MapPin className="w-5 h-5 text-professional-primary mt-1" />
                   <div>
                     <p className="font-medium">RR Technos Training Center- Bangalore</p>
-                    <p className="text-sm text-muted-foreground">
-                    India Location:
-                    #1218, 3rd Floor, 'B' Sector 6th Main, KHB complex, Yelahanka New Town, India.
-                    </p>
-                  
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=%231218,+3rd+Floor,+'B'+Sector+6th+Main,+KHB+complex,+Yelahanka+New+Town,+India"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-professional-primary hover:underline transition-colors cursor-pointer"
+                    >
+                      India Location:
+                      #1218, 3rd Floor, 'B' Sector 6th Main, KHB complex, Yelahanka New Town, India.
+                    </a>
+
                   </div>
                 </div>
 
@@ -227,10 +237,15 @@ Email: ${formData.email}`;
                   <MapPin className="w-5 h-5 text-professional-primary mt-1" />
                   <div>
                     <p className="font-medium">RR Technos Training Center- Bangalore</p>
-                    <p className="text-sm text-muted-foreground">
-                    #222, 1st floor Rajendra Prasad building, KVB bank road , Rosemount international preschool Thubarahalli, Bangalore 560066
-                    </p>
-                  
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=%23222,+1st+floor+Rajendra+Prasad+building,+KVB+bank+road,+Rosemount+international+preschool+Thubarahalli,+Bangalore+560066"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-professional-primary hover:underline transition-colors cursor-pointer"
+                    >
+                      #222, 1st floor Rajendra Prasad building, KVB bank road , Rosemount international preschool Thubarahalli, Bangalore 560066
+                    </a>
+
                   </div>
                 </div>
                 

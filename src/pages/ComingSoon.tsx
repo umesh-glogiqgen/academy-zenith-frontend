@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
@@ -9,6 +10,14 @@ export default function ComingSoon() {
   const navigate = useNavigate();
   const location = useLocation();
   const courseData = location.state?.courseData;
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
 
   const handleContactUs = () => {
     const message = courseData

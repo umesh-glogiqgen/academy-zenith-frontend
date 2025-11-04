@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Mail, Award } from "lucide-react";
 // Import your logo from assets
 import rrtechnosLogo from "@/assets/logo-rr-technos.png";
-
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -13,11 +12,42 @@ export const Navigation = () => {
     { href: "#about", label: "About Us" },
     { href: "#contact", label: "Contact" }
   ];
+  const handleLogoClick = () => {
+    setIsMenuOpen(false);
+    const element = document.getElementById('home');
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "919573529800"; // WhatsApp number with country code
-    const message = encodeURIComponent("Hi, I'm interested in a free consultation");
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    if (element) {
+      const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      // Fallback to scroll to top if home section not found
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  const handleConsultationClick = () => {
+    setIsMenuOpen(false);
+
+    const element = document.getElementById('contact');
+    if (element) {
+      const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -26,8 +56,8 @@ export const Navigation = () => {
 
     const targetId = href.replace('#', '');
 
-    // Function to scroll to element
-    const scrollToElement = () => {
+    // Function to scroll to element with retry logic for lazy-loaded sections
+    const scrollToElement = (retryCount = 0) => {
       const element = document.getElementById(targetId);
 
       if (element) {
@@ -40,25 +70,26 @@ export const Navigation = () => {
           behavior: 'smooth'
         });
       } else {
-        // If element not found, try scrolling after a delay (for lazy-loaded sections)
-        setTimeout(() => {
-          const retryElement = document.getElementById(targetId);
-          if (retryElement) {
-            const navbarHeight = 118;
-            const elementPosition = retryElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+        // For lazy-loaded sections (like contact), scroll toward the bottom first
+        // This triggers the IntersectionObserver to load the section
+        if (retryCount === 0) {
+          // Scroll to near the bottom to trigger lazy loading
+          window.scrollTo({
+            top: document.documentElement.scrollHeight - window.innerHeight - 200,
+            behavior: 'smooth'
+          });
 
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        }, 300);
+          // Retry after lazy section has time to load
+          setTimeout(() => scrollToElement(1), 800);
+        } else if (retryCount < 3) {
+          // Additional retries with increasing delays
+          setTimeout(() => scrollToElement(retryCount + 1), 300);
+        }
       }
     };
 
     // Small delay to ensure mobile menu closes first
-    setTimeout(scrollToElement, 100);
+    setTimeout(() => scrollToElement(0), 100);
   };
 
   return (
@@ -69,16 +100,16 @@ export const Navigation = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Mail className="w-3 h-3" />
-              <span>rrtechnos.info@gmail.com</span>
+              <span>rrtechnos.training@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-3 h-3" />
-              <span>+91 9573529800</span>
+             
+              <span></span>
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Award className="w-5 h-5 text-[#FF8800]" />
-            <span className="font-semibold">Trusted by 500+ Institutions</span>
+          <Phone className="w-3 h-3" />
+            <span className="font-semibold">+91 9573529800</span>
           </div>
         </div>
       </div>
@@ -92,7 +123,8 @@ export const Navigation = () => {
               <img
                 src={rrtechnosLogo}
                 alt="RR TECHNOS"
-                className="h-12 w-auto object-contain"
+                className="h-12 w-auto object-contain cursor-pointer"
+                onClick={handleLogoClick}
               />
             </div>
 
@@ -113,7 +145,7 @@ export const Navigation = () => {
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-4">
               <Button
-                onClick={handleWhatsAppClick}
+                onClick={handleConsultationClick}
                 className="bg-[#FF8800] hover:bg-[#FF9920] text-white transition-colors px-6"
               >
                 Free Consultation
@@ -147,7 +179,7 @@ export const Navigation = () => {
                 ))}
                 <div className="pt-4 border-t border-gray-200 space-y-2">
                   <Button
-                    onClick={handleWhatsAppClick}
+                    onClick={handleConsultationClick}
                     className="w-full bg-[#FF8800] hover:bg-[#FF9920] text-white"
                   >
                     Free Consultation

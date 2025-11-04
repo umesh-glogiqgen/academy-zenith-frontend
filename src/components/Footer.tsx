@@ -5,6 +5,24 @@ import rrtechnosLogo from "@/assets/rr-technos-logo.png";
 import { WhatsAppContact } from "@/components/WhatsAppContact";
 
 export const Footer = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-white-900 text-primary">
       {/* Newsletter Section */}
@@ -70,10 +88,10 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-orange-400">Quick Links</h4>
             <ul className="space-y-3 text-primary text-sm">
-              <li><a href="#home" className="hover:text-orange-400 transition-colors">Home</a></li>
-              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Training Courses</a></li>
-              <li><a href="#about" className="hover:text-orange-400 transition-colors">About Us</a></li>
-              <li><a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a></li>
+              <li><a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="hover:text-orange-400 transition-colors cursor-pointer">Home</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Training Courses</a></li>
+              <li><a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="hover:text-orange-400 transition-colors cursor-pointer">About Us</a></li>
+              <li><a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="hover:text-orange-400 transition-colors cursor-pointer">Contact</a></li>
             </ul>
           </div>
 
@@ -81,11 +99,14 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-orange-400">Training Programs</h4>
             <ul className="space-y-3 text-primary text-sm">
-              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Workday HCM</a></li>
-              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Workday Finance</a></li>
-              <li><a href="#courses" className="hover:text-orange-400 transition-colors">Workday Integration</a></li>
-              <li><a href="#courses" className="hover:text-orange-400 transition-colors">ServiceNow</a></li>
-              <li><a href="#courses" className="hover:text-orange-400 transition-colors">AI & Machine Learning</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday HCM</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Finance</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Integration</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Extend</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">ServiceNow</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">PeopleSoft ERP</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">SAP Security</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">AI & Machine Learning</a></li>
             </ul>
           </div>
 
@@ -95,11 +116,16 @@ export const Footer = () => {
             <ul className="space-y-4 text-primary text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" />
-                <span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Hig-66,+Neera+Cafe+Building,+E-seva+line,+Near+Temple+bus+stand,+K+P+H+B+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-orange-400 transition-colors cursor-pointer"
+                >
                 RR Technos Training Center
 
 Hig-66, Neera Cafe Building, E-seva line, Near Temple bus stand, K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
@@ -107,7 +133,7 @@ Hig-66, Neera Cafe Building, E-seva line, Near Temple bus stand, K P H B Phase 3
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                <span className="break-all">rrtechnos.info@gmail.com</span>
+                <span className="break-all">rrtechnos.training@gmail.com</span>
               </li>
             </ul>
 

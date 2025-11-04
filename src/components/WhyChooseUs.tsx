@@ -121,13 +121,13 @@ export const WhyChooseUs = () => {
           </h3>
 
           {/* Single Card containing all three columns */}
-          <div className=" overflow-hidden ">
-            <div className="grid md:grid-cols-3 ">
+          <div className="overflow-hidden">
+            <div className="grid md:grid-cols-3 gap-6">
               {trainingModes.map((mode, index) => (
-                <div key={index} className="p-6">
+                <div key={index} className="flex flex-col h-full">
                   {/* Image - Only show for modes that have image property */}
                   {mode.image && (
-                    <div className="relative h-40 overflow-hidden rounded-lg mb-4">
+                    <div className="relative h-48 overflow-hidden rounded-lg mb-4">
                       <img
                         src={mode.image}
                         alt={mode.title}
@@ -137,16 +137,16 @@ export const WhyChooseUs = () => {
                   )}
 
                   {/* Orange Button Title */}
-                  <div className="bg-[#FF8800] text-white text-center py-3 px-4 rounded-lg font-bold text-base mb-4">
+                  <div className="bg-[#FF8800] text-white text-center py-3 px-4 rounded-lg font-bold text-lg mb-6">
                     {mode.title}
                   </div>
 
                   {/* Features List */}
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-3 flex-grow">
                     {mode.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-[#0066CC] flex-shrink-0 mt-0.5" />
-                        <span className="text-xs text-[#4A7BA7] leading-relaxed font-normal font-sf-display">{feature}</span>
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <CheckCircle className="w-5 h-5 text-[#0066CC] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-[#4A7BA7] leading-relaxed font-normal font-sf-display">{feature}</span>
                       </li>
                     ))}
                   </ul>

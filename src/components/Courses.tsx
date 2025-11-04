@@ -77,7 +77,7 @@ const courses = [
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#46a6a5]",
     icon: "⚙️",
-    image: "/traning5.jpg"
+    image: "/virtual-classroom-study-space.jpg"
   },
   {
     id: 6,
@@ -107,7 +107,7 @@ const courses = [
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
     icon: "🏢",
-    image: "/traning7.jpg"
+    image: "/online-education-concept-studying-science-laptop-modern-technologies.jpg"
   },
   {
     id: 8,
@@ -122,7 +122,7 @@ const courses = [
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
     icon: "🔐",
-    image: "/traning8.jpg"
+    image: "/how-is-your-deals-group-people-business-conference-modern-classroom-daytime.jpg"
   }
 ];
 

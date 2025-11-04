@@ -81,9 +81,7 @@ const Index = () => {
         <PlacementPartners />
       </LazySection>
 
-      <LazySection forceRender={forceRenderSections.includes('contact')}>
-        <ContactForm/>
-      </LazySection>
+      <ContactForm />
 
       <Footer />
       

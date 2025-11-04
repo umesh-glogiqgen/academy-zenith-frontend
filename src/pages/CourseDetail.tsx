@@ -24,7 +24,7 @@ import {
   Mail,
   HelpCircle
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Course data based on your provided documents
 const courseData: Record<string, any> = {
@@ -43,6 +43,7 @@ const courseData: Record<string, any> = {
     certificate: "Workday HCM Certified",
     nextBatch: "January 15, 2025",
     icon: "👥",
+    image: "/traning1.jpg",
     badge: "Most Popular",
     badgeColor: "bg-gradient-to-r from-blue-500 to-blue-600",
     curriculum: [
@@ -154,6 +155,7 @@ const courseData: Record<string, any> = {
     certificate: "Workday Finance Certified",
     nextBatch: "February 1, 2025",
     icon: "💰",
+    image: "/traning2.jpg",
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
     curriculum: [
@@ -276,6 +278,7 @@ const courseData: Record<string, any> = {
     certificate: "Workday Integration Certified",
     nextBatch: "January 20, 2025",
     icon: "🔧",
+    image: "/traning3.jpg",
     badge: "Technical",
     badgeColor: "bg-gradient-to-r from-purple-500 to-purple-600",
     curriculum: [
@@ -385,6 +388,7 @@ const courseData: Record<string, any> = {
     certificate: "Workday Extend Certified",
     nextBatch: "February 15, 2025",
     icon: "⚡",
+    image: "/traning4.jpg",
     badge: "Advanced",
     badgeColor: "bg-gradient-to-r from-orange-500 to-orange-600",
     curriculum: [
@@ -480,6 +484,7 @@ const courseData: Record<string, any> = {
     certificate: "AI/ML Certified Developer",
     nextBatch: "January 10, 2025",
     icon: "🤖",
+    image: "/traning6.jpg",
     badge: "Future Tech",
     badgeColor: "bg-gradient-to-r from-purple-500 to-purple-600",
     curriculum: [
@@ -551,6 +556,14 @@ export default function CourseDetail() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   const course = courseId ? courseData[courseId] : null;
+
+  // Scroll to top when component mounts or courseId changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, [courseId]);
 
   if (!course) {
     return (
@@ -682,7 +695,13 @@ Thank you!`;
             </div>
             
             <div className="text-center">
-              <div className="text-8xl mb-4">{course.icon}</div>
+              <div className="mb-4">
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  className="w-64 h-48 object-cover rounded-lg mx-auto shadow-2xl"
+                />
+              </div>
               <Card className="p-6 bg-white/10 backdrop-blur border-white/20">
                 <div className="grid grid-cols-2 gap-4 text-white">
                   <div>
