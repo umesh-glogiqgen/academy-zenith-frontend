@@ -17,6 +17,7 @@ import { PlacementPartners } from "@/components/PlacementPartners";
 import { ContactForm } from "@/components/ContactForm";
 import { PlacementStatsCards } from "@/components/PlacementStatsCards";
 import { LazySection } from "@/components/LazySection";
+import { OurVision } from "@/components/OurVision";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -57,6 +58,8 @@ const Index = () => {
 
       {/* Render AboutUs and Courses immediately for navigation */}
       <AboutUs />
+
+   
 
       <LazySection forceRender={forceRenderSections.includes('why-choose')}>
         <WhyChooseUs />

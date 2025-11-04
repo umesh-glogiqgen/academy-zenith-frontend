@@ -136,6 +136,8 @@ export const Courses = () => {
 
   const handleViewDetails = (courseId: number, courseTitle: string) => {
     // Map course IDs to their URL slugs
+    // Courses with detail pages: 1-Workday HCM, 2-Workday Finance, 3-Workday Integration, 4-Workday Extend, 6-AI/ML
+    // Coming Soon pages: 5-ServiceNow, 7-PeopleSoft ERP, 8-SAP Security
     const courseSlugMap: Record<number, string> = {
       1: 'workday-hcm',
       2: 'workday-finance',
@@ -152,7 +154,7 @@ export const Courses = () => {
       // Navigate to the course detail page with course data
       navigate(`/course/${courseSlug}`, { state: { courseData } });
     } else {
-      // For courses without detail pages, navigate to coming soon page
+      // For courses without detail pages (5, 7, 8), navigate to coming soon page
       navigate('/coming-soon', { state: { courseData } });
     }
   };

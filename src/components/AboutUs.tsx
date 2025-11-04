@@ -66,9 +66,7 @@ export const AboutUs = () => {
             {/* Vision Content - Left */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-14 h-14 bg-[#0066CC] rounded-full flex items-center justify-center">
-                  <Eye className="w-7 h-7 text-white" />
-                </div>
+                
                 <h3 className="text-3xl font-bold text-gray-800">Our Vision</h3>
               </div>
 
