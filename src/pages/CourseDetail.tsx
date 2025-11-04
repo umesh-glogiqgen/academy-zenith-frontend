@@ -1,18 +1,18 @@
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import {
-  ArrowLeft,
-  Clock,
-  Users,
-  Star,
-  BookOpen,
-  Award,
-  CheckCircle,
-  MessageCircle,
+import { 
+  ArrowLeft, 
+  Clock, 
+  Users, 
+  Star, 
+  BookOpen, 
+  Award, 
+  CheckCircle, 
+  MessageCircle, 
   Download,
   Play,
   Calendar,
@@ -24,7 +24,7 @@ import {
   Mail,
   HelpCircle
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // Course data based on your provided documents
 const courseData: Record<string, any> = {
@@ -546,18 +546,11 @@ const courseData: Record<string, any> = {
 export default function CourseDetail() {
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
   const [selectedModule, setSelectedModule] = useState(0);
   const [showAllFAQs, setShowAllFAQs] = useState(false);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   const course = courseId ? courseData[courseId] : null;
-  const passedCourseData = location.state?.courseData;
-
-  // Scroll to top when component mounts or courseId changes
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [courseId]);
 
   if (!course) {
     return (
@@ -624,12 +617,10 @@ Thank you!`;
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-white">
         <div className="container mx-auto px-6">
-          <Button
-            variant="ghost"
+          <Button 
+            variant="ghost" 
             className="text-primary mb-6"
-            onClick={() => {
-              navigate('/', { state: { scrollTo: 'courses' } });
-            }}
+            onClick={() => navigate('/')}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Courses
@@ -689,19 +680,9 @@ Thank you!`;
                 </Button>
               </div>
             </div>
-
+            
             <div className="text-center">
-              {passedCourseData?.image ? (
-                <div className="mb-4 rounded-lg overflow-hidden shadow-2xl">
-                  <img
-                    src={passedCourseData.image}
-                    alt={course.title}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
-              ) : (
-                <div className="text-8xl mb-4">{course.icon}</div>
-              )}
+              <div className="text-8xl mb-4">{course.icon}</div>
               <Card className="p-6 bg-white/10 backdrop-blur border-white/20">
                 <div className="grid grid-cols-2 gap-4 text-white">
                   <div>

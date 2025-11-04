@@ -11,6 +11,8 @@ import flexibleTimings from "@/assets/icons/Flexible Timings.png"
 import practicalLearning from "@/assets/icons/Practical Learning.png"
 import expertMentorship from "@/assets/icons/Expert Mentorship.png"
 import careerSupport from "@/assets/icons/Career Support.png"
+import rocket from "@/assets/rocket1.png"
+import newArrow from "@assets/icons/business-strategy-success-target-goals.png"
 export const AboutUs = () => {
   const credentials = [
     "5+ Top Workday Experienced Professionals",
@@ -149,16 +151,41 @@ export const AboutUs = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Mission Image - Left */}
             <div className="relative lg:order-1">
-              <div className="relative">
-                <img
-                  src="/fl.png"
-                  alt="Modern training facility"
-                  className="w-full h-[450px] object-cover rounded-3xl "
-                />
-                {/* White Card Overlay - Top Right */}
-               
-              </div>
-            </div>
+  <div className="relative">
+    <img
+      src="/business-strategy-success-target-goals.jpg"
+      alt="Modern training facility"
+      className="w-[97%] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] object-cover rounded-3xl"
+    />
+
+<div className="absolute top-16 right-0 left-[20px] md:-top-26 md:-right-[-200px] md:left-[320px]  lg:-top-26 lg:-right-[-200px] lg:left-[270px] xl:-right-6 flex items-center justify-between w-full sm:w-[90%] md:w-[420px] bg-white border-4 border-orange-500 rounded-2xl p-3 sm:p-4 shadow-xl animate-[fadeInUp_0.6s_ease-out]">
+  {/* Rocket Icon */}
+  <img
+    src={rocket}
+    alt="rocket"
+    className="h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 absolute -top-12 sm:-top-14 md:-top-16 right-2 sm:right-4 md:left-[230px] mb-1"
+  />
+
+  {/* Text Content */}
+  <div className="flex flex-col justify-center text-left space-y-1 pr-20 sm:pr-24 md:pr-0">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 leading-tight">
+      <span className="font-extrabold inline-block -translate-y-2 sm:-translate-y-3 mr-1">Over </span>
+      <span className="text-4xl sm:text-5xl md:text-6xl font-normal">95%</span>
+    </div>
+
+    <div className="text-gray-800 text-xs sm:text-sm md:text-base leading-snug w-full">
+      <strong className="text-lg sm:text-xl md:text-2xl">of our learners</strong>
+      <br />
+      achieve their career goals with <strong>RR Technos.</strong>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+      
+    
 
             {/* Mission Content - Right */}
             <div className="space-y-5 lg:order-2">
