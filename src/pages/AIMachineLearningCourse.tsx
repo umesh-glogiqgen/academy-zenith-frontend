@@ -151,7 +151,7 @@ const AIMLCourseDetailsPage = () => {
               Back to Courses
             </button>
             <span className="mx-2">›</span>
-            <span>AI & Machine Learning</span>
+            <span>Genrative AI</span>
             <span className="mx-2">›</span>
             <span className="text-orange-600 font-medium">Generative AI with Python</span>
           </div>

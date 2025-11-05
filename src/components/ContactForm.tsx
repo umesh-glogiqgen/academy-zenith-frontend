@@ -8,6 +8,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 
 export const ContactForm = () => {
+  const [isFocused, setIsFocused] = useState(false);
+
+  const [isFocused2, setIsFocused2] = useState(false);
+  const [isFocused3, setIsFocused3] = useState(false);
+
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,22 +33,22 @@ export const ContactForm = () => {
     "PeopleSoft",
     "SAP Security",
     "ServiceNow",
-    "AI & Machine Learning",
+    "Generative AI",
     "Cloud Technologies"
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // Here you can integrate with your backend API
       // For now, we'll just log the data and show success
       console.log("Form submitted:", formData);
-      
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Reset form after successful submission
       setFormData({
         name: "",
@@ -50,9 +57,9 @@ export const ContactForm = () => {
         course: "",
         others: ""
       });
-      
+
       alert("Thank you! Your inquiry has been submitted successfully. We'll contact you soon.");
-      
+
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Sorry, there was an error submitting your form. Please try again.");
@@ -67,7 +74,7 @@ export const ContactForm = () => {
 Name: ${formData.name}
 Course Interest: ${formData.course || 'General Inquiry'}
 Email: ${formData.email}`;
-    
+
     const whatsappUrl = `https://wa.me/919573529800?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -80,7 +87,7 @@ Email: ${formData.email}`;
             Contact <span className="text-professional-primary">Us</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your tech journey? Get in touch with us for course details, 
+            Ready to start your tech journey? Get in touch with us for course details,
             demo sessions, or any queries. We're here to help you succeed!
           </p>
         </div>
@@ -91,7 +98,7 @@ Email: ${formData.email}`;
             <h3 className="text-2xl font-semibold mb-6 text-professional-secondary">
               Get Started Today
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name">Name *</Label>
@@ -99,10 +106,13 @@ Email: ${formData.email}`;
                   id="name"
                   type="text"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
                   className="mt-1"
-                  placeholder="Enter your full name"
+                  placeholder={isFocused ? "" : "Enter your full name"}
+                
                 />
               </div>
 
@@ -112,10 +122,13 @@ Email: ${formData.email}`;
                   id="email"
                   type="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
+                  onFocus={() => setIsFocused2(true)}
+                  onBlur={() => setIsFocused2(false)}
                   className="mt-1"
-                  placeholder="your.email@example.com"
+                  placeholder={isFocused2 ? "" : "your.email@example.com"}
+                  
                 />
               </div>
 
@@ -124,9 +137,11 @@ Email: ${formData.email}`;
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="+91 9876543210"
+                  placeholder={isFocused3 ? "" : "+91 98xxxxxxx"}
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onFocus={() => setIsFocused3(true)}
+                  onBlur={() => setIsFocused3(false)}
                   required
                   className="mt-1"
                 />
@@ -134,7 +149,7 @@ Email: ${formData.email}`;
 
               <div>
                 <Label htmlFor="course">Course of Interest *</Label>
-                <Select value={formData.course} onValueChange={(value) => setFormData({...formData, course: value})}>
+                <Select value={formData.course} onValueChange={(value) => setFormData({ ...formData, course: value })}>
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select a course" />
                   </SelectTrigger>
@@ -154,26 +169,26 @@ Email: ${formData.email}`;
                   id="others"
                   placeholder="Any specific questions, preferred batch timings, or requirements..."
                   value={formData.others}
-                  onChange={(e) => setFormData({...formData, others: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, others: e.target.value })}
                   className="mt-1"
                   rows={4}
                 />
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  type="submit" 
-                  variant="course" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  variant="course"
+                  size="lg"
                   className="flex-1"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                 </Button>
-                <Button 
-                  type="button" 
-                  variant="outline" 
-                  size="lg" 
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="lg"
                   className="flex-1"
                   onClick={handleWhatsAppClick}
                 >
@@ -186,7 +201,7 @@ Email: ${formData.email}`;
                     Call Us
                   </Button>
                 </a>
-                
+
               </div>
             </form>
           </Card>
@@ -197,7 +212,7 @@ Email: ${formData.email}`;
               <h3 className="text-2xl font-semibold mb-6 text-professional-secondary">
                 Visit Our Training Center
               </h3>
-              
+
               <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-professional-primary mt-1" />
@@ -248,29 +263,29 @@ Email: ${formData.email}`;
 
                   </div>
                 </div>
-                
-                
-                
+
+
+
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-professional-primary" />
                   <div>
                     <p className="font-medium">Phone & WhatsApp</p>
-                    <p className="text-sm text-muted-foreground">+91 9573529800</p>
+                    <p className="text-sm text-muted-foreground">+91 95735 29800</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-professional-primary" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">rrtechnos@gmail.com</p>
+                    <p className="text-sm text-muted-foreground">rrtechnos.training@gmail.com</p>
                   </div>
                 </div>
               </div>
 
-              <a 
-                href="https://maps.app.goo.gl/HKWRCvsbtStBQvuw5" 
-                target="_blank" 
+              <a
+                href="https://maps.app.goo.gl/HKWRCvsbtStBQvuw5"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button variant="outline" size="lg" className="w-full mb-4">

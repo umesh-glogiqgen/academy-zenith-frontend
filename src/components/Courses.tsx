@@ -10,8 +10,8 @@ const courses = [
     description: "Comprehensive Human Capital Management with Workday. Learn Core HCM, Talent...",
     instructor: "Industry Expert",
     modules: 18,
-    duration: "60 Days",
-    students: 450,
+    duration: "45 Days",
+    students: 5000,
     rating: 4.8,
     price: "Contact for Fees",
     badge: "Most Popular",
@@ -25,8 +25,8 @@ const courses = [
     description: "Master Workday Financial Management with hands-on training in accounting, budgeting...",
     instructor: "Certified Professional",
     modules: 20,
-    duration: "75 Days",
-    students: 320,
+    duration: "45 Days",
+    students: 5000,
     rating: 4.7,
     price: "Contact for Fees",
     badge: "High Demand",
@@ -40,8 +40,8 @@ const courses = [
     description: "Learn Workday Studio, Cloud Connect, and EIB for seamless data integration and syste...",
     instructor: "Technical Expert",
     modules: 16,
-    duration: "50 Days",
-    students: 275,
+    duration: "45 Days",
+    students: "2000",
     rating: 4.9,
     price: "Contact for Fees",
     badge: "Technical",
@@ -55,7 +55,7 @@ const courses = [
     description: "Build custom applications on Workday platform using Extend technology and...",
     instructor: "Platform Specialist",
     modules: 12,
-    duration: "40 Days",
+    duration: "45 Days",
     students: 150,
     rating: 4.6,
     price: "Contact for Fees",
@@ -70,7 +70,7 @@ const courses = [
     description: "Complete ServiceNow administration, development, and ITSM implementation wi...",
     instructor: "ServiceNow Expert",
     modules: 15,
-    duration: "80 Days",
+    duration: "45 Days",
     students: 380,
     rating: 4.8,
     price: "Contact for Fees",
@@ -81,7 +81,7 @@ const courses = [
   },
   {
     id: 6,
-    title: "AI & Machine Learning",
+    title: "Genrative AI",
     description: "Master Python, ML algorithms, and Generative AI with hands-on projects using...",
     instructor: "AI Specialist",
     modules: 35,
@@ -222,7 +222,7 @@ export const Courses = () => {
                   </div>
                   <div className="flex items-center gap-1.5 text-[#FF8866] font-sf-display">
                     <Users className="w-3.5 h-3.5 text-[#FF8866]" />
-                    <span>{course.students}+ students</span>
+                    <span>{course.students}+ Learners</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-[#0066CC] font-sf-display">
                     <Star className="w-3.5 h-3.5 fill-current text-[#0066CC]" />

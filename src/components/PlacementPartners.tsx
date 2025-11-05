@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
 
-export const PlacementPartners = () => {
+export const  PlacementPartners= () => {
   
   const partners = [
     {
@@ -162,7 +167,6 @@ export const PlacementPartners = () => {
   ];
 
 
-
   const [failedLogos, setFailedLogos] = useState<Set<number>>(new Set());
 
   const handleImageError = (index: number) => {
@@ -170,40 +174,403 @@ export const PlacementPartners = () => {
   };
 
   return (
-    <section className="py-10  bg-white">
-      <div className="container mx-auto px-6">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-800">
-            Our Complete <span className="text-[#0066CC]">Placement Partner Network</span>
-          </h2>
-        </div>
+    <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+      <div className="container mx-auto px-4">
+        {/* Title */}
+        <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 text-gray-900 tracking-tight">
+        Our Alumni Work <span className="text-blue-800"> With Leading Organizations</span>
+        </h2>
 
-        {/* Partner Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-items-center max-w-7xl mx-auto">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center p-4 md:p-6 transition-all duration-300 bg-gray-50 rounded-lg border border-gray-200 hover:border-[#0066CC] hover:shadow-md w-full h-24"
-            >
-              {!partner.logo || failedLogos.has(index) ? (
-                <div className="flex items-center justify-center h-full w-full">
-                  <span className="text-[#0066CC] font-bold text-sm md:text-base text-center px-2">
-                    {partner.name}
-                  </span>
+        {/* Carousel Container */}
+        <div className="relative max-w-[1400px] mx-auto perspective-container">
+          <Swiper
+            effect="coverflow"
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={3}
+            spaceBetween={-80}
+            loop={true}
+            loopedSlides={partners.length}
+            speed={800}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 280,
+              modifier: 2.8,
+              slideShadows: true,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+              dynamicMainBullets: 3,
+            }}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+            className="infinite-erp-swiper"
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                }
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: -40,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 200,
+                  modifier: 2.2,
+                }
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: -80,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 280,
+                  modifier: 2.8,
+                }
+              }
+            }}
+          >
+            {partners.map((partner, index) => (
+              <SwiperSlide key={`${partner.name}-${index}`}>
+                <div className="slide-wrapper">
+                  <div className="infinite-partner-card">
+                    <div className="card-inner">
+                      <div className="card-face">
+                        {!partner.logo || failedLogos.has(index) ? (
+                          <span className="text-3xl md:text-4xl font-bold text-gray-700">
+                            {partner.name}
+                          </span>
+                        ) : (
+                          <img
+                            src={partner.logo}
+                            alt={`${partner.name} Logo`}
+                            className="partner-logo-infinite"
+                            onError={() => handleImageError(index)}
+                          />
+                        )}
+                      </div>
+                    </div>
+                    {/* Animated gradient overlay */}
+                    <div className="gradient-overlay"></div>
+                  </div>
                 </div>
-              ) : (
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-10 md:h-12 w-auto object-contain max-w-full"
-                  onError={() => handleImageError(index)}
-                />
-              )}
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
+
+      {/* Advanced Custom Styles with Infinite Animations */}
+      <style jsx>{`
+        .perspective-container {
+          perspective: 2500px;
+        }
+
+        .infinite-erp-swiper {
+          padding: 80px 20px 120px;
+          position: relative;
+        }
+
+        .slide-wrapper {
+          padding: 20px;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+        }
+
+        .infinite-partner-card {
+          position: relative;
+          width: 100%;
+          height: 420px;
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(250, 251, 252, 0.98) 100%
+          );
+          border-radius: 28px;
+          box-shadow: 
+            0 25px 70px -20px rgba(0, 0, 0, 0.18),
+            0 12px 35px -12px rgba(0, 0, 0, 0.12),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.7);
+          overflow: hidden;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 1px solid rgba(226, 232, 240, 0.8);
+          transform-style: preserve-3d;
+        }
+
+        .card-inner {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+        }
+
+        .card-face {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 50px;
+          position: relative;
+          z-index: 2;
+          backface-visibility: hidden;
+        }
+
+        .partner-logo-infinite {
+          max-width: 80%;
+          max-height: 80%;
+          object-fit: contain;
+          filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.08));
+          transition: all 0.4s ease;
+        }
+
+        /* Gradient overlay for depth */
+        .gradient-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            135deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 100%
+          );
+          opacity: 0;
+          transition: opacity 0.6s ease;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        /* Active slide (center) - Full visibility */
+        .infinite-erp-swiper .swiper-slide-active .slide-wrapper {
+          transform: scale(1.08) translateZ(50px);
+          z-index: 10;
+        }
+
+        .infinite-erp-swiper .swiper-slide-active .infinite-partner-card {
+          box-shadow: 
+            0 35px 90px -25px rgba(0, 0, 0, 0.25),
+            0 18px 45px -18px rgba(0, 0, 0, 0.18),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+            0 0 0 3px rgba(59, 130, 246, 0.2);
+          border: 2px solid rgba(59, 130, 246, 0.4);
+          transform: translateZ(0);
+        }
+
+        .infinite-erp-swiper .swiper-slide-active .partner-logo-infinite {
+          filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.12));
+          transform: scale(1.05);
+        }
+
+        .infinite-erp-swiper .swiper-slide-active .gradient-overlay {
+          opacity: 1;
+        }
+
+        /* Next slide (appearing from right) */
+        .infinite-erp-swiper .swiper-slide-next .slide-wrapper {
+          transform: scale(0.88) translateZ(-40px) rotateY(-12deg);
+          opacity: 0.65;
+        }
+
+        .infinite-erp-swiper .swiper-slide-next .infinite-partner-card {
+          box-shadow: 
+            0 15px 40px -15px rgba(0, 0, 0, 0.15),
+            0 8px 20px -8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Previous slide (appearing from left) */
+        .infinite-erp-swiper .swiper-slide-prev .slide-wrapper {
+          transform: scale(0.88) translateZ(-40px) rotateY(12deg);
+          opacity: 0.65;
+        }
+
+        .infinite-erp-swiper .swiper-slide-prev .infinite-partner-card {
+          box-shadow: 
+            0 15px 40px -15px rgba(0, 0, 0, 0.15),
+            0 8px 20px -8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Slides further out (preparing to enter) */
+        .infinite-erp-swiper .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) .slide-wrapper {
+          transform: scale(0.75) translateZ(-80px);
+          opacity: 0.4;
+        }
+
+        /* Enhanced shadow effects with animation */
+        .swiper-slide-shadow-left,
+        .swiper-slide-shadow-right {
+          background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0)
+          ) !important;
+          border-radius: 28px;
+          transition: opacity 0.6s ease;
+        }
+
+        .swiper-slide-shadow-right {
+          background-image: linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0)
+          ) !important;
+        }
+
+        /* Pagination styling */
+        .infinite-erp-swiper .swiper-pagination {
+          bottom: 40px;
+        }
+
+        .infinite-erp-swiper .swiper-pagination-bullet {
+          width: 12px;
+          height: 12px;
+          background: #cbd5e1;
+          opacity: 1;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 2px solid transparent;
+        }
+
+        .infinite-erp-swiper .swiper-pagination-bullet-active {
+          width: 42px;
+          border-radius: 6px;
+          background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+          border-color: rgba(59, 130, 246, 0.3);
+          box-shadow: 0 4px 14px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Smooth entrance animation for slides */
+        @keyframes slideEnter {
+          0% {
+            opacity: 0;
+            transform: scale(0.5) translateZ(-100px) rotateY(45deg);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) translateZ(0) rotateY(0deg);
+          }
+        }
+
+        /* Smooth exit animation for slides */
+        @keyframes slideExit {
+          0% {
+            opacity: 1;
+            transform: scale(1) translateZ(0) rotateY(0deg);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(0.5) translateZ(-100px) rotateY(-45deg);
+          }
+        }
+
+        /* Continuous floating animation */
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        .infinite-erp-swiper .swiper-slide-active .infinite-partner-card {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        /* Hover effect on any slide */
+        .infinite-partner-card:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 
+            0 40px 100px -30px rgba(0, 0, 0, 0.3),
+            0 20px 50px -20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Pulse animation for active slide */
+        @keyframes pulse {
+          0%, 100% {
+            box-shadow: 
+              0 35px 90px -25px rgba(0, 0, 0, 0.25),
+              0 18px 45px -18px rgba(0, 0, 0, 0.18),
+              0 0 0 3px rgba(59, 130, 246, 0.2);
+          }
+          50% {
+            box-shadow: 
+              0 35px 90px -25px rgba(0, 0, 0, 0.25),
+              0 18px 45px -18px rgba(0, 0, 0, 0.18),
+              0 0 0 5px rgba(59, 130, 246, 0.3);
+          }
+        }
+
+        .infinite-erp-swiper .swiper-slide-active .infinite-partner-card {
+          animation: float 3s ease-in-out infinite, pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+          .infinite-partner-card {
+            height: 340px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .infinite-partner-card {
+            height: 300px;
+          }
+
+          .infinite-erp-swiper {
+            padding: 60px 10px 100px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .infinite-partner-card {
+            height: 260px;
+          }
+
+          .card-face {
+            padding: 35px;
+          }
+        }
+
+        /* Smooth transition during autoplay */
+        .infinite-erp-swiper .swiper-wrapper {
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Loading state */
+        .slide-wrapper {
+          animation: fadeInSlide 0.6s ease-out;
+        }
+
+        @keyframes fadeInSlide {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 };
+
+export default PlacementPartners;

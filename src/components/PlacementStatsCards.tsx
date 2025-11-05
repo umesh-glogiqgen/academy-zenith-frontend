@@ -19,13 +19,13 @@ const stats = [
   },
   {
     icon: placementRate,
-    value: "99%",
+    value: "100%",
     label: "Placement Rate",
     bgColor: "bg-orange-500"
   },
   {
     icon: averagePackage,
-    value: "INR 855K+",
+    value: "INR 85K+",
     label: "Average Package",
     bgColor: "bg-orange-500"
   }

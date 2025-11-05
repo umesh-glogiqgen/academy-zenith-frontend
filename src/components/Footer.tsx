@@ -3,8 +3,11 @@ import { Input } from "@/components/ui/input";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Brain } from "lucide-react";
 import rrtechnosLogo from "@/assets/rr-technos-logo.png";
 import { WhatsAppContact } from "@/components/WhatsAppContact";
+import { Navigate, replace } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
+  const navigate = useNavigate()
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
 
@@ -54,7 +57,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6" onClick={() => navigate("/") }>
               <img
                 src={rrtechnosLogo}
                 alt="RR TECHNOS"
@@ -68,18 +71,18 @@ export const Footer = () => {
               Empowering educational institutions and learners worldwide with cutting-edge AI solutions.
               Transform learning experiences with our personalized AI tutoring systems and chatbots.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=61580823174367" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
-                <Facebook className="w-5 h-5" />
+            <div className="flex space-x-5">
+              <a href="https://www.facebook.com/profile.php?id=61580823174367" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 hover:scale-110 transition-all duration-300 p-2 rounded-full hover:bg-orange-50">
+                <Facebook className="w-7 h-7" />
               </a>
-              <a href="https://x.com/RrTechnos2025" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a href="https://x.com/RrTechnos2025" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 hover:scale-110 transition-all duration-300 p-2 rounded-full hover:bg-orange-50">
+                <Twitter className="w-7 h-7" />
               </a>
-              <a href="https://www.linkedin.com/in/rr-technos-268165387/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://www.linkedin.com/in/rr-technos-268165387/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 hover:scale-110 transition-all duration-300 p-2 rounded-full hover:bg-orange-50">
+                <Linkedin className="w-7 h-7" />
               </a>
-              <a href="https://www.instagram.com/rrtechnos/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a href="https://www.instagram.com/rrtechnos/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-orange-400 hover:scale-110 transition-all duration-300 p-2 rounded-full hover:bg-orange-50">
+                <Instagram className="w-7 h-7" />
               </a>
             </div>
           </div>
@@ -106,7 +109,7 @@ export const Footer = () => {
               <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">ServiceNow</a></li>
               <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">PeopleSoft ERP</a></li>
               <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">SAP Security</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">AI & Machine Learning</a></li>
+              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Generative AI </a></li>
             </ul>
           </div>
 
@@ -129,14 +132,14 @@ Hig-66, Neera Cafe Building, E-seva line, Near Temple bus stand, K P H B Phase 3
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                <span>+91 9573529800</span>
+                <span>+91 95735 29800</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
                 <span className="break-all">rrtechnos.training@gmail.com</span>
               </li>
             </ul>
-
+    
             <div className="mt-6">
               <WhatsAppContact
                 phoneNumber="+919573529800"

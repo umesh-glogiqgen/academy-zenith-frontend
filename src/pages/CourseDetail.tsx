@@ -25,6 +25,7 @@ import {
   HelpCircle
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { ContactForm } from "@/components/ContactForm";
 
 // Course data based on your provided documents
 const courseData: Record<string, any> = {
@@ -471,8 +472,8 @@ const courseData: Record<string, any> = {
 
   "ai-machine-learning": {
     id: 6,
-    title: "AI & Machine Learning with Python",
-    subtitle: "Complete AI/ML Development Program",
+    title: "Genrative AI with Python",
+    subtitle: "Complete AI Development Program",
     description: "Master Python, Machine Learning, and Generative AI with hands-on projects. Learn to build AI applications using OpenAI, LangChain, and modern ML frameworks.",
     instructor: "AI Specialist & Senior Developer",
     duration: "90 Days",
@@ -938,7 +939,7 @@ Thank you!`;
 
               {/* Special Offer */}
               <Card className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200">
-                <h3 className="font-bold text-xl mb-4 text-orange-800">🎉 Special Offer!</h3>
+                <h3 className="font-bold text-xl mb-4 text-orange-800">🎉 BENEFITS OF RR TECHNOLOGIES </h3>
                 <div className="space-y-2 text-sm text-orange-700">
                   <p>✅ Free Demo Session</p>
                   <p>✅ 100% Placement Support</p>
@@ -953,7 +954,7 @@ Thank you!`;
           </div>
         </div>
       </section>
-
+ <ContactForm/>
       <Footer />
     </div>
   );

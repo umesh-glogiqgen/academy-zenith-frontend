@@ -53,7 +53,7 @@ export const ThreeCards = () => {
             <img src={icon3} alt="Generative AI" className="h-12 w-12" />
           </div>
           <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide font-normal">Become A</p>
-          <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 sm:mb-3">Generative AI</h3>
+          <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 sm:mb-3">GENERATIVE AI EXPERT</h3>
           <a href="#courses" className="text-[#0066CC] font-bold font-normal inline-flex items-center hover:underline text-xs uppercase tracking-wide">
             KNOW MORE <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
           </a>
