@@ -44,7 +44,7 @@ export const PlacementStatsCards = () => {
               {/* Icon Circle */}
               <div className="flex justify-center mb-4">
                 <div className={`${stat.bgColor} rounded-full p-4 w-16 h-16 flex items-center justify-center`}>
-                  <img src={stat.icon} alt={stat.label} className="w-8 h-8" />
+                  <img src={stat.icon} alt={stat.label} width="32" height="32" loading="eager" className="w-8 h-8" />
                 </div>
               </div>
 

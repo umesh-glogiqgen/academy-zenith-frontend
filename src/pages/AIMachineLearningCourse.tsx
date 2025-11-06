@@ -164,9 +164,12 @@ const AIMLCourseDetailsPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=50&h=50&fit=crop&crop=center" 
-                  alt="LogiqGen Logo" 
+                <img
+                  src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=50&h=50&fit=crop&crop=center"
+                  alt="LogiqGen Logo"
+                  width="40"
+                  height="40"
+                  loading="eager"
                   className="w-10 h-10 rounded-full border-2 border-white"
                 />
                 <span className="text-lg font-semibold">{courseData.company}</span>
@@ -368,9 +371,12 @@ const AIMLCourseDetailsPage = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"
                 alt="AI Technology"
+                width="600"
+                height="320"
+                loading="eager"
                 className="w-full h-80 object-cover rounded-lg shadow-lg"
               />
             </div>

@@ -1,17 +1,53 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-
+import { useEffect, useState } from 'react';
 // Import the main Workday training image - the colorful modules graphic
 import startimage from "@/assets/startimage.png";
+import { useNavigate,useLocation } from 'react-router-dom';
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 export const ScrollingHero = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+
+  // Handle scrolling after navigation (when route changes)
+  useEffect(() => {
+    if (location.hash === "#contact") {
+      const scrollToContact = (retry = 0) => {
+        const el = document.getElementById("contact");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (retry < 5) {
+          // Retry until the element exists (for lazy loading)
+          setTimeout(() => scrollToContact(retry + 1), 300);
+        }
+      };
+      scrollToContact();
+    }
+  }, [location]);
+ 
   const handleGetDemo = () => {
     window.open('https://wa.me/919573529800?text=Hi, I would like to get a demo', '_blank');
+ 
   };
 
   const handleEnquiry = () => {
-    window.open('https://wa.me/919573529800?text=Hi, I would like to enquire about your courses', '_blank');
+    // window.open('https://wa.me/919573529800?text=Hi, I would like to enquire about your courses', '_blank');
+    if (location.pathname !== "/") {
+      // Go to home first, including hash
+      navigate("/#contact");
+    } else {
+      // Scroll directly if already on home page
+      const element = document.getElementById("contact");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+
   };
 
   return (
@@ -53,10 +89,19 @@ export const ScrollingHero = () => {
 
           {/* Right Image */}
           <div className="relative flex items-center justify-center md:justify-center order-1 md:order-2">
+            {!imageLoaded && (
+              <Skeleton className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[380px] lg:max-w-[600px] xl:max-w-[700px] h-[240px] sm:h-[300px] md:h-[330px] lg:h-[500px]" />
+            )}
             <img
               src={startimage}
               alt="Workday Training Modules"
-              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[380px] lg:max-w-[600px] xl:max-w-[700px] h-auto object-contain"
+              width="700"
+              height="600"
+              loading="eager"
+              onLoad={() => setImageLoaded(true)}
+              className={`w-full max-w-[280px] sm:max-w-[350px] md:max-w-[380px] lg:max-w-[600px] xl:max-w-[700px] h-auto object-contain transition-opacity duration-300 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
             />
           </div>
         </div>

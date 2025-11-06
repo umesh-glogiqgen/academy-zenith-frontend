@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 import { 
   ArrowLeft,
   BookOpen, 
@@ -450,9 +448,7 @@ Thank you!`;
   };
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
+    <>
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-white">
         <div className="container mx-auto px-6">
@@ -523,9 +519,12 @@ Thank you!`;
             {/* Right Content - Course Info Card */}
             <div>
               <Card className="p-8">
-                <img 
-                  src={courseData.image} 
+                <img
+                  src={courseData.image}
                   alt={courseData.title}
+                  width="600"
+                  height="256"
+                  loading="eager"
                   className="w-full h-64 object-cover rounded-lg mb-6"
                 />
                 <h3 className="font-bold text-xl mb-4">Course Information</h3>
@@ -810,9 +809,7 @@ Thank you!`;
           </p>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

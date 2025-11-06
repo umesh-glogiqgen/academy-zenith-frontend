@@ -13,7 +13,15 @@ import expertMentorship from "@/assets/icons/Expert Mentorship.png"
 import careerSupport from "@/assets/icons/Career Support.png"
 import rocket from "@/assets/rocket1.png"
 import newArrow from "@assets/icons/business-strategy-success-target-goals.png"
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+
 export const AboutUs = () => {
+  const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
+
+  const handleImageLoad = (imageKey: string) => {
+    setLoadedImages(prev => ({ ...prev, [imageKey]: true }));
+  };
   const credentials = [
     "5+ Top Workday Experienced Professionals",
     "Work Experience in Top MNCs Globally",
@@ -83,7 +91,7 @@ export const AboutUs = () => {
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0">
                  
-                    <img src={industryFocus} className="h-12 w-12" />
+                    <img src={industryFocus} width="48" height="48" loading="eager" className="h-12 w-12" />
                     
                   </div>
                   <div className="pt-2">
@@ -94,7 +102,7 @@ export const AboutUs = () => {
                 {/* Innovation Driven */}
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0">
-                  <img src={InnovationDriven} className="h-12 w-12" />
+                  <img src={InnovationDriven} width="48" height="48" loading="eager" className="h-12 w-12" />
                   </div>
                   <div className="pt-2">
                     <span className="text-sm font-bold text-[#003A70]">Innovation Driven</span>
@@ -104,7 +112,7 @@ export const AboutUs = () => {
                 {/* Community Centered */}
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0">
-                  <img src={community} className="h-12 w-12" />
+                  <img src={community} width="48" height="48" loading="eager" className="h-12 w-12" />
                   </div>
                   <div className="pt-2">
                     <span className="text-sm font-bold text-[#003A70]">Community Centered</span>
@@ -114,7 +122,7 @@ export const AboutUs = () => {
                 {/* Excellence Focused */}
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0">
-                  <img src={Excellence} className="h-12 w-12" />
+                  <img src={Excellence} width="48" height="48" loading="eager" className="h-12 w-12" />
                   </div>
                   <div className="pt-2">
                     <span className="text-sm font-bold text-[#003A70]">Excellence Focused</span>
@@ -127,10 +135,19 @@ export const AboutUs = () => {
             <div className="relative">
               <Card className="overflow-hidden shadow-lg rounded-2xl border-0">
                 <div className="relative">
+                  {!loadedImages['vision'] && (
+                    <Skeleton className="absolute inset-0 w-full h-full" />
+                  )}
                   <img
                     src="/man-woman-making-deal-work.jpg"
                     alt="Professional team collaboration"
-                    className="w-full h-full object-cover"
+                    width="600"
+                    height="400"
+                    loading="eager"
+                    onLoad={() => handleImageLoad('vision')}
+                    className={`w-full h-full object-cover transition-opacity duration-300 ${
+                      loadedImages['vision'] ? 'opacity-100' : 'opacity-0'
+                    }`}
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-6">
                     <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 border-2 border-[#FF6B35]">
@@ -152,18 +169,27 @@ export const AboutUs = () => {
             {/* Mission Image - Left */}
             <div className="relative lg:order-1">
   <div className="relative">
+    {!loadedImages['mission'] && (
+      <Skeleton className="absolute inset-0 w-[97%] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] rounded-3xl" />
+    )}
     <img
       src="/business-strategy-success-target-goals.jpg"
       alt="Modern training facility"
-      className="w-[97%] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] object-cover rounded-3xl"
+      width="800"
+      height="450"
+      loading="eager"
+      onLoad={() => handleImageLoad('mission')}
+      className={`w-[97%] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] object-cover rounded-3xl transition-opacity duration-300 ${
+        loadedImages['mission'] ? 'opacity-100' : 'opacity-0'
+      }`}
     />
 
-<div className="absolute top-16 right-0 left-[20px] md:-top-26 md:-right-[-200px] md:left-[320px]  lg:-top-26 lg:-right-[-200px] lg:left-[270px] xl:-right-6 flex items-center justify-between w-full sm:w-[90%] md:w-[420px] bg-white border-4 border-orange-500 rounded-2xl p-3 sm:p-4 shadow-xl animate-[fadeInUp_0.6s_ease-out]">
+<div className="absolute top-16 right-0 left-[20px] md:-top-26 md:-right-[-200px] md:left-[320px]  lg:top-12 lg:-right-[-400px] lg:left-[80px] xl:-right-12 xl:left-[260px]  xl:top-14 flex items-center justify-between w-full sm:w-[90%] md:w-[420px] bg-white border-4 border-orange-500 rounded-2xl p-3 sm:p-4 shadow-xl animate-[fadeInUp_0.6s_ease-out]">
   {/* Rocket Icon */}
   <img
     src={rocket}
     alt="rocket"
-    className="h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 absolute -top-12 sm:-top-14 md:-top-16 right-2 sm:right-4 md:left-[230px] mb-1"
+    className="h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40  absolute -top-12 sm:-top-14 md:-top-16 right-2 sm:right-4 md:left-[230px] mb-1"
   />
 
   {/* Text Content */}
@@ -200,7 +226,7 @@ export const AboutUs = () => {
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     
-                      <img src={practicalLearning} alt="Practical Learning" className="w-10 h-10" />
+                      <img src={practicalLearning} alt="Practical Learning" width="40" height="40" loading="eager" className="w-10 h-10" />
 
                   </div>
                   <div>
@@ -213,7 +239,7 @@ export const AboutUs = () => {
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     
-                      <img src={expertMentorship} alt="Expert Mentorship" className="w-10 h-10" />
+                      <img src={expertMentorship} alt="Expert Mentorship" width="40" height="40" loading="eager" className="w-10 h-10" />
 
                   </div>
                   <div>
@@ -226,7 +252,7 @@ export const AboutUs = () => {
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                    
-                      <img src={careerSupport} alt="Career Support" className="w-10 h-10" />
+                      <img src={careerSupport} alt="Career Support" width="40" height="40" loading="eager" className="w-10 h-10" />
                  
                   </div>
                   <div>
@@ -248,16 +274,25 @@ export const AboutUs = () => {
             {serviceTypes.map((service, index) => (
               <Card key={index} className="overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border border-gray-200 bg-white shadow-md rounded-2xl">
                 <div className="relative p-4">
+                  {!loadedImages[`service-${index}`] && (
+                    <Skeleton className="absolute inset-4 w-[calc(100%-2rem)] h-48 rounded-2xl" />
+                  )}
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-2xl"
+                    width="400"
+                    height="192"
+                    loading="eager"
+                    onLoad={() => handleImageLoad(`service-${index}`)}
+                    className={`w-full h-48 object-cover rounded-2xl transition-opacity duration-300 ${
+                      loadedImages[`service-${index}`] ? 'opacity-100' : 'opacity-0'
+                    }`}
                   />
                   {/* Orange circular icon overlapping bottom of image */}
                   <div className="absolute mt-3 left-1/2 top-44 transform -translate-x-1/2 -translate-y-1/2 z-10">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white">
                   <div className="w-16 h-16 bg-[#FF8800] rounded-full flex items-center justify-center text-white">
-                    <img src={service.icon} alt={service.title} className="w-10 h-10" />
+                    <img src={service.icon} alt={service.title} width="40" height="40" loading="eager" className="w-10 h-10" />
                   </div>
                 </div>
               </div>

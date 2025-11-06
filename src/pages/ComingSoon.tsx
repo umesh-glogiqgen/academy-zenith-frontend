@@ -2,8 +2,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 import { Home, Clock, MessageCircle, Rocket } from "lucide-react";
 
 export default function ComingSoon() {
@@ -33,10 +31,7 @@ export default function ComingSoon() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-
-      <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-32 pb-20 px-6">
+    <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-32 pb-20 px-6">
         <div className="max-w-2xl w-full text-center">
           {/* Icon */}
           <div className="mb-8">
@@ -110,9 +105,6 @@ export default function ComingSoon() {
           {/* Extra spacing before footer */}
           <div className="h-20"></div>
         </div>
-      </div>
-
-      <Footer />
     </div>
   );
 }

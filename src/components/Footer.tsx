@@ -61,6 +61,9 @@ export const Footer = () => {
               <img
                 src={rrtechnosLogo}
                 alt="RR TECHNOS"
+                width="120"
+                height="40"
+                loading="eager"
                 className="h-10 w-auto object-contain"
               />
               <div>

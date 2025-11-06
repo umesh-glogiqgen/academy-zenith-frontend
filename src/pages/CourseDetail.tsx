@@ -2,19 +2,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
-import { 
-  ArrowLeft, 
-  Clock, 
-  Users, 
-  Star, 
-  BookOpen, 
-  Award, 
-  CheckCircle, 
-  MessageCircle, 
+import {
+  ArrowLeft,
+  Clock,
+  Users,
+  Star,
+  BookOpen,
+  Award,
+  CheckCircle,
+  MessageCircle,
   Download,
-  Play,
   Calendar,
   Target,
   Globe,
@@ -472,17 +469,17 @@ const courseData: Record<string, any> = {
 
   "ai-machine-learning": {
     id: 6,
-    title: "Genrative AI with Python",
-    subtitle: "Complete AI Development Program",
-    description: "Master Python, Machine Learning, and Generative AI with hands-on projects. Learn to build AI applications using OpenAI, LangChain, and modern ML frameworks.",
-    instructor: "AI Specialist & Senior Developer",
-    duration: "90 Days",
-    modules: 25,
+    title: "Generative AI Professional Training Program",
+    subtitle: "Master Modern AI with Prompt Engineering, LLMs, RAG & AI Agents",
+    description: "The Generative AI Professional Training Program by RR Technos is designed to empower learners with real-world skills in modern Artificial Intelligence. This program blends practical learning with core AI concepts such as Prompt Engineering, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and AI Agents. You'll gain hands-on experience in designing, developing, and deploying intelligent AI solutions that drive innovation.",
+    instructor: "Certified AI Engineer",
+    duration: "2 Months (60 Days)",
+    modules: 8,
     students: 600,
     rating: 4.9,
     price: "Contact for Fees",
     level: "Beginner to Advanced",
-    certificate: "AI/ML Certified Developer",
+    certificate: "Generative AI Certified Professional",
     nextBatch: "January 10, 2025",
     icon: "🤖",
     image: "/traning6.jpg",
@@ -490,60 +487,458 @@ const courseData: Record<string, any> = {
     badgeColor: "bg-gradient-to-r from-purple-500 to-purple-600",
     curriculum: [
       {
-        module: "Python Programming Foundation",
-        duration: "3 weeks",
+        module: "Generative AI Fundamentals",
+        duration: "1 week",
         topics: [
-          "Python Basics and Syntax",
-          "Data Structures and Algorithms",
-          "Object-Oriented Programming",
-          "File Handling and Exception Management",
-          "Libraries: NumPy, Pandas, Matplotlib"
+          "What is Generative AI?",
+          "Understanding AI vs Machine Learning vs Deep Learning",
+          "Evolution of AI Models – GPT, Claude, Gemini, Llama, Mistral",
+          "AI Ecosystem Overview – OpenAI, Anthropic, Meta, Google",
+          "Where industries use Generative AI today (Healthcare, Finance, Marketing, Education)",
+          "Popular Tools: ChatGPT, Copilots, AI Writers, and Designers"
         ]
       },
       {
-        module: "Machine Learning Fundamentals",
-        duration: "4 weeks",
+        module: "Prompt Engineering Made Simple",
+        duration: "1 week",
         topics: [
-          "Introduction to ML Concepts",
-          "Supervised vs Unsupervised Learning",
-          "Linear and Logistic Regression",
-          "Decision Trees and Random Forest",
-          "Model Evaluation and Validation"
+          "Zero-shot, One-shot, and Few-shot Prompting",
+          "Writing Prompts for Q&A, Summarization, and Idea Generation",
+          "Role-based Prompts and Persona Creation",
+          "Chain of Thought and Step-by-Step Reasoning",
+          "Prompt Debugging and Optimization Techniques"
         ]
       },
       {
-        module: "Generative AI & LLMs",
-        duration: "4 weeks",
+        module: "Advanced Prompt Engineering",
+        duration: "1 week",
         topics: [
-          "OpenAI API Integration",
-          "LangChain Framework",
-          "Vector Databases and Embeddings",
-          "RAG (Retrieval-Augmented Generation)",
-          "Building AI Chatbots"
+          "Designing Multi-turn Conversations with Memory",
+          "Templates and Variables in Prompts",
+          "Advanced Prompt Structures and Context Management",
+          "Output Control and Formatting (Style, Tone, Length)",
+          "Ethics, Bias, and Responsible AI Usage"
+        ]
+      },
+      {
+        module: "NLP & LLM Concepts",
+        duration: "1 week",
+        topics: [
+          "Architecture of Large Language Models (Transformers)",
+          "Tokenization and Embeddings",
+          "Fine-tuning vs Prompt-tuning vs Instruction-tuning",
+          "Understanding Attention Mechanisms",
+          "Practical: Using OpenAI & Hugging Face APIs"
+        ]
+      },
+      {
+        module: "RAG – Retrieval-Augmented Generation",
+        duration: "1.5 weeks",
+        topics: [
+          "What is RAG and Why It's Important",
+          "Setting up Vector Databases (FAISS, Pinecone, Chroma)",
+          "Integrating External Knowledge Sources",
+          "Building Knowledge-based Chatbots",
+          "Practical: Enterprise Q&A Bot (Legal / Healthcare)"
+        ]
+      },
+      {
+        module: "AI Agents & Workflow Automation",
+        duration: "1.5 weeks",
+        topics: [
+          "Introduction to Agentic AI",
+          "Planning, Reasoning, and Decision-making",
+          "Multi-step Automation with LangChain & OpenAI Functions",
+          "API Integrations (Email, Sheets, Slack, Browser, etc.)",
+          "End-to-End AI Agent Project"
+        ]
+      },
+      {
+        module: "Generative AI Applications",
+        duration: "1.5 weeks",
+        topics: [
+          "Chatbots for Customer Support & FAQs",
+          "Text-to-SQL Applications",
+          "Text-to-Image and Content Generation Tools",
+          "AI Copilots for Productivity Automation",
+          "Real-World Projects (Legal Assistant, Retail Search, Healthcare Bot)"
+        ]
+      },
+      {
+        module: "AI Deployment & Integration",
+        duration: "1.5 weeks",
+        topics: [
+          "Streamlit / Flask for App Deployment",
+          "Frontend Chat UI Design",
+          "API Key Security and Integration",
+          "Hosting AI Apps (Vercel, Render, AWS)",
+          "End-to-End Deployment Practice"
         ]
       }
     ],
     highlights: [
-      "Hands-on Project Portfolio",
-      "Industry-relevant Technologies",
-      "AI/ML Career Guidance",
-      "Open Source Contributions",
-      "Mentorship Program",
-      "Job Placement Support"
+      "Professional Instructor-Led Training",
+      "100% Practical Oriented",
+      "Access to Recorded Sessions",
+      "Resume Preparation & Mock Interview Support",
+      "Dedicated Technical Support",
+      "100% Job Assistance",
+      "Daily 1 Hour Training Sessions",
+      "Batch-wise WhatsApp Group",
+      "Real-World AI Projects Portfolio",
+      "Industry-aligned Curriculum",
+      "Online & Offline Training Modes"
     ],
     prerequisites: [
-      "Basic programming knowledge",
-      "Mathematics fundamentals",
-      "Computer literacy"
+      "Basic programming concepts (helpful but not mandatory)",
+      "Computer literacy and basic IT knowledge",
+      "No prior AI/ML experience required",
+      "Willingness to learn and practice"
     ],
     faqs: [
       {
-        question: "What programming experience do I need?",
-        answer: "Basic programming concepts are helpful, but we start from Python fundamentals and build up to advanced AI/ML concepts."
+        question: "What is Generative AI and why should I learn it?",
+        answer: "Generative AI is a rapidly growing field that enables machines to create new content like text, images, and code. It's transforming industries including healthcare, finance, marketing, and education. Learning Generative AI opens doors to high-demand careers in one of the fastest-growing technology domains."
       },
       {
-        question: "Will I work on real projects?",
-        answer: "Yes, you'll build multiple real-world projects including AI chatbots, ML models, and complete AI applications for your portfolio."
+        question: "Do I need programming experience to join this course?",
+        answer: "No prior programming or AI experience is required. We start from fundamentals and build up to advanced concepts. Basic computer literacy and willingness to learn are sufficient to get started."
+      },
+      {
+        question: "What will I be able to do after completing this program?",
+        answer: "After completing this program, you'll be able to: Use Generative AI tools confidently, Design high-quality prompts that produce precise results, Build RAG systems and AI-powered chatbots, Develop automation workflows and custom AI Agents, and Deliver real-time AI apps and portfolio projects."
+      },
+      {
+        question: "What is the duration and mode of training?",
+        answer: "The complete program is 2 months (60 days) with daily 1-hour instructor-led sessions. Training is available in both online and offline modes to suit your convenience."
+      },
+      {
+        question: "Will I get hands-on practice during the training?",
+        answer: "Yes! The training is 100% practical-oriented. You'll work on real-world projects including AI chatbots, RAG systems, automation workflows, and deploy live applications."
+      },
+      {
+        question: "Do you provide job assistance after course completion?",
+        answer: "Yes! We provide 100% job assistance including resume preparation, mock interviews, placement support, and interview coordination with our network of hiring companies."
+      },
+      {
+        question: "Can I access recorded sessions if I miss a live class?",
+        answer: "Absolutely! All daily training sessions are recorded and made available the same day for revision and practice. You can access them anytime."
+      },
+      {
+        question: "What kind of support will I get during the training?",
+        answer: "You'll receive dedicated technical support throughout the program, batch-wise WhatsApp group for instant doubt resolution, resume preparation assistance, and mock interview sessions."
+      },
+      {
+        question: "What are the career opportunities after this course?",
+        answer: "Generative AI professionals are in high demand across industries. Career opportunities include AI Engineer, Prompt Engineer, ML Engineer, AI Application Developer, RAG Specialist, AI Solutions Architect, and AI Consultant roles."
+      },
+      {
+        question: "Which AI tools and technologies will I learn?",
+        answer: "You'll learn to work with leading AI tools and frameworks including ChatGPT, OpenAI APIs, LangChain, Vector Databases (FAISS, Pinecone, Chroma), Hugging Face, Streamlit, Flask, and deployment platforms like Vercel and AWS."
+      }
+    ]
+  },
+
+  "sap-security-s4hana-fiori": {
+    id: 7,
+    title: "SAP Security S/4HANA FIORI",
+    subtitle: "Professional Training Program",
+    description: "Comprehensive SAP S/4HANA Security program designed for professionals aspiring to build strong expertise in managing, implementing, and securing SAP S/4HANA environments. Master authorization concepts, role management, user administration, and Fiori application security.",
+    instructor: "Certified SAP Security Professional",
+    duration: "50 Days (25 Days SAP Security + 25 Days S/4HANA FIORI)",
+    modules: 18,
+    students: 500,
+    rating: 4.9,
+    price: "Contact for Fees",
+    level: "Beginner to Advanced",
+    certificate: "SAP Security & S/4HANA FIORI Certified",
+    nextBatch: "January 20, 2025",
+    icon: "🔐",
+    image: "/traning8.jpg",
+    badge: "Professional Program",
+    badgeColor: "bg-gradient-to-r from-blue-600 to-cyan-600",
+    curriculum: [
+      {
+        module: "Introduction to SAP and SAP Security",
+        duration: "3 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "ERP – SAP Why SAP is needed",
+          "Modules and the purpose of it",
+          "Major SAP modules: FI | MM | SD | QM | PP | HR",
+          "Job function and responsibilities of a security professional",
+          "Why SAP Security is required in SAP ERP system",
+          "Transaction codes",
+          "SAP Landscape (DEVELOPMENT, QUALITY and PRODUCTION)"
+        ]
+      },
+      {
+        module: "SAP Security Tables and Reports",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "SAP Security Tables and Reports",
+          "USBOX and USOBT",
+          "USOBX_C and USBOT_C"
+        ]
+      },
+      {
+        module: "Authorization Check Configuration",
+        duration: "3 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "SU21 - Authorization Object Management",
+          "SU22 - Authorization Object Configuration",
+          "Check indicator /su24 changes",
+          "SU25 - Authorization Upgrade"
+        ]
+      },
+      {
+        module: "Single User Administration (SU01)",
+        duration: "3 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "Create user",
+          "Reset/Change/Deactivate Password",
+          "Assign Roles/Profiles",
+          "Lock/Unlock user",
+          "Delete user",
+          "Understanding the Tabs: Parameter, License, Default, Role, Profile, Address"
+        ]
+      },
+      {
+        module: "Mass User Administration (SU10)",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "Create users",
+          "Deactivate mass user's password",
+          "Assign Roles/profiles",
+          "Lock/unlock users",
+          "Delete mass users",
+          "Disadvantages of SU10"
+        ]
+      },
+      {
+        module: "Advanced User Concepts",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "User types",
+          "User groups for the purpose to use it",
+          "Forbidden Password restriction"
+        ]
+      },
+      {
+        module: "Role Administration",
+        duration: "4 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "Role types: Single role, Master role – Derived role, Composite role",
+          "Introduction to Authorization objects",
+          "Activities/fields",
+          "Important Authorization objects",
+          "Add manually authorization objects/T-codes",
+          "Deactivate authorization object",
+          "Traffic lights",
+          "Authorization generation",
+          "Expert mode of role generation",
+          "Mass Role/Profile generation",
+          "Mass user comparison"
+        ]
+      },
+      {
+        module: "Role Transport",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "Transport request types",
+          "Transport single/mass roles",
+          "Release transport",
+          "Import transport",
+          "Role Download/upload",
+          "How to delete the role from production system"
+        ]
+      },
+      {
+        module: "User Information System (SUIM)",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "User selection criteria",
+          "Roles by complex selection criteria",
+          "Comparison",
+          "Change documents"
+        ]
+      },
+      {
+        module: "Troubleshooting and Restriction",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "Troubleshooting of authorization issue: SU53, STAUTHTRACE",
+          "Restriction on Tables: Authorization group creation",
+          "Map authorization group to Tables",
+          "How to restrict a custom program",
+          "Background job"
+        ]
+      },
+      {
+        module: "System Configuration and Implementation",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "Profile parameter setup",
+          "Implementation Phases"
+        ]
+      },
+      {
+        module: "Next-Generation and Specialized Security",
+        duration: "2 days",
+        section: "SAP Security (25 Days)",
+        topics: [
+          "S/4 HANA and Fiori Security understanding",
+          "HR Security overview"
+        ]
+      },
+      {
+        module: "Introduction to SAP S/4HANA",
+        duration: "3 days",
+        section: "S/4HANA FIORI (25 Days)",
+        topics: [
+          "Overview and evolution of SAP S/4HANA",
+          "Versions and key innovations",
+          "Difference between SAP S/4HANA, SAP ECC, and SAP HANA DB",
+          "Architecture and components of SAP S/4HANA",
+          "Security considerations for migration from ECC to S/4HANA",
+          "Key points to consider during migration"
+        ]
+      },
+      {
+        module: "Authorizations and Role Management",
+        duration: "5 days",
+        section: "S/4HANA FIORI (25 Days)",
+        topics: [
+          "Authorization concept and framework in SAP S/4HANA",
+          "Understanding authorization objects (e.g., S_SERVICE, S_RFCACL)",
+          "Standard transactions: PFCG, SUIM, SU22, SU24, SU25, STAUTHTRACE",
+          "Role transport and best practices",
+          "Trusted RFC connections and OData authorization handling"
+        ]
+      },
+      {
+        module: "SAP Fiori Security and UX Evolution",
+        duration: "5 days",
+        section: "S/4HANA FIORI (25 Days)",
+        topics: [
+          "SAP Fiori UX strategy and design principles",
+          "SAP Fiori architecture and integration",
+          "Fiori Launchpad, Web Dispatcher, and communication channels",
+          "Browser and OS compatibility overview",
+          "Deployment options: Central Hub & Embedded Deployment",
+          "Fiori Apps Reference Library and App activation"
+        ]
+      },
+      {
+        module: "Configuration and Implementation",
+        duration: "5 days",
+        section: "S/4HANA FIORI (25 Days)",
+        topics: [
+          "SAP Gateway configuration",
+          "Embedded search setup",
+          "Task list configuration in S/4HANA",
+          "Implementing transactional apps",
+          "Activating OData services and SAPUI5 components",
+          "Creating ABAP front-end and back-end roles",
+          "Assigning and testing roles in Fiori environment"
+        ]
+      },
+      {
+        module: "Custom Business Catalogs and Roles",
+        duration: "4 days",
+        section: "S/4HANA FIORI (25 Days)",
+        topics: [
+          "Creating custom catalogs, groups, and roles",
+          "Custom Launchpad creation and configuration",
+          "Target mapping and static tile setup",
+          "Managing transport requests for catalogs and groups",
+          "Understanding Spaces, Pages, and Sections",
+          "Granting access for Fiori objects effectively"
+        ]
+      },
+      {
+        module: "Troubleshooting and Best Practices",
+        duration: "3 days",
+        section: "S/4HANA FIORI (25 Days)",
+        topics: [
+          "Common authorization and app issues",
+          "Debugging and trace tools in Fiori and S/4HANA",
+          "Troubleshooting missing authorizations",
+          "Monitoring OData and Fiori apps",
+          "Performance optimization and audit insights"
+        ]
+      }
+    ],
+    highlights: [
+      "Comprehensive 50-day program covering SAP Security & S/4HANA FIORI",
+      "Learn from Certified SAP Security Professional",
+      "Daily 1 Hour Training Sessions – instructor-led live classes",
+      "Daily Recorded Sessions – available same day",
+      "Resume Preparation Assistance",
+      "Mock Interview Support",
+      "Job Assistance & Placement Support",
+      "Dedicated Technical Support",
+      "Batch-wise WhatsApp Group",
+      "Real-time Project Experience",
+      "Industry-aligned curriculum",
+      "Online & Offline training modes"
+    ],
+    prerequisites: [
+      "Basic understanding of SAP ERP systems (helpful but not mandatory)",
+      "Computer literacy and basic IT knowledge",
+      "No prior SAP Security experience required",
+      "Willingness to learn and practice"
+    ],
+    faqs: [
+      {
+        question: "What is SAP Security and why is it important?",
+        answer: "SAP Security is a critical component that controls user access, protects sensitive data, and ensures compliance in SAP systems. It's essential for managing authorizations, roles, and protecting business-critical information in enterprise environments."
+      },
+      {
+        question: "Do I need prior SAP experience to join this course?",
+        answer: "No prior SAP experience is required. We start from basics and build up to advanced concepts. Basic understanding of IT and business processes is helpful but not mandatory."
+      },
+      {
+        question: "What is the difference between SAP Security and S/4HANA FIORI Security?",
+        answer: "SAP Security focuses on traditional ECC security concepts including roles, authorizations, and user management. S/4HANA FIORI Security extends these concepts to the modern Fiori user interface, OData services, and new authorization objects specific to S/4HANA."
+      },
+      {
+        question: "Will I get hands-on practice during the training?",
+        answer: "Yes! The training is 100% practical-oriented with access to live SAP systems. You'll work on real scenarios, create roles, manage users, and troubleshoot authorization issues."
+      },
+      {
+        question: "What is the duration and mode of training?",
+        answer: "The complete program is 50 days (25 days SAP Security + 25 days S/4HANA FIORI) with daily 1-hour instructor-led sessions. Training is available in both online and offline modes."
+      },
+      {
+        question: "Do you provide job assistance after course completion?",
+        answer: "Yes! We provide 100% job assistance including resume preparation, mock interviews, placement support, and interview coordination with our network of hiring companies."
+      },
+      {
+        question: "Will I receive a certificate after completing the course?",
+        answer: "Yes, you'll receive an industry-recognized SAP Security & S/4HANA FIORI certification from RR Technos upon successful completion of the program."
+      },
+      {
+        question: "Can I access recorded sessions if I miss a live class?",
+        answer: "Absolutely! All daily training sessions are recorded and made available the same day for revision and practice. You can access them anytime."
+      },
+      {
+        question: "What kind of support will I get during the training?",
+        answer: "You'll receive dedicated technical support throughout the program, batch-wise WhatsApp group for instant doubt resolution, resume preparation assistance, and mock interview sessions."
+      },
+      {
+        question: "What are the career opportunities after this course?",
+        answer: "SAP Security professionals are in high demand across industries. Career opportunities include SAP Security Consultant, Authorization Analyst, SAP Basis Security Specialist, S/4HANA Security Consultant, and SAP GRC Consultant roles."
       }
     ]
   }
@@ -625,101 +1020,141 @@ Thank you!`;
   };
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
+    <>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-white">
-        <div className="container mx-auto px-6">
-          <Button 
-            variant="ghost" 
-            className="text-primary mb-6"
+      <section className="pt-32 pb-20 bg-gradient-to-br from-white via-yellow-50/30 to-yellow-100/50 relative overflow-hidden">
+        {/* Decorative wave background */}
+        <div className="absolute top-0 right-0 w-1/2 h-full">
+          <svg className="absolute top-0 right-0 h-full w-full" viewBox="0 0 500 800" preserveAspectRatio="xMaxYMid slice">
+            <path d="M0,0 C150,100 200,200 200,400 C200,600 150,700 0,800 L500,800 L500,0 Z" fill="#fef3c7" opacity="0.5"/>
+            <path d="M100,0 C250,150 300,250 300,450 C300,650 250,750 100,800 L500,800 L500,0 Z" fill="#fde68a" opacity="0.3"/>
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <Button
+            variant="ghost"
+            className="text-primary mb-6 hover:bg-primary/10"
             onClick={() => navigate('/')}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Courses
           </Button>
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Content */}
             <div>
-              <Badge className={`${course.badgeColor} text-primary mb-4`}>
+              <Badge className={`${course.badgeColor} text-white border-none mb-4 px-4 py-1.5 text-sm`}>
                 {course.badge}
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 leading-tight">
                 {course.title}
               </h1>
-              <p className="text-xl text-primary/90 mb-6">
+              <p className="text-xl text-primary/90 mb-6 font-medium">
                 {course.subtitle}
               </p>
-              <p className="text-primary/80 mb-8 leading-relaxed">
+              <p className="text-primary/70 mb-8 leading-relaxed text-base">
                 {course.description}
               </p>
-              
-              <div className="flex flex-wrap gap-4 mb-8">
+
+              <div className="flex flex-wrap gap-6 mb-8">
                 <div className="flex items-center gap-2 text-primary">
-                  <Clock className="w-5 h-5" />
-                  <span>{course.duration}</span>
+                  <Clock className="w-5 h-5 text-[#237d8c]" />
+                  <span className="font-medium">{course.duration}</span>
                 </div>
                 <div className="flex items-center gap-2 text-primary">
-                  <Users className="w-5 h-5" />
-                  <span>{course.students}+ Students</span>
+                  <Users className="w-5 h-5 text-[#237d8c]" />
+                  <span className="font-medium">{course.students}+ Students</span>
                 </div>
                 <div className="flex items-center gap-2 text-primary">
-                  <Star className="w-5 h-5 fill-current" />
-                  <span>{course.rating} Rating</span>
+                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <span className="font-medium">{course.rating} Rating</span>
                 </div>
                 <div className="flex items-center gap-2 text-primary">
-                  <BookOpen className="w-5 h-5" />
-                  <span>{course.modules} Modules</span>
+                  <BookOpen className="w-5 h-5 text-[#237d8c]" />
+                  <span className="font-medium">{course.modules} Modules</span>
                 </div>
               </div>
-              
-              <div className="flex gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-white text-[#237d8c] hover:bg-white/90"
+
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  size="lg"
+                  className="bg-[#e78b46] hover:bg-[#d67535] text-white shadow-lg hover:shadow-xl transition-all duration-200 font-semibold"
                   onClick={handleEnrollClick}
                 >
-                  <MessageCircle className="w-5 h-5 mr-2" />
                   Enroll Now
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-[#237d8c]"
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-[#237d8c] text-[#237d8c] hover:bg-[#237d8c] hover:text-white hover:border-[#237d8c] transition-all duration-200 font-semibold"
                   onClick={handleScheduleDemo}
                 >
-                  <Play className="w-5 h-5 mr-2" />
-                  Free Demo
+                  Schedule Free Demo
                 </Button>
               </div>
             </div>
-            
-            <div className="text-center">
-              <div className="mb-4">
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-64 h-48 object-cover rounded-lg mx-auto shadow-2xl"
-                />
-              </div>
-              <Card className="p-6 bg-white/10 backdrop-blur border-white/20">
-                <div className="grid grid-cols-2 gap-4 text-white">
-                  <div>
-                    <div className="text-sm opacity-80">Next Batch</div>
-                    <div className="font-semibold">{course.nextBatch}</div>
+
+            {/* Right Content - Course Info Card with Image */}
+            <div className="relative">
+              <Card className="p-0 overflow-hidden shadow-2xl border-2 border-gray-100 bg-white">
+                {/* Course Image */}
+                <div className="relative h-64 w-full overflow-hidden">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    width="600"
+                    height="256"
+                    loading="eager"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-white/90 text-primary border-none shadow-md px-3 py-1.5">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 inline mr-1" />
+                      {course.rating}
+                    </Badge>
                   </div>
-                  <div>
-                    <div className="text-sm opacity-80">Level</div>
-                    <div className="font-semibold">{course.level}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm opacity-80">Certificate</div>
-                    <div className="font-semibold">{course.certificate}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm opacity-80">Price</div>
-                    <div className="font-semibold">{course.price}</div>
+                </div>
+
+                {/* Course Information */}
+                <div className="p-8">
+                  <h3 className="font-bold text-2xl mb-6 text-primary">Course Information</h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600 font-medium">Instructor:</span>
+                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.instructor}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600 font-medium">Duration:</span>
+                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.duration}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600 font-medium">Students:</span>
+                      <span className="font-semibold text-primary">{course.students}+</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600 font-medium">Rating:</span>
+                      <div className="flex items-center gap-1">
+                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        <span className="font-semibold text-primary">{course.rating}</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600 font-medium">Certificate:</span>
+                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.certificate}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600 font-medium">Next Batch:</span>
+                      <span className="font-semibold text-primary">{course.nextBatch}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600 font-medium">Level:</span>
+                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.level}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2">
+                      <span className="text-gray-600 font-medium">Price:</span>
+                      <span className="font-bold text-[#e78b46] text-lg">{course.price}</span>
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -743,32 +1178,44 @@ Thank you!`;
                 
                 <div className="space-y-4">
                   {course.curriculum?.map((module: any, index: number) => (
-                    <div 
-                      key={index}
-                      className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                        selectedModule === index ? 'bg-[#e78b46] text-white' : 'hover:bg-gray-50'
-                      }`}
-                      onClick={() => setSelectedModule(index)}
-                    >
-                      <div className="flex justify-between items-center mb-2">
-                        <h3 className="font-semibold text-lg">
-                          Module {index + 1}: {module.module}
-                        </h3>
-                        <Badge variant="outline" className={selectedModule === index ? 'border-white text-white' : ''}>
-                          {module.duration}
-                        </Badge>
-                      </div>
-                      
-                      {selectedModule === index && (
-                        <div className="mt-4 space-y-2">
-                          {module.topics.map((topic: string, topicIndex: number) => (
-                            <div key={topicIndex} className="flex items-center gap-2">
-                              <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                              <span className="text-sm">{topic}</span>
-                            </div>
-                          ))}
+                    <div key={index}>
+                      {/* Section Header */}
+                      {module.section && (index === 0 || module.section !== course.curriculum[index - 1]?.section) && (
+                        <div className="bg-gradient-to-r from-[#237d8c] to-[#349198] text-white px-4 py-3 rounded-lg font-bold text-lg mb-4 mt-6 first:mt-0">
+                          {module.section}
                         </div>
                       )}
+
+                      {/* Module Content */}
+                      <div
+                        className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                          selectedModule === index ? 'bg-[#e78b46] text-white' : 'hover:bg-gray-50'
+                        }`}
+                        onClick={() => setSelectedModule(index)}
+                      >
+                        <div className="flex justify-between items-center mb-2">
+                          <h3 className="font-semibold text-lg">
+                            Module {index + 1}: {module.module}
+                          </h3>
+                          <Badge variant="outline" className={selectedModule === index ? 'bg-white/20 border-white text-white' : ''}>
+                            {module.duration}
+                          </Badge>
+                        </div>
+
+                        {selectedModule === index && (
+                          <div className="mt-4 pt-4 border-t border-white/20">
+                            <h4 className="font-semibold mb-3">Topics Covered:</h4>
+                            <ul className="space-y-2">
+                              {module.topics.map((topic: string, topicIndex: number) => (
+                                <li key={topicIndex} className="flex items-start gap-2">
+                                  <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                                  <span>{topic}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -881,24 +1328,24 @@ Thank you!`;
                 </div>
                 
                 <div className="mt-6 space-y-3">
-                  <Button 
-                    className="w-full bg-[#237d8c] hover:bg-[#1e6b76]"
+                  <Button
+                    className="w-full bg-[#237d8c] hover:bg-[#1e6b76] text-white transition-all duration-200 font-semibold"
                     onClick={handleEnrollClick}
                   >
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Enroll Now
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    className="w-full"
+                  <Button
+                    variant="outline"
+                    className="w-full border-2 border-[#237d8c] text-[#237d8c] hover:bg-[#237d8c] hover:text-white hover:border-[#237d8c] transition-all duration-200 font-semibold"
                     onClick={handleScheduleDemo}
                   >
                     <Calendar className="w-4 h-4 mr-2" />
                     Schedule Free Demo
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    className="w-full"
+                  <Button
+                    variant="outline"
+                    className="w-full border-2 border-gray-300 text-gray-700 hover:bg-gray-700 hover:text-white hover:border-gray-700 transition-all duration-200 font-semibold"
                     onClick={() => window.open('tel:+919573529800')}
                   >
                     <Phone className="w-4 h-4 mr-2" />
@@ -954,8 +1401,7 @@ Thank you!`;
           </div>
         </div>
       </section>
- <ContactForm/>
-      <Footer />
-    </div>
+      <ContactForm/>
+    </>
   );
 }

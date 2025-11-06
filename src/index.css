@@ -498,4 +498,25 @@
   .animate-fade-in {
     animation: fade-in 0.5s ease-out forwards;
   }
+
+  /* Workday card glow animation */
+  @keyframes workday-glow {
+    0%, 100% {
+      /* box-shadow: 0 0 20px #0066cc99, 0 0 30px rgba(0, 102, 204, 0.4), 0 0 40px rgba(0, 102, 204, 0.3); */
+      border-color: rgba(0, 102, 204, 0.8);
+  
+    }
+    50% {
+      /* box-shadow: 0 0 30px rgba(0, 102, 204, 0.8), 0 0 40px rgba(0, 102, 204, 0.6), 0 0 60px rgba(0, 102, 204, 0.4); */
+      border-color: rgba(0, 102, 204, 1);
+    
+    }
+  }
+
+  .workday-glow-card {
+    animation: workday-glow 2s infinite;
+    border-width: 2px;
+    position: relative;
+    z-index: 10;
+  }
 }

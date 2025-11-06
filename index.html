@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://wa.me" />
+
+    <!-- Critical Fonts Preload -->
+    <link rel="preload" href="/fonts/sf-ui-display-medium-58646be638f96.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/sf-ui-display-bold-58646a511e3d9.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/sf-ui-display-black-58646a6b80d5a.otf" as="font" type="font/otf" crossorigin />
+
     <title>RR Technos - From Workday to AI, One Platform for Your Tech Growth</title>
     <meta name="description" content="Leading Workday, AI, and enterprise technology training institute. Online & offline training with real-time projects, expert trainers, and 100% placement support in Hyderabad." />
     <meta name="keywords" content="Workday training, Workday HCM, Workday Finance, AI training, enterprise technology, online training, offline training, placement support, Hyderabad, RR Technos" />
@@ -20,6 +31,31 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // Force scroll to top immediately
+      window.scrollTo(0, 0);
+
+      // Disable browser's automatic scroll restoration
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+
+      // Clear any stored scroll positions
+      sessionStorage.removeItem('scrollPosition');
+      localStorage.removeItem('scrollPosition');
+
+      // Prevent scroll restoration on page load
+      window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+      });
+
+      // Force scroll to top after a brief delay (in case React takes over)
+      setTimeout(() => {
+        if (!window.location.hash) {
+          window.scrollTo(0, 0);
+        }
+      }, 100);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

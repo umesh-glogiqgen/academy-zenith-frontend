@@ -6,8 +6,15 @@ import certificationGuidance from "@/assets/icons/Certification Guidance.png";
 import mentorship from "@/assets/icons/mentorship.png";
 import support from "@/assets/icons/24-7 Support.png";
 import alumniNetwork from "@/assets/icons/Alumni Network.png";
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const WhyChooseUs = () => {
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+
+  const handleImageLoad = (index: number) => {
+    setLoadedImages(prev => ({ ...prev, [index]: true }));
+  };
   const differentiators = [
     {
       icon: realTimeProjects,
@@ -98,7 +105,7 @@ export const WhyChooseUs = () => {
               <div className="absolute mt-3 left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white">
                  
-                    <img src={item.icon} alt={item.title} className="w-12 h-12" />
+                    <img src={item.icon} alt={item.title} width="48" height="48" loading="eager" className="w-12 h-12" />
                   
                 </div>
               </div>
@@ -128,10 +135,19 @@ export const WhyChooseUs = () => {
                   {/* Image - Only show for modes that have image property */}
                   {mode.image && (
                     <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+                      {!loadedImages[index] && (
+                        <Skeleton className="absolute inset-0 w-full h-48" />
+                      )}
                       <img
                         src={mode.image}
                         alt={mode.title}
-                        className="w-full h-full object-cover"
+                        width="400"
+                        height="192"
+                        loading="eager"
+                        onLoad={() => handleImageLoad(index)}
+                        className={`w-full h-full object-cover transition-opacity duration-300 ${
+                          loadedImages[index] ? 'opacity-100' : 'opacity-0'
+                        }`}
                       />
                     </div>
                   )}

@@ -206,9 +206,12 @@ export const StudentPlacementSection = () => {
             {companies.map((company, index) => (
               <div key={index} className="bg-white rounded-lg p-4 border border-border hover:shadow-md transition-shadow duration-300 group">
                 <div className="h-12 flex items-center justify-center bg-gray-50 rounded border border-gray-200">
-                  <img 
-                    src={company.logo} 
+                  <img
+                    src={company.logo}
                     alt={`${company.name} logo`}
+                    width="120"
+                    height="48"
+                    loading="eager"
                     className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                   />
                 </div>

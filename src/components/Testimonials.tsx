@@ -56,7 +56,7 @@ export const Testimonials = () => {
               <div className="flex justify-center    -mt-16 mb-6">
               <div className="w-21 h-21 bg-white  rounded-full flex items-center justify-center shadow-xl border-4 border-white">
                 <div className={`${stat.color} w-16  h-16 rounded-full flex items-center justify-center text-white shadow-lg`}>
-                  <img src={stat.icon} alt={stat.label} className="w-10 h-10" />
+                  <img src={stat.icon} alt={stat.label} width="40" height="40" loading="eager" className="w-10 h-10" />
                   </div>
                 </div>
               </div>

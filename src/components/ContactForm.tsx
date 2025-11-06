@@ -304,7 +304,7 @@ Email: ${formData.email}`;
                   height="100%"
                   style={{ border: 0, borderRadius: "8px" }}
                   allowFullScreen
-                  loading="lazy"
+                  loading="eager"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="RR Technos Training Center Location"
                 ></iframe>

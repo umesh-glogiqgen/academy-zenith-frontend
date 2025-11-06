@@ -96,6 +96,9 @@ export const CompactCourseSlider = ({
             <img
               src={imageUrl}
               alt={`Professional training course ${index + 1}`}
+              width="400"
+              height="300"
+              loading="eager"
               className="w-full h-full object-cover"
               style={{
                 opacity: imagesLoaded[index] ? 1 : 0,

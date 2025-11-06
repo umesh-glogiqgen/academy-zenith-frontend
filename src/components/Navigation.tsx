@@ -15,25 +15,52 @@ const NAV_LINKS = [
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
-  // Reset scroll to top on home page load (only if no hash)
+  // Mark as not initial load after first render
   useEffect(() => {
-    if (isHomePage && !location.hash) {
-      window.scrollTo(0, 0);
-    }
+    const timer = setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 500);
+    return () => clearTimeout(timer);
   }, []);
 
-  // Handle hash navigation when arriving on home page
+  // Clear hash and scroll to top on initial page load
   useEffect(() => {
-    if (isHomePage && location.hash) {
+    if (isInitialLoad && isHomePage && location.hash) {
+      // Clear the hash from URL without triggering navigation
+      window.history.replaceState(null, '', '/');
+      // Force scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, [isInitialLoad, isHomePage, location.hash]);
+
+  // Reset scroll to top on home page load (only if no hash and no scroll state)
+  useEffect(() => {
+    if (isHomePage && !location.hash && !location.state?.scrollTo) {
+      // Force scroll to top immediately
+      window.scrollTo(0, 0);
+
+      // Also set it again after a delay to ensure it sticks
+      const timer = setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [isHomePage, location.hash, location.state]);
+
+  // Handle hash navigation when arriving on home page (but not on initial load)
+  useEffect(() => {
+    if (!isInitialLoad && isHomePage && location.hash) {
       const targetId = location.hash.replace('#', '');
-      setTimeout(() => {
+      // Longer delay to ensure page is fully loaded
+      const timer = setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) {
-          const navbarHeight = 118;
+          const navbarHeight = 130;
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.scrollY - navbarHeight;
           window.scrollTo({
@@ -41,9 +68,10 @@ export const Navigation = () => {
             behavior: 'smooth'
           });
         }
-      }, 100);
+      }, 300);
+      return () => clearTimeout(timer);
     }
-  }, [isHomePage, location]);
+  }, [isInitialLoad, isHomePage, location.hash]);
 
   // Scroll spy effect to track active section with throttling
   useEffect(() => {
@@ -159,40 +187,22 @@ export const Navigation = () => {
       return;
     }
 
-    // Function to scroll to element with retry logic for lazy-loaded sections
-    const scrollToElement = (retryCount = 0) => {
-      const element = document.getElementById(targetId);
+    // Simplified scroll to element - let Index.tsx handle lazy loading
+    const element = document.getElementById(targetId);
 
-      if (element) {
-        const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+    if (element) {
+      const navbarHeight = 130; // Increased offset for better visibility
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      } else {
-        // For lazy-loaded sections (like contact), scroll toward the bottom first
-        // This triggers the IntersectionObserver to load the section
-        if (retryCount === 0) {
-          // Scroll to near the bottom to trigger lazy loading
-          window.scrollTo({
-            top: document.documentElement.scrollHeight - window.innerHeight - 200,
-            behavior: 'smooth'
-          });
-
-          // Retry after lazy section has time to load
-          setTimeout(() => scrollToElement(1), 800);
-        } else if (retryCount < 3) {
-          // Additional retries with increasing delays
-          setTimeout(() => scrollToElement(retryCount + 1), 300);
-        }
-      }
-    };
-
-    // Small delay to ensure mobile menu closes first
-    setTimeout(() => scrollToElement(0), 100);
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      // If element not found, just update URL with hash and let Index.tsx handle it
+      window.location.hash = href;
+    }
   };
 
   return (
@@ -226,6 +236,9 @@ export const Navigation = () => {
               <img
                 src={rrtechnosLogo}
                 alt="RR TECHNOS"
+                width="150"
+                height="48"
+                loading="eager"
                 className="h-12 w-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
                 onClick={handleLogoClick}
               />

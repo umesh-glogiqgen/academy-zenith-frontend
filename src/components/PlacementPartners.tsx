@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import { Skeleton } from "@/components/ui/skeleton";
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
@@ -168,9 +169,14 @@ export const  PlacementPartners= () => {
 
 
   const [failedLogos, setFailedLogos] = useState<Set<number>>(new Set());
+  const [loadedLogos, setLoadedLogos] = useState<Set<number>>(new Set());
 
   const handleImageError = (index: number) => {
     setFailedLogos(prev => new Set(prev).add(index));
+  };
+
+  const handleImageLoad = (index: number) => {
+    setLoadedLogos(prev => new Set(prev).add(index));
   };
 
   return (
@@ -190,7 +196,6 @@ export const  PlacementPartners= () => {
             slidesPerView={3}
             spaceBetween={-80}
             loop={true}
-            loopedSlides={partners.length}
             speed={800}
             autoplay={{
               delay: 2500,
@@ -255,12 +260,23 @@ export const  PlacementPartners= () => {
                             {partner.name}
                           </span>
                         ) : (
-                          <img
-                            src={partner.logo}
-                            alt={`${partner.name} Logo`}
-                            className="partner-logo-infinite"
-                            onError={() => handleImageError(index)}
-                          />
+                          <div className="relative w-full h-full flex items-center justify-center">
+                            {!loadedLogos.has(index) && !failedLogos.has(index) && (
+                              <Skeleton className="absolute inset-0 w-full h-full" />
+                            )}
+                            <img
+                              src={partner.logo}
+                              alt={`${partner.name} Logo`}
+                              width="200"
+                              height="80"
+                              loading="eager"
+                              onLoad={() => handleImageLoad(index)}
+                              onError={() => handleImageError(index)}
+                              className={`partner-logo-infinite transition-opacity duration-300 ${
+                                loadedLogos.has(index) ? 'opacity-100' : 'opacity-0'
+                              }`}
+                            />
+                          </div>
                         )}
                       </div>
                     </div>
@@ -275,7 +291,7 @@ export const  PlacementPartners= () => {
       </div>
 
       {/* Advanced Custom Styles with Infinite Animations */}
-      <style jsx>{`
+      <style>{`
         .perspective-container {
           perspective: 2500px;
         }

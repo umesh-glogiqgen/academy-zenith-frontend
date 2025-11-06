@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Clock, Users, Star, BookOpen, Phone, MessageCircle } from "lucide-react";
 import { ContinuousNewsTicker } from "@/components/ContinuousNewsTicker";
 import { useNavigate } from "react-router-dom";
+import { memo, useCallback, useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 const courses = [
   {
     id: 1,
@@ -77,15 +79,15 @@ const courses = [
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#46a6a5]",
     icon: "⚙️",
-    image: "/virtual-classroom-study-space.jpg"
+    image: "/standard-quality-control-concept-m.jpg"
   },
   {
     id: 6,
-    title: "Genrative AI",
-    description: "Master Python, ML algorithms, and Generative AI with hands-on projects using...",
-    instructor: "AI Specialist",
-    modules: 35,
-    duration: "90 Days",
+    title: "Generative AI",
+    description: "Master Prompt Engineering, LLMs, RAG, and AI Agents with hands-on projects. Build intelligent AI solutions...",
+    instructor: "Certified AI Engineer",
+    modules: 8,
+    duration: "2 Months",
     students: 600,
     rating: 4.9,
     price: "Contact for Fees",
@@ -107,43 +109,53 @@ const courses = [
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
     icon: "🏢",
-    image: "/online-education-concept-studying-science-laptop-modern-technologies.jpg"
+    image: "/enterprise-resource-management-erp-software-system-business-resources-uds.jpg"
   },
   {
     id: 8,
-    title: "SAP Security",
-    description: "Learn ethical hacking, network security, cloud security, and security compliance...",
-    instructor: "Security Expert",
-    modules: 22,
-    duration: "60 Days",
-    students: 450,
+    title: "SAP Security S/4HANA FIORI",
+    description: "Comprehensive SAP S/4HANA Security program covering authorization, role management, user administration, and Fiori application security...",
+    instructor: "Certified SAP Security Professional",
+    modules: 18,
+    duration: "50 Days",
+    students: 500,
     rating: 4.9,
     price: "Contact for Fees",
-    badge: "High Demand",
-    badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
+    badge: "Professional Program",
+    badgeColor: "bg-gradient-to-r from-blue-600 to-cyan-600",
     icon: "🔐",
-    image: "/how-is-your-deals-group-people-business-conference-modern-classroom-daytime.jpg"
+    image: "/traning8.jpg"
   }
 ];
 
-export const Courses = () => {
-  const navigate = useNavigate();
+interface CoursesProps {
+  highlightWorkdayCards?: boolean;
+}
 
-  const handleEnrollClick = () => {
+export const Courses = memo(({ highlightWorkdayCards = false }: CoursesProps) => {
+  const navigate = useNavigate();
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+
+  const handleImageLoad = useCallback((courseId: number) => {
+    setLoadedImages(prev => ({ ...prev, [courseId]: true }));
+  }, []);
+
+  const handleEnrollClick = useCallback(() => {
     // WhatsApp contact
     window.open('https://wa.me/919573529800?text=Hi, I am interested in joining your course', '_blank');
-  };
+  }, []);
 
-  const handleViewDetails = (courseId: number, courseTitle: string) => {
+  const handleViewDetails = useCallback((courseId: number, courseTitle: string) => {
     // Map course IDs to their URL slugs
-    // Courses with detail pages: 1-Workday HCM, 2-Workday Finance, 3-Workday Integration, 4-Workday Extend, 6-AI/ML
-    // Coming Soon pages: 5-ServiceNow, 7-PeopleSoft ERP, 8-SAP Security
+    // Courses with detail pages: 1-Workday HCM, 2-Workday Finance, 3-Workday Integration, 4-Workday Extend, 6-AI/ML, 8-SAP Security
+    // Coming Soon pages: 5-ServiceNow, 7-PeopleSoft ERP
     const courseSlugMap: Record<number, string> = {
       1: 'workday-hcm',
       2: 'workday-finance',
       3: 'workday-integration',
       4: 'workday-extend',
-      6: 'ai-machine-learning'
+      6: 'ai-machine-learning',
+      8: 'sap-security-s4hana-fiori'
     };
 
     const courseSlug = courseSlugMap[courseId];
@@ -154,10 +166,10 @@ export const Courses = () => {
       // Navigate to the course detail page with course data
       navigate(`/course/${courseSlug}`, { state: { courseData } });
     } else {
-      // For courses without detail pages (5, 7, 8), navigate to coming soon page
+      // For courses without detail pages (5, 7), navigate to coming soon page
       navigate('/coming-soon', { state: { courseData } });
     }
-  };
+  }, [navigate]);
 
   return (
     <section id="courses" className="pt-4 pb-20 bg-white">
@@ -179,18 +191,32 @@ export const Courses = () => {
 
         {/* Courses Grid - 4 columns */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {courses.map((course) => (
+          {courses.map((course) => {
+            // Highlight first 4 Workday cards (IDs 1-4)
+            const shouldGlow = highlightWorkdayCards && course.id >= 1 && course.id <= 4;
+
+            return (
             <Card
               key={course.id}
-              className="overflow-hidden bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer group rounded-xl"
+              className={`overflow-hidden bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer group rounded-xl ${
+                shouldGlow ? 'workday-glow-card' : ''
+              }`}
             >
               {/* Course Image with Badge */}
               <div className="relative h-44 bg-gray-100">
+                {!loadedImages[course.id] && (
+                  <Skeleton className="absolute inset-0 w-full h-full" />
+                )}
                 <img
                   src={course.image}
                   alt={course.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
+                  width="400"
+                  height="176"
+                  loading="eager"
+                  onLoad={() => handleImageLoad(course.id)}
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
+                    loadedImages[course.id] ? 'opacity-100' : 'opacity-0'
+                  }`}
                 />
                 {/* Badge in top-right corner */}
                 <span className="absolute top-3 right-3 bg-[#17A2B8] text-white px-3 py-1 rounded-full text-xs font-semibold font-sf-display">
@@ -234,7 +260,7 @@ export const Courses = () => {
                 <div className="grid grid-cols-2 gap-2">
                   <Button
                     size="sm"
-                    className="bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-semibold py-2 font-sf-display"
+                    className="bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-semibold py-2 font-sf-display transition-all duration-200"
                     onClick={handleEnrollClick}
                   >
                     Enquire Now
@@ -242,7 +268,7 @@ export const Courses = () => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="border-[#0066CC] text-[#0066CC] hover:bg-blue-50 text-xs font-semibold py-2 font-sf-display"
+                    className="border-2 border-[#0066CC] text-[#0066CC] hover:bg-[#0066CC] hover:text-white hover:border-[#0066CC] text-xs font-semibold py-2 font-sf-display transition-all duration-200"
                     onClick={() => handleViewDetails(course.id, course.title)}
                   >
                     View Details
@@ -250,9 +276,12 @@ export const Courses = () => {
                 </div>
               </div>
             </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
   );
-};
+});
+
+Courses.displayName = 'Courses';
