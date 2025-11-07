@@ -23,6 +23,52 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ContactForm } from "@/components/ContactForm";
+import { RecommendedCourses } from "@/components/RecommendedCourses";
+import PlacementPartners from "@/components/PlacementPartners";
+
+// Import all courses list to check if course exists
+const allCourses = [
+  {
+    id: 1,
+    title: "Workday HCM",
+    slug: "workday-hcm"
+  },
+  {
+    id: 2,
+    title: "Workday Finance",
+    slug: "workday-finance"
+  },
+  {
+    id: 3,
+    title: "Workday Integration",
+    slug: "workday-integration"
+  },
+  {
+    id: 4,
+    title: "Workday Extend",
+    slug: "workday-extend"
+  },
+  {
+    id: 5,
+    title: "ServiceNow",
+    slug: "servicenow"
+  },
+  {
+    id: 6,
+    title: "Generative AI",
+    slug: "ai-machine-learning"
+  },
+  {
+    id: 7,
+    title: "PeopleSoft ERP",
+    slug: "peoplesoft-erp"
+  },
+  {
+    id: 8,
+    title: "SAP Security S/4HANA FIORI",
+    slug: "sap-security-s4hana-fiori"
+  }
+];
 
 // Course data based on your provided documents
 const courseData: Record<string, any> = {
@@ -952,6 +998,7 @@ export default function CourseDetail() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   const course = courseId ? courseData[courseId] : null;
+  const courseExists = allCourses.find(c => c.slug === courseId);
 
   // Scroll to top when component mounts or courseId changes
   useEffect(() => {
@@ -961,16 +1008,50 @@ export default function CourseDetail() {
     });
   }, [courseId]);
 
-  if (!course) {
+  // If course exists but doesn't have detailed data yet, redirect to ComingSoon page
+  useEffect(() => {
+    if (courseExists && !course) {
+      const courseDataForComingSoon = {
+        title: courseExists.title,
+        description: `This course is currently under development. Contact us to learn more about course details.`,
+        duration: "TBD",
+        modules: "TBD",
+        icon: courseExists.id === 5 ? "⚙️" : courseExists.id === 7 ? "🏢" : "📚",
+        badge: "Coming Soon",
+        badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#1e6b76]"
+      };
+
+      navigate('/coming-soon', {
+        state: {
+          courseData: courseDataForComingSoon,
+          courseSlug: courseId
+        },
+        replace: true
+      });
+    }
+  }, [courseExists, course, courseId, navigate]);
+
+  // If course doesn't exist at all, show "Course Not Found"
+  if (!courseExists) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Course Not Found</h1>
-          <p className="text-gray-600 mb-4">The course you're looking for doesn't exist.</p>
-          <Button onClick={() => navigate('/')}>Back to Home</Button>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-50/30 via-white to-yellow-100/40">
+        <div className="text-center px-6">
+          <h1 className="text-3xl font-bold mb-4 text-[#1E3A5F]">Course Not Found</h1>
+          <p className="text-gray-600 mb-6">The course you're looking for doesn't exist.</p>
+          <Button
+            onClick={() => navigate('/')}
+            className="bg-[#237d8c] hover:bg-[#1e6b76] text-white"
+          >
+            Back to Home
+          </Button>
         </div>
       </div>
     );
+  }
+
+  // If course exists but doesn't have detailed data yet, show loading while redirecting
+  if (!course) {
+    return null;
   }
 
   const handleEnrollClick = () => {
@@ -1095,66 +1176,67 @@ Thank you!`;
               </div>
             </div>
 
-            {/* Right Content - Course Info Card with Image */}
+            {/* Right Content - Featured Course Image */}
             <div className="relative">
               <Card className="p-0 overflow-hidden shadow-2xl border-2 border-gray-100 bg-white">
                 {/* Course Image */}
-                <div className="relative h-64 w-full overflow-hidden">
+                <div className="relative h-96 w-full overflow-hidden">
                   <img
                     src={course.image}
                     alt={course.title}
                     width="600"
-                    height="256"
+                    height="384"
                     loading="eager"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-white/90 text-primary border-none shadow-md px-3 py-1.5">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+                  {/* Floating Stats */}
+                  <div className="absolute top-4 right-4 flex flex-col gap-2">
+                    <Badge className="bg-white/95 text-primary border-none shadow-lg px-3 py-1.5">
                       <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 inline mr-1" />
-                      {course.rating}
+                      {course.rating} Rating
                     </Badge>
+                    <Badge className="bg-white/95 text-primary border-none shadow-lg px-3 py-1.5">
+                      <Users className="w-4 h-4 inline mr-1 text-[#237d8c]" />
+                      {course.students}+ Students
+                    </Badge>
+                  </div>
+
+                  {/* Bottom Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                        <Calendar className="w-4 h-4" />
+                        <span className="text-sm font-medium">{course.nextBatch}</span>
+                      </div>
+                      <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                        <Clock className="w-4 h-4" />
+                        <span className="text-sm font-medium">{course.duration}</span>
+                      </div>
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                      <Award className="w-4 h-4" />
+                      <span className="text-sm font-medium">{course.level}</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Course Information */}
-                <div className="p-8">
-                  <h3 className="font-bold text-2xl mb-6 text-primary">Course Information</h3>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <span className="text-gray-600 font-medium">Instructor:</span>
-                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.instructor}</span>
+                {/* Quick Action Section */}
+                <div className="p-6 bg-gradient-to-br from-[#237d8c] to-[#1e6b76]">
+                  <div className="flex items-center justify-between text-white">
+                    <div>
+                      <p className="text-sm opacity-90 mb-1">Get Started Today</p>
+                      <p className="text-2xl font-bold">{course.price}</p>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <span className="text-gray-600 font-medium">Duration:</span>
-                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.duration}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <span className="text-gray-600 font-medium">Students:</span>
-                      <span className="font-semibold text-primary">{course.students}+</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <span className="text-gray-600 font-medium">Rating:</span>
-                      <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        <span className="font-semibold text-primary">{course.rating}</span>
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <span className="text-gray-600 font-medium">Certificate:</span>
-                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.certificate}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <span className="text-gray-600 font-medium">Next Batch:</span>
-                      <span className="font-semibold text-primary">{course.nextBatch}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <span className="text-gray-600 font-medium">Level:</span>
-                      <span className="font-semibold text-primary text-right max-w-[60%]">{course.level}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span className="text-gray-600 font-medium">Price:</span>
-                      <span className="font-bold text-[#e78b46] text-lg">{course.price}</span>
-                    </div>
+                    <Button
+                      size="lg"
+                      className="bg-[#e78b46] hover:bg-[#d67535] text-white shadow-lg hover:shadow-xl transition-all duration-200 font-semibold"
+                      onClick={handleEnrollClick}
+                    >
+                      Enroll Now
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -1386,7 +1468,7 @@ Thank you!`;
 
               {/* Special Offer */}
               <Card className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200">
-                <h3 className="font-bold text-xl mb-4 text-orange-800">🎉 BENEFITS OF RR TECHNOLOGIES </h3>
+                <h3 className="font-bold text-xl mb-4 text-orange-800">🎉 BENEFITS OF RR TECHNOS </h3>
                 <div className="space-y-2 text-sm text-orange-700">
                   <p>✅ Free Demo Session</p>
                   <p>✅ 100% Placement Support</p>
@@ -1401,6 +1483,9 @@ Thank you!`;
           </div>
         </div>
       </section>
+
+      <RecommendedCourses currentCourseSlug={courseId} limit={4} title="Related Courses" />
+      <PlacementPartners/>
       <ContactForm/>
     </>
   );

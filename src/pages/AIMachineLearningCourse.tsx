@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Star, BookOpen, Award, Bot, Code, Brain, Target, CheckCircle, Zap, Globe, Mail, Phone, ArrowLeft, Download, Play, Calendar } from "lucide-react";
 import React, { useState } from 'react';
+import { RecommendedCourses } from "@/components/RecommendedCourses";
+import { ContactForm } from "@/components/ContactForm";
 
 // LogiqGen AI & ML Course Data based on the uploaded brochure
 const courseData = {
@@ -408,6 +410,8 @@ const AIMLCourseDetailsPage = () => {
           </div>
         </div>
       </div>
+      <RecommendedCourses currentCourseSlug="ai-machine-learning" limit={4} title="Related Courses" />
+      <ContactForm />
     </div>
   );
 };

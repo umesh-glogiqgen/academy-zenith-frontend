@@ -60,7 +60,7 @@ export const Navigation = () => {
       const timer = setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) {
-          const navbarHeight = 130;
+          const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.scrollY - navbarHeight;
           window.scrollTo({
@@ -191,7 +191,7 @@ export const Navigation = () => {
     const element = document.getElementById(targetId);
 
     if (element) {
-      const navbarHeight = 130; // Increased offset for better visibility
+      const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - navbarHeight;
 

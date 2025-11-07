@@ -14,6 +14,7 @@ import ComingSoon from "./pages/ComingSoon";
 import SAPSecurityS4HANAFioriCourse from "./pages/SAP";
 import { ContactForm } from "./components/ContactForm";
 import { Layout } from "./components/Layout";
+import CourseClientsSwiper from "./pages/CourseClientsSwiper";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
           {/* Layout wrapper keeps Navigation and Footer mounted across route changes */}
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
+            <Route path="/swi" element={<CourseClientsSwiper/>} />
             <Route path="/s" element={<SAPSecurityS4HANAFioriCourse/>} />
             <Route path="/contact" element={<ContactForm/>} />
             <Route path="/ai-machine-learning-course" element={<AIMachineLearningCourse/>}/>

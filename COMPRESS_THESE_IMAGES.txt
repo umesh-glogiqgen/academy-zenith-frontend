@@ -1,0 +1,47 @@
+🔧 COMPRESS THESE IMAGES - URGENT!
+
+Go to: https://tinypng.com OR https://squoosh.app
+
+Upload and compress these files (they're too large):
+
+CRITICAL (>10MB):
+1. traning1.jpg (22M) → should be 200KB
+2. enterprise-resource-management-erp-software-system-business-resources-uds.jpg (21M) → should be 200KB
+3. traning7.jpg (21M) → should be 200KB
+4. how-is-your-deals-group-people-business-conference-modern-classroom-daytime.jpg (19M) → should be 180KB
+5. traning3.jpg (19M) → should be 180KB
+6. feturedCourses1.jpg (18M) → should be 170KB
+7. male-supervisor-training-latin-executive-call-center-manager-explaining-work-stuff-employees-offering-tech-support-customer-service.jpg (16M) → should be 150KB
+
+HIGH PRIORITY (5-10MB):
+8. alarm-clock-with-young-businessman-using-laptop.jpg (9.3M) → should be 100KB
+9. virtual-classroom-study-space.jpg (8.4M) → should be 90KB
+10. business-strategy-success-target-goals.jpg (8.0M) → should be 90KB
+11. traning6.jpg (7.0M) → should be 80KB
+12. traning2.jpg (6.4M) → should be 80KB
+13. online-education-concept-studying-science-laptop-modern-technologies.jpg (6.3M) → should be 80KB
+14. traning8.jpg (5.3M) → should be 70KB
+15. standard-quality-control-concept-m.jpg (5.1M) → should be 70KB
+16. traning5.jpg (5.1M) → should be 70KB
+
+MEDIUM (1-5MB):
+17. team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla.jpg (3.0M) → should be 50KB
+18. man-woman-making-deal-work.jpg (1.9M) → should be 40KB
+19. traning4.jpg (1.6M) → should be 35KB
+
+HOW TO COMPRESS:
+1. Go to https://tinypng.com
+2. Drag and drop the image file
+3. Wait for compression (automatic)
+4. Download the compressed version
+5. Replace the file in: d:\comapny\academy-zenith-front\public\
+
+OR use https://squoosh.app for more control
+
+RESULT AFTER COMPRESSION:
+✅ Images load instantly
+✅ No lag while scrolling
+✅ Content appears immediately
+✅ Website feels fast like your friend's static site
+
+YOUR FRIEND'S SECRET: Their images are already compressed to 50-200KB each!

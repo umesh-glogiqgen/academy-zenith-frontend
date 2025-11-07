@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
+import {
   ArrowLeft,
-  BookOpen, 
-  Clock, 
-  Users, 
-  Star, 
+  BookOpen,
+  Clock,
+  Users,
+  Star,
   Award,
   CheckCircle2,
   ChevronDown,
@@ -17,6 +17,8 @@ import {
   FileCheck,
   Zap
 } from "lucide-react";
+import { RecommendedCourses } from "@/components/RecommendedCourses";
+import { ContactForm } from "@/components/ContactForm";
 
 const SAPSecurityS4HANAFioriCourse = () => {
   const navigate = useNavigate();
@@ -809,6 +811,8 @@ Thank you!`;
           </p>
         </div>
       </section>
+      <RecommendedCourses currentCourseSlug="sap-security-s4hana-fiori" limit={4} title="Related Courses" />
+      <ContactForm />
     </>
   );
 };

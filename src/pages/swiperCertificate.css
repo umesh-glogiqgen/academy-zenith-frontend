@@ -1,0 +1,72 @@
+/* Root container */
+.rotatingSwiper {
+    width: 100%;
+    overflow: hidden;
+    perspective: 1200px;
+  }
+  
+  /* Swiper track */
+  .rotating-carousel .swiper-wrapper {
+    transition-timing-function: linear !important; /* ensures smooth, constant spin */
+  }
+  
+  /* Each slide behaves like a rotating 3D card */
+  .rotating-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  /* Card element */
+  .card3D {
+    width: 200px;
+    height: 120px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transform-origin: center center;
+    animation: cardRotate 8s linear infinite;
+    backface-visibility: hidden;
+  }
+  
+  /* Logo styling */
+  .card3D img {
+    max-width: 70%;
+    max-height: 80px;
+    object-fit: contain;
+    user-select: none;
+  }
+  
+  /* Keyframe for continuous 3D rotation (right → left) */
+  @keyframes cardRotate {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-360deg);
+    }
+  }
+  
+  /* Smooth hover pause */
+  .card3D:hover {
+    animation-play-state: paused;
+    transform: scale(1.05) rotateY(-15deg);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .card3D {
+      width: 140px;
+      height: 100px;
+    }
+    .card3D img {
+      max-height: 60px;
+    }
+  }
+      

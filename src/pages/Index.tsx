@@ -14,6 +14,7 @@ import { PlacementPartners } from "@/components/PlacementPartners";
 import { ContactForm } from "@/components/ContactForm";
 import { PlacementStatsCards } from "@/components/PlacementStatsCards";
 import { OurVision } from "@/components/OurVision";
+import { RecommendedCourses } from "@/components/RecommendedCourses";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";  
 
@@ -55,7 +56,14 @@ const Index = () => {
       const scrollTimer = setTimeout(() => {
         const section = document.getElementById(sectionId);
         if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
+          const elementPosition = section.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       }, 100);
 
@@ -80,7 +88,7 @@ const Index = () => {
       const scrollTimer = setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) {
-          const navbarHeight = 130;
+          const navbarHeight = 118; // Top bar (38px) + Main nav (80px)
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.scrollY - navbarHeight;
 
@@ -105,6 +113,7 @@ const Index = () => {
       <FeaturedCourses />
       <StudentPlacementSection />
       <PlacementPartners />
+      {/* <RecommendedCourses limit={4} title="Explore More Courses" /> */}
       <ContactForm />
 
       {/* Floating WhatsApp Button */}

@@ -18,7 +18,8 @@ const courses = [
     badge: "Most Popular",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
     icon: "👥",
-    image: "/traning1.jpg"
+    image: "/traning1.jpg",
+    slug: "workday-hcm"
   },
   {
     id: 2,
@@ -33,7 +34,8 @@ const courses = [
     badge: "High Demand",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#349198]",
     icon: "💰",
-    image: "/traning2.jpg"
+    image: "/traning2.jpg",
+    slug: "workday-finance"
   },
   {
     id: 3,
@@ -48,7 +50,8 @@ const courses = [
     badge: "Technical",
     badgeColor: "bg-gradient-to-r from-[#d9eca1] to-[#58bbb2]",
     icon: "🔗",
-    image: "/traning3.jpg"
+    image: "/traning3.jpg",
+    slug: "workday-integration"
   },
   {
     id: 4,
@@ -63,7 +66,8 @@ const courses = [
     badge: "Advanced",
     badgeColor: "bg-gradient-to-r from-[#46a6a5] to-[#58bbb2]",
     icon: "🚀",
-    image: "/traning4.jpg"
+    image: "/traning4.jpg",
+    slug: "workday-extend"
   },
   {
     id: 5,
@@ -78,7 +82,8 @@ const courses = [
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#237d8c] to-[#46a6a5]",
     icon: "⚙️",
-    image: "/standard-quality-control-concept-m.jpg"
+    image: "/standard-quality-control-concept-m.jpg",
+    slug: "servicenow"
   },
   {
     id: 6,
@@ -93,7 +98,8 @@ const courses = [
     badge: "Future Tech",
     badgeColor: "bg-gradient-to-r from-[#349198] to-[#46a6a5]",
     icon: "🤖",
-    image: "/traning6.jpg"
+    image: "/traning6.jpg",
+    slug: "ai-machine-learning"
   },
   {
     id: 7,
@@ -108,11 +114,12 @@ const courses = [
     badge: "Enterprise",
     badgeColor: "bg-gradient-to-r from-[#58bbb2] to-[#46a6a5]",
     icon: "🏢",
-    image: "/enterprise-resource-management-erp-software-system-business-resources-uds.jpg"
+    image: "/enterprise-resource-management-erp-software-system-business-resources-uds.jpg",
+    slug: "peoplesoft-erp"
   },
   {
     id: 8,
-    title: "SAP Security S/4HANA FIORI",
+    title: "SAP Security ",
     description: "Comprehensive SAP S/4HANA Security program covering authorization, role management, user administration, and Fiori application security...",
     instructor: "Certified SAP Security Professional",
     modules: 18,
@@ -123,7 +130,8 @@ const courses = [
     badge: "Professional Program",
     badgeColor: "bg-gradient-to-r from-blue-600 to-cyan-600",
     icon: "🔐",
-    image: "/traning8.jpg"
+    image: "/traning8.jpg",
+    slug: "sap-security-s4hana-fiori"
   }
 ];
 
@@ -139,30 +147,10 @@ export const Courses = memo(({ highlightWorkdayCards = false }: CoursesProps) =>
     window.open('https://wa.me/919573529800?text=Hi, I am interested in joining your course', '_blank');
   }, []);
 
-  const handleViewDetails = useCallback((courseId: number, courseTitle: string) => {
-    // Map course IDs to their URL slugs
-    // Courses with detail pages: 1-Workday HCM, 2-Workday Finance, 3-Workday Integration, 4-Workday Extend, 6-AI/ML, 8-SAP Security
-    // Coming Soon pages: 5-ServiceNow, 7-PeopleSoft ERP
-    const courseSlugMap: Record<number, string> = {
-      1: 'workday-hcm',
-      2: 'workday-finance',
-      3: 'workday-integration',
-      4: 'workday-extend',
-      6: 'ai-machine-learning',
-      8: 'sap-security-s4hana-fiori'
-    };
-
-    const courseSlug = courseSlugMap[courseId];
-    // Find the course data to pass along
-    const courseData = courses.find(c => c.id === courseId);
-
-    if (courseSlug) {
-      // Navigate to the course detail page with course data
-      navigate(`/course/${courseSlug}`, { state: { courseData } });
-    } else {
-      // For courses without detail pages (5, 7), navigate to coming soon page
-      navigate('/coming-soon', { state: { courseData } });
-    }
+  const handleViewDetails = useCallback((slug: string) => {
+    // Navigate to the course detail page
+    navigate(`/course/${slug}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [navigate]);
 
   return (
@@ -192,12 +180,23 @@ export const Courses = memo(({ highlightWorkdayCards = false }: CoursesProps) =>
             return (
             <Card
               key={course.id}
-              className={`overflow-hidden bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer group rounded-xl ${
+              id={`course-${course.slug}`}
+              className={`relative bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 cursor-pointer group rounded-xl overflow-hidden ${
                 shouldGlow ? 'workday-glow-card' : ''
               }`}
+              style={{
+                boxShadow: 'inset 0 -1px 0 0 transparent',
+                transition: 'all 0.5s ease-in-out'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = 'inset 0 -4px 0 0 #0066CC, 0 4px 20px rgba(0, 102, 204, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'inset 0 -1px 0 0 transparent';
+              }}
             >
               {/* Course Image with Badge */}
-              <div className="relative h-44 bg-gray-100">
+              <div className="relative h-44 bg-gray-100 overflow-hidden">
                 <img
                   src={course.image}
                   alt={course.title}
@@ -257,7 +256,7 @@ export const Courses = memo(({ highlightWorkdayCards = false }: CoursesProps) =>
                     size="sm"
                     variant="outline"
                     className="border-2 border-[#FF8800] text-[#FF8800] hover:bg-[#FF8800] hover:text-white hover:border-[#FF8800] text-xs font-semibold py-2 font-sf-display transition-all duration-200"
-                    onClick={() => handleViewDetails(course.id, course.title)}
+                    onClick={() => handleViewDetails(course.slug)}
                   >
                     View Details
                   </Button>

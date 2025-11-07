@@ -4,14 +4,24 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Brain } fr
 import rrtechnosLogo from "@/assets/rr-technos-logo.png";
 import { WhatsAppContact } from "@/components/WhatsAppContact";
 import { Navigate, replace } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Footer = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
 
     const targetId = href.replace('#', '');
+
+    // If not on home page, navigate to home with hash
+    if (!isHomePage) {
+      navigate(`/${href}`);
+      return;
+    }
+
     const element = document.getElementById(targetId);
 
     if (element) {
@@ -105,14 +115,14 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-orange-400">Training Programs</h4>
             <ul className="space-y-3 text-primary text-sm">
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday HCM</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Finance</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Integration</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Extend</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">ServiceNow</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">PeopleSoft ERP</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">SAP Security</a></li>
-              <li><a href="#courses" onClick={(e) => handleNavClick(e, '#courses')} className="hover:text-orange-400 transition-colors cursor-pointer">Generative AI </a></li>
+              <li><a href="#course-workday-hcm" onClick={(e) => handleNavClick(e, '#course-workday-hcm')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday HCM</a></li>
+              <li><a href="#course-workday-finance" onClick={(e) => handleNavClick(e, '#course-workday-finance')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Finance</a></li>
+              <li><a href="#course-workday-integration" onClick={(e) => handleNavClick(e, '#course-workday-integration')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Integration</a></li>
+              <li><a href="#course-workday-extend" onClick={(e) => handleNavClick(e, '#course-workday-extend')} className="hover:text-orange-400 transition-colors cursor-pointer">Workday Extend</a></li>
+              <li><a href="#course-servicenow" onClick={(e) => handleNavClick(e, '#course-servicenow')} className="hover:text-orange-400 transition-colors cursor-pointer">ServiceNow</a></li>
+              <li><a href="#course-peoplesoft-erp" onClick={(e) => handleNavClick(e, '#course-peoplesoft-erp')} className="hover:text-orange-400 transition-colors cursor-pointer">PeopleSoft ERP</a></li>
+              <li><a href="#course-sap-security-s-4hana-fiori" onClick={(e) => handleNavClick(e, '#course-sap-security-s-4hana-fiori')} className="hover:text-orange-400 transition-colors cursor-pointer">SAP Security</a></li>
+              <li><a href="#course-generative-ai" onClick={(e) => handleNavClick(e, '#course-generative-ai')} className="hover:text-orange-400 transition-colors cursor-pointer">Generative AI </a></li>
             </ul>
           </div>
 
@@ -123,7 +133,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Hig-66,+Neera+Cafe+Building,+E-seva+line,+Near+Temple+bus+stand,+K+P+H+B+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072"
+                  href="https://www.google.com/maps/search/?api=1&query+z=Hig-66,+Neera+Cafe+Building,+E-seva+line,+Near+Temple+bus+stand,+K+P+H+B+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-orange-400 transition-colors cursor-pointer"
