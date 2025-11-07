@@ -1,8 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Star } from "lucide-react";
-import { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
 
 const courses = [
   {
@@ -41,12 +39,6 @@ const courses = [
 ];
 
 export const FeaturedCourses = () => {
-  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
-
-  const handleImageLoad = (courseId: number) => {
-    setLoadedImages(prev => ({ ...prev, [courseId]: true }));
-  };
-
   const handleEnquiry = (courseTitle: string, coursePrice: string, courseDuration: string) => {
     const message = `Hi RR Technos Team! 👋
 
@@ -93,19 +85,13 @@ Thank you! 😊`;
               className="overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 rounded-xl"
             >
               <div className="relative overflow-hidden bg-gray-100">
-                {!loadedImages[course.id] && (
-                  <Skeleton className="absolute inset-0 w-full h-48" />
-                )}
                 <img
                   src={course.image}
                   alt={course.title}
                   width="400"
                   height="192"
                   loading="eager"
-                  onLoad={() => handleImageLoad(course.id)}
-                  className={`w-full h-48 object-cover transition-opacity duration-300 ${
-                    loadedImages[course.id] ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className="w-full h-48 object-cover"
                 />
 
                 <div className="absolute top-4 right-4 bg-[#0066CC] text-white px-4 py-2 rounded-full text-sm font-bold font-sf-display shadow-lg">

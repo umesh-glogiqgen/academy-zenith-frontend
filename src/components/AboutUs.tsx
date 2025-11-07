@@ -13,15 +13,8 @@ import expertMentorship from "@/assets/icons/Expert Mentorship.png"
 import careerSupport from "@/assets/icons/Career Support.png"
 import rocket from "@/assets/rocket1.png"
 import newArrow from "@assets/icons/business-strategy-success-target-goals.png"
-import { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
 
 export const AboutUs = () => {
-  const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
-
-  const handleImageLoad = (imageKey: string) => {
-    setLoadedImages(prev => ({ ...prev, [imageKey]: true }));
-  };
   const credentials = [
     "5+ Top Workday Experienced Professionals",
     "Work Experience in Top MNCs Globally",
@@ -135,19 +128,13 @@ export const AboutUs = () => {
             <div className="relative">
               <Card className="overflow-hidden shadow-lg rounded-2xl border-0">
                 <div className="relative">
-                  {!loadedImages['vision'] && (
-                    <Skeleton className="absolute inset-0 w-full h-full" />
-                  )}
                   <img
                     src="/man-woman-making-deal-work.jpg"
                     alt="Professional team collaboration"
                     width="600"
                     height="400"
                     loading="eager"
-                    onLoad={() => handleImageLoad('vision')}
-                    className={`w-full h-full object-cover transition-opacity duration-300 ${
-                      loadedImages['vision'] ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-6">
                     <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 border-2 border-[#FF6B35]">
@@ -169,19 +156,13 @@ export const AboutUs = () => {
             {/* Mission Image - Left */}
             <div className="relative lg:order-1">
   <div className="relative">
-    {!loadedImages['mission'] && (
-      <Skeleton className="absolute inset-0 w-[97%] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] rounded-3xl" />
-    )}
     <img
       src="/business-strategy-success-target-goals.jpg"
       alt="Modern training facility"
       width="800"
       height="450"
       loading="eager"
-      onLoad={() => handleImageLoad('mission')}
-      className={`w-[97%] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] object-cover rounded-3xl transition-opacity duration-300 ${
-        loadedImages['mission'] ? 'opacity-100' : 'opacity-0'
-      }`}
+      className="w-[97%] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] object-cover rounded-3xl"
     />
 
 <div className="absolute top-16 right-0 left-[20px] md:-top-26 md:-right-[-200px] md:left-[320px]  lg:top-12 lg:-right-[-400px] lg:left-[80px] xl:-right-12 xl:left-[260px]  xl:top-14 flex items-center justify-between w-full sm:w-[90%] md:w-[420px] bg-white border-4 border-orange-500 rounded-2xl p-3 sm:p-4 shadow-xl animate-[fadeInUp_0.6s_ease-out]">
@@ -274,19 +255,13 @@ export const AboutUs = () => {
             {serviceTypes.map((service, index) => (
               <Card key={index} className="overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border border-gray-200 bg-white shadow-md rounded-2xl">
                 <div className="relative p-4">
-                  {!loadedImages[`service-${index}`] && (
-                    <Skeleton className="absolute inset-4 w-[calc(100%-2rem)] h-48 rounded-2xl" />
-                  )}
                   <img
                     src={service.image}
                     alt={service.title}
                     width="400"
                     height="192"
                     loading="eager"
-                    onLoad={() => handleImageLoad(`service-${index}`)}
-                    className={`w-full h-48 object-cover rounded-2xl transition-opacity duration-300 ${
-                      loadedImages[`service-${index}`] ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className="w-full h-48 object-cover rounded-2xl"
                   />
                   {/* Orange circular icon overlapping bottom of image */}
                   <div className="absolute mt-3 left-1/2 top-44 transform -translate-x-1/2 -translate-y-1/2 z-10">

@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Target, Lightbulb, Users, Award } from 'lucide-react';
-import { Skeleton } from "@/components/ui/skeleton";
 
 export const OurVision = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,19 +76,13 @@ export const OurVision = () => {
           {/* Right Image with Card Overlay */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              {!imageLoaded && (
-                <Skeleton className="absolute inset-0 w-full h-[400px] md:h-[500px]" />
-              )}
               <img
                 src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop"
                 alt="Professional collaboration"
                 width="800"
                 height="500"
                 loading="eager"
-                onLoad={() => setImageLoaded(true)}
-                className={`w-full h-[400px] md:h-[500px] object-cover transition-opacity duration-300 ${
-                  imageLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
+                className="w-full h-[400px] md:h-[500px] object-cover"
               />
 
               {/* Overlay Card */}

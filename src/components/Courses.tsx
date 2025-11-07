@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Clock, Users, Star, BookOpen, Phone, MessageCircle } from "lucide-react";
 import { ContinuousNewsTicker } from "@/components/ContinuousNewsTicker";
 import { useNavigate } from "react-router-dom";
-import { memo, useCallback, useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { memo, useCallback } from "react";
 const courses = [
   {
     id: 1,
@@ -134,11 +133,6 @@ interface CoursesProps {
 
 export const Courses = memo(({ highlightWorkdayCards = false }: CoursesProps) => {
   const navigate = useNavigate();
-  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
-
-  const handleImageLoad = useCallback((courseId: number) => {
-    setLoadedImages(prev => ({ ...prev, [courseId]: true }));
-  }, []);
 
   const handleEnrollClick = useCallback(() => {
     // WhatsApp contact
@@ -204,19 +198,13 @@ export const Courses = memo(({ highlightWorkdayCards = false }: CoursesProps) =>
             >
               {/* Course Image with Badge */}
               <div className="relative h-44 bg-gray-100">
-                {!loadedImages[course.id] && (
-                  <Skeleton className="absolute inset-0 w-full h-full" />
-                )}
                 <img
                   src={course.image}
                   alt={course.title}
                   width="400"
                   height="176"
                   loading="eager"
-                  onLoad={() => handleImageLoad(course.id)}
-                  className={`w-full h-full object-cover transition-opacity duration-300 ${
-                    loadedImages[course.id] ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className="w-full h-full object-cover"
                 />
                 {/* Badge in top-right corner */}
                 <span className="absolute top-3 right-3 bg-[#17A2B8] text-white px-3 py-1 rounded-full text-xs font-semibold font-sf-display">
@@ -268,7 +256,7 @@ export const Courses = memo(({ highlightWorkdayCards = false }: CoursesProps) =>
                   <Button
                     size="sm"
                     variant="outline"
-                    className="border-2 border-[#0066CC] text-[#0066CC] hover:bg-[#0066CC] hover:text-white hover:border-[#0066CC] text-xs font-semibold py-2 font-sf-display transition-all duration-200"
+                    className="border-2 border-[#FF8800] text-[#FF8800] hover:bg-[#FF8800] hover:text-white hover:border-[#FF8800] text-xs font-semibold py-2 font-sf-display transition-all duration-200"
                     onClick={() => handleViewDetails(course.id, course.title)}
                   >
                     View Details

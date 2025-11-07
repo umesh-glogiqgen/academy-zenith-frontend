@@ -6,15 +6,8 @@ import certificationGuidance from "@/assets/icons/Certification Guidance.png";
 import mentorship from "@/assets/icons/mentorship.png";
 import support from "@/assets/icons/24-7 Support.png";
 import alumniNetwork from "@/assets/icons/Alumni Network.png";
-import { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
 
 export const WhyChooseUs = () => {
-  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
-
-  const handleImageLoad = (index: number) => {
-    setLoadedImages(prev => ({ ...prev, [index]: true }));
-  };
   const differentiators = [
     {
       icon: realTimeProjects,
@@ -135,19 +128,13 @@ export const WhyChooseUs = () => {
                   {/* Image - Only show for modes that have image property */}
                   {mode.image && (
                     <div className="relative h-48 overflow-hidden rounded-lg mb-4">
-                      {!loadedImages[index] && (
-                        <Skeleton className="absolute inset-0 w-full h-48" />
-                      )}
                       <img
                         src={mode.image}
                         alt={mode.title}
                         width="400"
                         height="192"
                         loading="eager"
-                        onLoad={() => handleImageLoad(index)}
-                        className={`w-full h-full object-cover transition-opacity duration-300 ${
-                          loadedImages[index] ? 'opacity-100' : 'opacity-0'
-                        }`}
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   )}

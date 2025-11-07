@@ -16,43 +16,23 @@ interface SliderProps {
   interval?: number;
 }
 
-export const CompactCourseSlider = ({ 
-  height = "h-32", 
-  className = "", 
+export const CompactCourseSlider = ({
+  height = "h-32",
+  className = "",
   autoPlay = true,
-  interval = 3000 
+  interval = 3000
 }: SliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>(new Array(courseImages.length).fill(false));
 
   useEffect(() => {
     if (!autoPlay) return;
-    
+
     const slideInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % courseImages.length);
     }, interval);
 
     return () => clearInterval(slideInterval);
   }, [autoPlay, interval]);
-
-  // Preload all images
-  useEffect(() => {
-    courseImages.forEach((imageUrl, index) => {
-      const img = new Image();
-      img.onload = () => {
-        console.log(`Image ${index + 1} preloaded successfully`);
-        setImagesLoaded(prev => {
-          const newLoaded = [...prev];
-          newLoaded[index] = true;
-          return newLoaded;
-        });
-      };
-      img.onerror = () => {
-        console.log(`Image ${index + 1} failed to preload`);
-      };
-      img.src = imageUrl;
-    });
-  }, []);
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
@@ -79,20 +59,9 @@ export const CompactCourseSlider = ({
         {courseImages.map((imageUrl, index) => (
           <div
             key={index}
-            className="flex-shrink-0 h-full relative bg-gray-200"
+            className="flex-shrink-0 h-full relative"
             style={{ width: `${100 / courseImages.length}%` }}
           >
-            {/* Loading placeholder - ONLY show if image not loaded */}
-            {!imagesLoaded[index] && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-orange-400 to-orange-600 text-white z-10">
-                <div className="text-center">
-                  <div className="animate-spin text-2xl mb-2">⟳</div>
-                  <div className="text-sm">Loading Image {index + 1}...</div>
-                </div>
-              </div>
-            )}
-            
-            {/* Actual image - ALWAYS render */}
             <img
               src={imageUrl}
               alt={`Professional training course ${index + 1}`}
@@ -100,55 +69,7 @@ export const CompactCourseSlider = ({
               height="300"
               loading="eager"
               className="w-full h-full object-cover"
-              style={{
-                opacity: imagesLoaded[index] ? 1 : 0,
-                transition: 'opacity 0.5s ease-in-out'
-              }}
-              onLoad={() => {
-                console.log(`Image ${index + 1} loaded in slider`);
-                setImagesLoaded(prev => {
-                  const newLoaded = [...prev];
-                  newLoaded[index] = true;
-                  return newLoaded;
-                });
-              }}
-              onError={() => {
-                console.log(`Image ${index + 1} failed in slider - showing fallback`);
-                // Keep the loading state to show fallback
-              }}
             />
-            
-            {/* Fallback content ONLY if image failed to load completely */}
-            {!imagesLoaded[index] && (
-              <div className={`absolute inset-0 flex items-center justify-center text-white font-bold text-lg ${
-                index % 3 === 0 ? 'bg-orange-500' : index % 3 === 1 ? 'bg-blue-600' : 'bg-purple-600'
-              }`}>
-                <div className="text-center">
-                  <div className="text-3xl mb-2">
-                    {index === 0 && "💻"}
-                    {index === 1 && "📊"}  
-                    {index === 2 && "📱"}
-                    {index === 3 && "🎯"}
-                    {index === 4 && "🚀"}
-                    {index === 5 && "👥"}
-                  </div>
-                  <div className="text-lg">Course {index + 1}</div>
-                  <div className="text-sm mt-1">
-                    {index === 0 && "Web Development"}
-                    {index === 1 && "Data Science"}  
-                    {index === 2 && "Mobile Apps"}
-                    {index === 3 && "Digital Marketing"}
-                    {index === 4 && "DevOps"}
-                    {index === 5 && "Team Management"}
-                  </div>
-                </div>
-              </div>
-            )}
-            
-            {/* Image loaded status */}
-            <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-20">
-              {imagesLoaded[index] ? '✓' : '⟳'}
-            </div>
           </div>
         ))}
       </div>
