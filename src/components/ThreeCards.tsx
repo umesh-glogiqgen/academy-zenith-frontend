@@ -27,7 +27,7 @@ export const ThreeCards = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 lg:-mt-16 relative z-30 pb-2 sm:pb-3 lg:pb-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 relative z-30">
         {/* Workday Consultant Card */}
-        <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100">
+        <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 card-glow-hover">
           <div className="flex items-center justify-start gap-2 mb-3 sm:mb-4">
             <img
               src={icon1}
@@ -46,7 +46,7 @@ export const ThreeCards = () => {
         </div>
 
         {/* SAP Security Expert Card */}
-        <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100">
+        <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 card-glow-hover">
           <div className="flex items-center justify-start gap-2 mb-3 sm:mb-4">
             <img
               src={icon2}
@@ -65,7 +65,7 @@ export const ThreeCards = () => {
         </div>
 
         {/* Generative AI Card */}
-        <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 sm:col-span-2 lg:col-span-1">
+        <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 sm:col-span-2 lg:col-span-1 card-glow-hover">
           <div className="flex items-center justify-start gap-2 mb-3 sm:mb-4">
             <img
               src={icon3}

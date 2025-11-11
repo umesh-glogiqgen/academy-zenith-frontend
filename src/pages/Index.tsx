@@ -10,7 +10,8 @@ import { MessageCircle } from "lucide-react";
 import { StudentPlacementSection } from "@/components/StudentPlacementSection";
 import { Testimonials } from "@/components/Testimonials";
 import { FeaturedCourses } from "@/components/FeaturedCourses";
-import { PlacementPartners } from "@/components/PlacementPartners";
+
+import PlacementPartners from "@/components/PlacementPartners";
 import { ContactForm } from "@/components/ContactForm";
 import { PlacementStatsCards } from "@/components/PlacementStatsCards";
 import { OurVision } from "@/components/OurVision";
@@ -112,7 +113,7 @@ const Index = () => {
       <Courses highlightWorkdayCards={highlightWorkdayCards} />
       <FeaturedCourses />
       <StudentPlacementSection />
-      <PlacementPartners />
+      <PlacementPartners/>
       {/* <RecommendedCourses limit={4} title="Explore More Courses" /> */}
       <ContactForm />
 

@@ -92,7 +92,7 @@ Email: ${formData.email}`;
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid xl:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
           <Card className="p-8">
             <h3 className="text-2xl font-semibold mb-6 text-professional-secondary">

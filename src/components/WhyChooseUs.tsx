@@ -78,8 +78,8 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="why-choose-us" className="py-20 bg-white overflow-visible">
+      <div className="container mx-auto px-6 overflow-visible">
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-sf-display">
@@ -91,20 +91,20 @@ export const WhyChooseUs = () => {
         </div>
 
         {/* Key Differentiators */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 px-4 pt-12 pb-8">
           {differentiators.map((item, index) => (
-            <div key={index} className="relative ">
+            <div key={index} className="relative mt-12">
               {/* Circular Icon - Positioned at top center, overlapping the card */}
-              <div className="absolute mt-3 left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="absolute z-20 mt-3 left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white">
-                 
+
                     <img src={item.icon} alt={item.title} width="48" height="48" loading="eager" className="w-12 h-12" />
-                  
+
                 </div>
               </div>
 
-              {/* Card Content */}
-              <Card className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.08)] pt-3 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl border-0 text-white rounded-2xl text-center">
+              {/* Card Content - Removed all hover transforms to prevent overflow */}
+              <Card className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.08)]  hover:scale-100 pt-3 transition-all duration-300 hover:shadow-2xl border-0 text-white rounded-2xl text-center ">
                <div className="rounded-b-xl bg-gradient-to-b from-[#0066CC] to-[#004C99] px-6 pt-16 pb-8 h-[98%]">
                <h3 className="text-xl font-bold mb-4 text-white font-sf-display">{item.title}</h3>
                <p className="text-white text-sm leading-relaxed font-sf-display font-normal">{item.description}</p>
